@@ -4,15 +4,16 @@ url: "https://jeon-repo.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 title: Jeon Repository                                  # site's title
-description: "A website with blog posts and pages"      # used by search engines
-avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
+description: ""                                         # used by search engines
+avatar: assets/img/bike.png                             # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
 # Header and footer text
-header_text: 힘 있는 도약을 꿈꾼다
+header_text: 그림도 잘 그리고 싶은 개발자
 header_feature_image: assets/img/pexels/triangular.jpeg
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+  Copyright 2021. jeon-repo all rights reserved.
+#  Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
 # Blog
 excerpt: true                                           # Or "truncate" (first 250 characters), "false" to disable

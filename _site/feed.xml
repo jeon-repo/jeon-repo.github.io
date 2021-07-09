@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-08T16:00:26+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle>A website with blog posts and pages</subtitle><entry><title type="html">Dark Mode</title><link href="https://jeon-repo.github.io/2021/04/27/dark-mode.html" rel="alternate" type="text/html" title="Dark Mode" /><published>2021-04-27T00:00:00+09:00</published><updated>2021-04-27T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/04/27/dark-mode</id><content type="html" xml:base="https://jeon-repo.github.io/2021/04/27/dark-mode.html">&lt;p&gt;&lt;strong&gt;More colors with less light.&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-09T18:34:38+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">테스트 포스팅</title><link href="https://jeon-repo.github.io/2021/07/09/%ED%9A%8C%EC%9B%90-%EC%8A%A4%EC%BC%80%EC%A4%84-%EA%B4%80%EB%A6%AC-%EC%9B%B9%EC%95%B1.html" rel="alternate" type="text/html" title="테스트 포스팅" /><published>2021-07-09T00:00:00+09:00</published><updated>2021-07-09T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/09/%ED%9A%8C%EC%9B%90-%EC%8A%A4%EC%BC%80%EC%A4%84-%EA%B4%80%EB%A6%AC-%EC%9B%B9%EC%95%B1</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/09/%ED%9A%8C%EC%9B%90-%EC%8A%A4%EC%BC%80%EC%A4%84-%EA%B4%80%EB%A6%AC-%EC%9B%B9%EC%95%B1.html">&lt;h1 id=&quot;회원-스케줄-관리-웹앱&quot;&gt;회원 스케줄 관리 웹앱&lt;/h1&gt;
+
+&lt;p&gt;purpose : 수익 실현
+개발에 시간을 투자할 가치&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;사용자를 모을 방법 (차별성) → 젤 어려움&lt;/li&gt;
+  &lt;li&gt;수익 실현&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;수익 실현 방법&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;광고 → &lt;a href=&quot;https://www.spaceotechnologies.com/how-do-free-apps-make-money/&quot;&gt;https://www.spaceotechnologies.com/how-do-free-apps-make-money/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;인앱 결제 → 광고 제거&lt;/li&gt;
+  &lt;li&gt;앱 유료화&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>janos</name></author><category term="Idea" /><category term="Health" /><category term="App" /><summary type="html">회원 스케줄 관리 웹앱</summary></entry><entry><title type="html">Dark Mode</title><link href="https://jeon-repo.github.io/2021/04/27/dark-mode.html" rel="alternate" type="text/html" title="Dark Mode" /><published>2021-04-27T00:00:00+09:00</published><updated>2021-04-27T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/04/27/dark-mode</id><content type="html" xml:base="https://jeon-repo.github.io/2021/04/27/dark-mode.html">&lt;p&gt;&lt;strong&gt;More colors with less light.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Click the half-moon most top-right button to turn the lights on/off.&lt;/p&gt;
 
@@ -578,193 +592,4 @@ This feature facilitates writing in a structured language such as a programming 
       &lt;p&gt;&lt;span class=&quot;cit-authors&quot;&gt;Michael’s Rose&lt;/span&gt;, &lt;span class=&quot;cit-title&quot;&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/markup-syntax-highlighting&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/span&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>Michael Rose</name></author><category term="Highlight" /><category term="Markdown" /><summary type="html">Syntax highlighting1 is a feature that displays source code. This feature facilitates writing in a structured language such as a programming language or a markup language as it makes import things visually distinct. &amp;#8617;</summary></entry><entry><title type="html">Generate a table of content</title><link href="https://jeon-repo.github.io/2013/12/12/Generate-a-table-of-content.html" rel="alternate" type="text/html" title="Generate a table of content" /><published>2013-12-12T00:00:00+09:00</published><updated>2013-12-12T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2013/12/12/Generate-a-table-of-content</id><content type="html" xml:base="https://jeon-repo.github.io/2013/12/12/Generate-a-table-of-content.html">&lt;h1 id=&quot;using-kramdown-gfm-&quot;&gt;Using Kramdown GFM &lt;!--more--&gt;&lt;/h1&gt;
-
-&lt;!-- To be placed at the beginning of the post, it is where the table of content will be generated --&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#using-kramdown-gfm-&quot; id=&quot;markdown-toc-using-kramdown-gfm-&quot;&gt;Using Kramdown GFM &lt;!--more--&gt;&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#basic-usage&quot; id=&quot;markdown-toc-basic-usage&quot;&gt;Basic Usage&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#using-tocjs&quot; id=&quot;markdown-toc-using-tocjs&quot;&gt;Using toc.js&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#customize-with-tocjs&quot; id=&quot;markdown-toc-customize-with-tocjs&quot;&gt;Customize with toc.js&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#use-with-this-jekyll-template&quot; id=&quot;markdown-toc-use-with-this-jekyll-template&quot;&gt;Use with this jekyll template&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#basic-usage-1&quot; id=&quot;markdown-toc-basic-usage-1&quot;&gt;Basic Usage&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#how-it-would-look-like&quot; id=&quot;markdown-toc-how-it-would-look-like&quot;&gt;How it would look like&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;basic-usage&quot;&gt;Basic Usage&lt;/h2&gt;
-
-&lt;p&gt;You need to put this at the beginning of the page where you want the table of content to be displayed&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* TOC
-{:toc}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;It will then render the markdown and html titles (lines that begins with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt; or using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;&lt;/code&gt; tages)&lt;/p&gt;
-
-&lt;h1 id=&quot;using-tocjs&quot;&gt;Using toc.js&lt;/h1&gt;
-
-&lt;p&gt;Demo display of &lt;a href=&quot;https://github.com/ghiculescu/jekyll-table-of-contents&quot;&gt;jekyll-table-of-contents&lt;/a&gt; by ghiculescu.&lt;/p&gt;
-
-&lt;!-- To be placed at the beginning of the post, it is where the table of content will be generated --&gt;
-&lt;div id=&quot;toc&quot;&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;customize-with-tocjs&quot;&gt;Customize with toc.js&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/ghiculescu/jekyll-table-of-contents&quot;&gt;toc.js&lt;/a&gt; stands for table of content, it is a js plugin that generates automatically a table of content of a post.&lt;/p&gt;
-
-&lt;h3 id=&quot;use-with-this-jekyll-template&quot;&gt;Use with this jekyll template&lt;/h3&gt;
-
-&lt;p&gt;If you want to customize the theme it is up to you, you can add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toc.js&lt;/code&gt; file into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;asset &amp;gt; js&lt;/code&gt; and add it into the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;page.html&lt;/code&gt; layout with:&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/js/toc.js&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Then you can use it as it is said on the repository.&lt;/p&gt;
-
-&lt;h2 id=&quot;basic-usage-1&quot;&gt;Basic Usage&lt;/h2&gt;
-
-&lt;p&gt;The script requires jQuery. First, reference toc.js in templates where you would like to add the table of content. Then, create an HTML element wherever you want your table of contents to appear:&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;toc&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then you put your post with titles and all like:&lt;/p&gt;
-
-&lt;div class=&quot;language-apiblueprint highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gu&quot;&gt;## Title&lt;/span&gt;
-&lt;span class=&quot;gu&quot;&gt;## Mid title 1&lt;/span&gt;
-This is text on page one
-&lt;span class=&quot;gu&quot;&gt;## Mid title 2&lt;/span&gt;
-This is text for page two
-&lt;span class=&quot;gu&quot;&gt;### Sub title 2.a&lt;/span&gt;
-Some more text
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then at the end of your post, you call the .toc() function using:&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#toc&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;how-it-would-look-like&quot;&gt;How it would look like&lt;/h2&gt;
-
-&lt;p&gt;So you can get a feel of it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/20642750/39189661-c22099f2-47a0-11e8-826e-2ec3ef4cc4f4.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;script&gt;
-// toc.js 
-// Copied here for the example, can be placed in assets/js for real use in your template.
-// https://github.com/ghiculescu/jekyll-table-of-contents
-(function($){
-  $.fn.toc = function(options) {
-    var defaults = {
-      noBackToTopLinks: false,
-      title: &apos;&lt;i&gt;Jump to...&lt;/i&gt;&apos;,
-      minimumHeaders: 3,
-      headers: &apos;h1, h2, h3, h4, h5, h6&apos;,
-      listType: &apos;ol&apos;, // values: [ol|ul]
-      showEffect: &apos;show&apos;, // values: [show|slideDown|fadeIn|none]
-      showSpeed: &apos;slow&apos;, // set to 0 to deactivate effect
-      classes: { list: &apos;&apos;,
-                 item: &apos;&apos;
-               }
-    },
-    settings = $.extend(defaults, options);
-
-    function fixedEncodeURIComponent (str) {
-      return encodeURIComponent(str).replace(/[!&apos;()*]/g, function(c) {
-        return &apos;%&apos; + c.charCodeAt(0).toString(16);
-      });
-    }
-
-    function createLink (header) {
-      var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
-      return &quot;&lt;a href=&apos;#&quot; + fixedEncodeURIComponent(header.id) + &quot;&apos;&gt;&quot; + innerText + &quot;&lt;/a&gt;&quot;;
-    }
-
-    var headers = $(settings.headers).filter(function() {
-      // get all headers with an ID
-      var previousSiblingName = $(this).prev().attr( &quot;name&quot; );
-      if (!this.id &amp;&amp; previousSiblingName) {
-        this.id = $(this).attr( &quot;id&quot;, previousSiblingName.replace(/\./g, &quot;-&quot;) );
-      }
-      return this.id;
-    }), output = $(this);
-    if (!headers.length || headers.length &lt; settings.minimumHeaders || !output.length) {
-      $(this).hide();
-      return;
-    }
-
-    if (0 === settings.showSpeed) {
-      settings.showEffect = &apos;none&apos;;
-    }
-
-    var render = {
-      show: function() { output.hide().html(html).show(settings.showSpeed); },
-      slideDown: function() { output.hide().html(html).slideDown(settings.showSpeed); },
-      fadeIn: function() { output.hide().html(html).fadeIn(settings.showSpeed); },
-      none: function() { output.html(html); }
-    };
-
-    var get_level = function(ele) { return parseInt(ele.nodeName.replace(&quot;H&quot;, &quot;&quot;), 10); };
-    var highest_level = headers.map(function(_, ele) { return get_level(ele); }).get().sort()[0];
-    var return_to_top = &apos;&lt;i class=&quot;icon-arrow-up back-to-top&quot;&gt; &lt;/i&gt;&apos;;
-
-    var level = get_level(headers[0]),
-      this_level,
-      html = settings.title + &quot; &lt;&quot; +settings.listType + &quot; class=\&quot;&quot; + settings.classes.list +&quot;\&quot;&gt;&quot;;
-    headers.on(&apos;click&apos;, function() {
-      if (!settings.noBackToTopLinks) {
-        window.location.hash = this.id;
-      }
-    })
-    .addClass(&apos;clickable-header&apos;)
-    .each(function(_, header) {
-      this_level = get_level(header);
-      if (!settings.noBackToTopLinks &amp;&amp; this_level === highest_level) {
-        $(header).addClass(&apos;top-level-header&apos;).after(return_to_top);
-      }
-      if (this_level === level) // same level as before; same indenting
-        html += &quot;&lt;li class=\&quot;&quot; + settings.classes.item + &quot;\&quot;&gt;&quot; + createLink(header);
-      else if (this_level &lt;= level){ // higher level than before; end parent ol
-        for(var i = this_level; i &lt; level; i++) {
-          html += &quot;&lt;/li&gt;&lt;/&quot;+settings.listType+&quot;&gt;&quot;
-        }
-        html += &quot;&lt;li class=\&quot;&quot; + settings.classes.item + &quot;\&quot;&gt;&quot; + createLink(header);
-      }
-      else if (this_level &gt; level) { // lower level than before; expand the previous to contain a ol
-        for(i = this_level; i &gt; level; i--) {
-          html += &quot;&lt;&quot; + settings.listType + &quot; class=\&quot;&quot; + settings.classes.list +&quot;\&quot;&gt;&quot; +
-                  &quot;&lt;li class=\&quot;&quot; + settings.classes.item + &quot;\&quot;&gt;&quot;
-        }
-        html += createLink(header);
-      }
-      level = this_level; // update for the next one
-    });
-    html += &quot;&lt;/&quot;+settings.listType+&quot;&gt;&quot;;
-    if (!settings.noBackToTopLinks) {
-      $(document).on(&apos;click&apos;, &apos;.back-to-top&apos;, function() {
-        $(window).scrollTop(0);
-        window.location.hash = &apos;&apos;;
-      });
-    }
-
-    render[settings.showEffect]();
-  };
-})(jQuery);
-&lt;/script&gt;
-
-&lt;!-- To be copied at the end of the post to render the table of content --&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-$(document).ready(function() {
-    $(&apos;#toc&apos;).toc();
-});
-&lt;/script&gt;</content><author><name>Sylhare</name></author><category term="Kramdown" /><category term="Customization" /><summary type="html">Using Kramdown GFM</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Michael Rose</name></author><category term="Highlight" /><category term="Markdown" /><summary type="html">Syntax highlighting1 is a feature that displays source code. This feature facilitates writing in a structured language such as a programming language or a markup language as it makes import things visually distinct. &amp;#8617;</summary></entry></feed>

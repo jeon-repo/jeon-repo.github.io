@@ -1,6 +1,16 @@
 [
   
   {
+    "title"    : "테스트 포스팅",
+    "category" : "",
+    "tags"     : " Idea, Health, App",
+    "url"      : "/2021/07/09/%ED%9A%8C%EC%9B%90-%EC%8A%A4%EC%BC%80%EC%A4%84-%EA%B4%80%EB%A6%AC-%EC%9B%B9%EC%95%B1.html",
+    "date"     : "July 9, 2021",
+    "excerpt"  : "회원 스케줄 관리 웹앱\n\npurpose : 수익 실현\n개발에 시간을 투자할 가치\n\n  사용자를 모을 방법 (차별성) → 젤 어려움\n  수익 실현\n\n\n수익 실현 방법\n\n  광고 → https://www.spaceotechnologies.com/how-do-free-apps-make-money/\n  인앱 결제 → 광고 제거\n  앱 유료화\n\n",
+  "content"  : "회원 스케줄 관리 웹앱\n\npurpose : 수익 실현\n개발에 시간을 투자할 가치\n\n  사용자를 모을 방법 (차별성) → 젤 어려움\n  수익 실현\n\n\n수익 실현 방법\n\n  광고 → https://www.spaceotechnologies.com/how-do-free-apps-make-money/\n  인앱 결제 → 광고 제거\n  앱 유료화\n\n"
+} ,
+  
+  {
     "title"    : "Dark Mode",
     "category" : "",
     "tags"     : " Katex, Markdown",

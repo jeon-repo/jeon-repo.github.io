@@ -1,3 +1,7 @@
+janos:
+  name: "janos"
+  avatar: assets/img/bike.png
+  url: "https://github.com/jeon-repo"
 rohanchandra: # author-id
   name: "Rohan Chandra"
   avatar: "https://avatars2.githubusercontent.com/u/816965?s=460&v=4"
