@@ -2,3 +2,4 @@
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+**/2020-11-*.md
