@@ -1,6 +1,16 @@
 [
   
   {
+    "title"    : "큐(Queue)",
+    "category" : "",
+    "tags"     : " 자료구조, 알고리즘",
+    "url"      : "/2021/07/13/%ED%81%90-Queue.html",
+    "date"     : "July 13, 2021",
+    "excerpt"  : "큐(Queue)란\n\n컴퓨터의 기본적인 자료구조의 한 가지로, FIFO(First In First Out)구조로 데이터를 저장하는 형식이다.\n\n\n  스택(Stack)의 LIFO(Last In First Out)와 반대되는 개념\n\n\n[발단]\n\n혼자 작은 규모로 자동투자 프로그램을 개발하던 도중\n\n\n  실시간 데이터 감시\n  타겟 데이터 포착시 매매 요청\n\n\n2가지의 기능을 비동기로 구현해야하는 상황이 생겨서 [그림1]의 signal 부분을 Q...",
+  "content"  : "큐(Queue)란\n\n컴퓨터의 기본적인 자료구조의 한 가지로, FIFO(First In First Out)구조로 데이터를 저장하는 형식이다.\n\n\n  스택(Stack)의 LIFO(Last In First Out)와 반대되는 개념\n\n\n[발단]\n\n혼자 작은 규모로 자동투자 프로그램을 개발하던 도중\n\n\n  실시간 데이터 감시\n  타겟 데이터 포착시 매매 요청\n\n\n2가지의 기능을 비동기로 구현해야하는 상황이 생겨서 [그림1]의 signal 부분을 Queue를 통해 구현하였다.\n\n[그림1]\n\n\n[예제]\n\nPython에서 Queue를 사용하는 간단한 예제이다.\n\n예제는 3개의 파일로 구성되어 있다.\n\n# test_signal.py\n\nfrom multiprocessing import Process, Queue\nfrom test_agent import Agent\nfrom test_trader import Buy, Sell\n\ndef run():\n    queue = Queue()\n    agent = Agent(queue)\n    scouter_price = Process(target=agent.scouter_price)\n    scouter_price.start()\n\n    while True:\n        if not queue.empty():\n            data = queue.get()\n            # scouter_price에서 얻은 데이터 활용\n            if data[0] == &#39;buy&#39;:\n                Buy(data[1])\n            if data[0] == &#39;sell&#39;:\n                Sell(data[1])\n            if data[0] == -1:\n                print(&#39;종료&#39;)\n                break\n\nif __name__ == &#39;__main__&#39;:\n    run()\n\n\n# test_agent.py\n\nfrom time import sleep\n\nclass Agent():\n    def __init__(self, queue):\n        self.queue = queue\n        \n    def scouter_price(self):\n        count = 0\n        while True:\n            # 감시 메커니즘 ...\n            count += 1\n            sleep(1)\n            print(f&#39;count: {count}&#39;)\n            if count == 3:\n                self.queue.put([&#39;buy&#39;, count])\n            if count == 6:\n                self.queue.put([&#39;sell&#39;, count])\n            if count == 7:\n                self.queue.put([-1])\n                break\n            else:\n                pass\n\n\n# test_trader.py\n\ndef Buy(data):\n\t# 매수 메커니즘 ...\n\tprint(f&#39;{data}로 매수 완료&#39;)\n\ndef Sell(data):\n\t# 매도 메커니즘 ...\n\tprint(f&#39;{data}로 매도 완료&#39;)\n\n\n[실행 결과]\n\n\n"
+} ,
+  
+  {
     "title"    : "카카오 코딩 테스트 - 신규 아이디 추천",
     "category" : "",
     "tags"     : " 카카오, 코테, Python",
