@@ -397,9 +397,9 @@
     <span class="c1"># 요리 n개 코스
 </span>    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">course</span><span class="p">:</span>
         <span class="n">menu_count</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">orders</span><span class="p">:</span>
-        	<span class="c1"># 주문 목록의 요리로 중복되지 않는 조합을 구성
-</span>            <span class="k">for</span> <span class="n">menu</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="c1"># 주문 목록의 요리로 중복되지 않는 조합을 구성
+</span>        <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">orders</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">menu</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">(</span><span class="n">order</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
                 <span class="n">menu</span> <span class="o">=</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">menu</span><span class="p">))</span>
                 <span class="c1"># 주문 횟수 카운트
 </span>                <span class="k">if</span> <span class="n">menu</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">menu_count</span><span class="p">.</span><span class="n">keys</span><span class="p">():</span>
@@ -428,6 +428,28 @@
 <p>하지만 문제를 모두 풀고 난 뒤에 <code class="language-plaintext highlighter-rouge">주문 횟수 카운트</code>부분과 여러개의 max값을 구하는 부분을 collections의 <code class="language-plaintext highlighter-rouge">Counter().most_common()</code> 함수를 통해 한 번에 해결될 수 있다는 내용을 알게되었다.</p>
 
 <p>역시 인터넷은 넓고, 방법은 많다는 사실을 다시 한 번 느끼게 되었다.</p>
+
+<p>[<code class="language-plaintext highlighter-rouge">collections</code> 라이브러리와 <code class="language-plaintext highlighter-rouge">리스트 컴프리헨션</code>을 활용한 코드]</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">orders</span><span class="p">,</span> <span class="n">course</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># 요리 n개 코스
+</span>    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">course</span><span class="p">:</span>
+        <span class="n">order_combinations</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># 중복되지 않는 요리 조합을 구성
+</span>        <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">orders</span><span class="p">:</span>
+            <span class="n">order_combinations</span> <span class="o">+=</span> <span class="n">combinations</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">order</span><span class="p">),</span> <span class="n">num</span><span class="p">)</span>
+
+	<span class="c1"># 주문 횟수 카운트와 여러 max를 구하는 부분
+</span>        <span class="n">best_menu</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">order_combinations</span><span class="p">).</span><span class="n">most_common</span><span class="p">()</span>
+        <span class="n">answer</span> <span class="o">+=</span> <span class="p">[</span> <span class="n">menu</span> <span class="k">for</span> <span class="n">menu</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">best_menu</span> <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">count</span> <span class="o">==</span> <span class="n">best_menu</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
+	<span class="c1"># 문자열 형태로 출력하기 위한 처리
+</span>    <span class="k">return</span> <span class="p">[</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">menu</span><span class="p">)</span> <span class="k">for</span> <span class="n">menu</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="p">]</span>
+</code></pre></div></div>
 
     
   </section>
