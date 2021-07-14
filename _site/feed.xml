@@ -1,4 +1,206 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-13T23:37:20+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">큐(Queue)</title><link href="https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue.html" rel="alternate" type="text/html" title="큐(Queue)" /><published>2021-07-13T00:00:00+09:00</published><updated>2021-07-13T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue.html">&lt;h3 id=&quot;큐queue란&quot;&gt;큐(Queue)란&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-14T14:12:42+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">카카오 코딩 테스트 - 메뉴 리뉴얼</title><link href="https://jeon-repo.github.io/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 메뉴 리뉴얼" /><published>2021-07-14T00:00:00+09:00</published><updated>2021-07-14T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC.html">&lt;p&gt;2021 KAKAO BLIND RECRUITMENT “메뉴 리뉴얼” 문제를 풀어보겠습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;#solution&quot;&gt;여기&lt;/a&gt;를 누르면 설명을 건너뛸 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;문제-설명&quot;&gt;[문제 설명]&lt;/h3&gt;
+
+&lt;p&gt;레스토랑을 운영하던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스카피&lt;/code&gt;는 코로나19로 인한 불경기를 극복하고자 메뉴를 새로 구성하려고 고민하고 있습니다.
+기존에는 단품으로만 제공하던 메뉴를 조합해서 코스요리 형태로 재구성해서 새로운 메뉴를 제공하기로 결정했습니다. 어떤 단품메뉴들을 조합해서 코스요리 메뉴로 구성하면 좋을 지 고민하던 “스카피”는 이전에 각 손님들이 주문할 때 가장 많이 함께 주문한 단품메뉴들을 코스요리 메뉴로 구성하기로 했습니다.
+단, 코스요리 메뉴는 최소 2가지 이상의 단품메뉴로 구성하려고 합니다. 또한, 최소 2명 이상의 손님으로부터 주문된 단품메뉴 조합에 대해서만 코스요리 메뉴 후보에 포함하기로 했습니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어, 손님 6명이 주문한 단품메뉴들의 조합이 다음과 같다면,&lt;br /&gt;
+(각 손님은 단품메뉴를 2개 이상 주문해야 하며, 각 단품메뉴는 A ~ Z의 알파벳 대문자로 표기합니다.)&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;손님 번호&lt;/th&gt;
+      &lt;th&gt;주문한 단품메뉴 조합&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1번 손님&lt;/td&gt;
+      &lt;td&gt;A, B, C, F, G&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2번 손님&lt;/td&gt;
+      &lt;td&gt;A, C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3번 손님&lt;/td&gt;
+      &lt;td&gt;C, D, E&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4번 손님&lt;/td&gt;
+      &lt;td&gt;A, C, D, E&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5번 손님&lt;/td&gt;
+      &lt;td&gt;B, C, F, G&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6번 손님&lt;/td&gt;
+      &lt;td&gt;A, C, D, E, H&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;가장 많이 함께 주문된 단품메뉴 조합에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스카피&lt;/code&gt;가 만들게 될 코스요리 메뉴 구성 후보는 다음과 같습니다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;코스 종류&lt;/th&gt;
+      &lt;th&gt;메뉴 구성&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;요리 2개 코스&lt;/td&gt;
+      &lt;td&gt;A, C&lt;/td&gt;
+      &lt;td&gt;1번, 2번, 4번, 6번 손님으로부터 총 4번 주문됐습니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;요리 3개 코스&lt;/td&gt;
+      &lt;td&gt;C, D, E&lt;/td&gt;
+      &lt;td&gt;3번, 4번, 6번 손님으로부터 총 3번 주문됐습니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;요리 4개 코스&lt;/td&gt;
+      &lt;td&gt;B, C, F, G&lt;/td&gt;
+      &lt;td&gt;1번, 5번 손님으로부터 총 2번 주문됐습니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;요리 4개 코스&lt;/td&gt;
+      &lt;td&gt;A, C, D, E&lt;/td&gt;
+      &lt;td&gt;4번, 6번 손님으로부터 총 2번 주문됐습니다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;문제&quot;&gt;[문제]&lt;/h3&gt;
+
+&lt;p&gt;각 손님들이 주문한 단품메뉴들이 문자열 형식으로 담긴 배열 orders, “스카피”가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;추가하고 싶어하는&lt;/code&gt; 코스요리를 구성하는 단품메뉴들의 갯수가 담긴 배열 course가 매개변수로 주어질 때, “스카피”가 새로 추가하게 될 코스요리의 메뉴 구성을 문자열 형태로 배열에 담아 return 하도록 solution 함수를 완성해 주세요.&lt;/p&gt;
+
+&lt;h3 id=&quot;제한사항&quot;&gt;[제한사항]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;orders 배열의 크기는 2 이상 20 이하입니다.&lt;/li&gt;
+  &lt;li&gt;orders 배열의 각 원소는 크기가 2 이상 10 이하인 문자열입니다.
+    &lt;ul&gt;
+      &lt;li&gt;각 문자열은 알파벳 대문자로만 이루어져 있습니다.&lt;/li&gt;
+      &lt;li&gt;각 문자열에는 같은 알파벳이 중복해서 들어있지 않습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;course 배열의 크기는 1 이상 10 이하입니다.
+    &lt;ul&gt;
+      &lt;li&gt;course 배열의 각 원소는 2 이상 10 이하인 자연수가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오름차순&lt;/code&gt;으로 정렬되어 있습니다.&lt;/li&gt;
+      &lt;li&gt;course 배열에는 같은 값이 중복해서 들어있지 않습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;정답은 각 코스요리 메뉴의 구성을 문자열 형식으로 배열에 담아 사전 순으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오름차순&lt;/code&gt; 정렬해서 return 해주세요.
+    &lt;ul&gt;
+      &lt;li&gt;배열의 각 원소에 저장된 문자열 또한 알파벳 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오름차순&lt;/code&gt;으로 정렬되어야 합니다.&lt;/li&gt;
+      &lt;li&gt;만약 가장 많이 함께 주문된 메뉴 구성이 여러 개라면, 모두 배열에 담아 return 하면 됩니다.&lt;/li&gt;
+      &lt;li&gt;orders와 course 매개변수는 return 하는 배열의 길이가 1 이상이 되도록 주어집니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;입출력-예&quot;&gt;[입출력 예]&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;orders&lt;/th&gt;
+      &lt;th&gt;course&lt;/th&gt;
+      &lt;th&gt;result&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[“ABCFG”, “AC”, “CDE”, “ACDE”, “BCFG”, “ACDEH”]&lt;/td&gt;
+      &lt;td&gt;[2,3,4]&lt;/td&gt;
+      &lt;td&gt;[“AC”, “ACDE”, “BCFG”, “CDE”]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[“ABCDE”, “AB”, “CD”, “ADE”, “XYZ”, “XYZ”, “ACD”]&lt;/td&gt;
+      &lt;td&gt;[2,3,5]&lt;/td&gt;
+      &lt;td&gt;[“ACD”, “AD”, “ADE”, “CD”, “XYZ”]&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;[“XYZ”, “XWY”, “WXA”]&lt;/td&gt;
+      &lt;td&gt;[2,3,4]&lt;/td&gt;
+      &lt;td&gt;[“WX”, “XY”]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;solution&quot;&gt;Solution&lt;/h1&gt;
+
+&lt;h3 id=&quot;문제-이해&quot;&gt;[문제 이해]&lt;/h3&gt;
+
+&lt;p&gt;내가 이해한 내용은 다음과 같았다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;조합을 사용해야 할 것&lt;/li&gt;
+    &lt;li&gt;결과는 가장 큰 데이터 리스트&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이해한 내용을 바탕으로 코드 작성을 해보았다.&lt;/p&gt;
+
+&lt;h3 id=&quot;코드&quot;&gt;[코드]&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# 조합 생성을 위한 라이브러리
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;itertools&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;combinations&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 문제의 제한사항 해결을 위한 라이브러리
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;course&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 요리 n개 코스
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;course&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;menu_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;orders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        	&lt;span class=&quot;c1&quot;&gt;# 주문 목록의 요리로 중복되지 않는 조합을 구성
+&lt;/span&gt;            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;combinations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;# 주문 횟수 카운트
+&lt;/span&gt;                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;menu_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;menu_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;menu_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;# 요리 주문 횟수 배열 생성
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;menu_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# max값이 여러개인 경우 &amp;amp; 제한사항 조건 처리
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;best_menu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;best_menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# 주문 횟수가 가장 많은 코스 요리 확인
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;best_menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;menu_count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;여담&quot;&gt;[여담]&lt;/h3&gt;
+
+&lt;p&gt;itertools의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;combinations()&lt;/code&gt;함수로 코스 요리 조합을 만들 때와  numpy의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;where()&lt;/code&gt;함수를 통해 여러개의 max값을 구할 때,&lt;br /&gt;
+라이브러리 없이 반복문 사용해 해결을 할까 생각했지만 강력한 라이브러리를 두고 사용하지 않는 것은 바보같다는 생각이 들어서 라이브러리를 최대로 활용해보았다.&lt;/p&gt;
+
+&lt;p&gt;하지만 문제를 모두 풀고 난 뒤에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;주문 횟수 카운트&lt;/code&gt;부분과 여러개의 max값을 구하는 부분을 collections의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Counter().most_common()&lt;/code&gt; 함수를 통해 한 번에 해결될 수 있다는 내용을 알게되었다.&lt;/p&gt;
+
+&lt;p&gt;역시 인터넷은 넓고, 방법은 많다는 사실을 다시 한 번 느끼게 되었다.&lt;/p&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><summary type="html">2021 KAKAO BLIND RECRUITMENT “메뉴 리뉴얼” 문제를 풀어보겠습니다.</summary></entry><entry><title type="html">큐(Queue)</title><link href="https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue.html" rel="alternate" type="text/html" title="큐(Queue)" /><published>2021-07-13T00:00:00+09:00</published><updated>2021-07-13T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue.html">&lt;h3 id=&quot;큐queue란&quot;&gt;큐(Queue)란&lt;/h3&gt;
 
 &lt;p&gt;컴퓨터의 기본적인 자료구조의 한 가지로, FIFO(First In First Out)구조로 데이터를 저장하는 형식이다.&lt;/p&gt;
 
@@ -93,6 +295,8 @@
 
 &lt;h3 id=&quot;실행-결과&quot;&gt;[실행 결과]&lt;/h3&gt;
 
+&lt;p&gt;실행 카운트 3일 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3으로 매수 완료&lt;/code&gt;, 6일 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;6으로 매도 완료&lt;/code&gt;, 7일 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;종료&lt;/code&gt;가 출력되고 모든 프로세스가 종료된다.&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-13-%ED%81%90-Queue/%EA%B5%AC%EC%A1%B0001-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="자료구조" /><category term="알고리즘" /><summary type="html">큐(Queue)란</summary></entry><entry><title type="html">카카오 코딩 테스트 - 신규 아이디 추천</title><link href="https://jeon-repo.github.io/2021/07/10/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EC%95%84%EC%9D%B4%EB%94%94-%EB%AC%B8%EC%A0%9C.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 신규 아이디 추천" /><published>2021-07-10T00:00:00+09:00</published><updated>2021-07-10T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/10/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EC%95%84%EC%9D%B4%EB%94%94-%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/10/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EC%95%84%EC%9D%B4%EB%94%94-%EB%AC%B8%EC%A0%9C.html">&lt;p&gt;2021 KAKAO BLIND RECRUITMENT “신규 아이디 추천” 문제를 풀어보겠습니다.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -128,13 +332,13 @@
 
 &lt;p&gt;신규 유저가 입력한 아이디를 나타내는 new_id가 매개변수로 주어질 때, “네오”가 설계한 7단계의 처리 과정을 거친 후의 추천 아이디를 return 하도록 solution 함수를 완성해 주세요.&lt;/p&gt;
 
-&lt;p&gt;[제한사항]&lt;/p&gt;
+&lt;h3 id=&quot;제한사항&quot;&gt;[제한사항]&lt;/h3&gt;
 
-&lt;p&gt;new_id는 길이 1 이상 1,000 이하인 문자열입니다.&lt;/p&gt;
-
-&lt;p&gt;new_id는 알파벳 대문자, 알파벳 소문자, 숫자, 특수문자로 구성되어 있습니다.&lt;/p&gt;
-
-&lt;p&gt;new_id에 나타날 수 있는 특수문자는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-_.~!@#$%^&amp;amp;*()=+[{]}:?,&amp;lt;&amp;gt;/&lt;/code&gt;로 한정됩니다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;new_id는 길이 1 이상 1,000 이하인 문자열입니다.&lt;/li&gt;
+  &lt;li&gt;new_id는 알파벳 대문자, 알파벳 소문자, 숫자, 특수문자로 구성되어 있습니다.&lt;/li&gt;
+  &lt;li&gt;new_id에 나타날 수 있는 특수문자는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-_.~!@#$%^&amp;amp;*()=+[{]}:?,&amp;lt;&amp;gt;/&lt;/code&gt;로 한정됩니다.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;입출력-예&quot;&gt;[입출력 예]&lt;/h3&gt;
 
@@ -211,21 +415,7 @@
     &lt;span class=&quot;c1&quot;&gt;# 문자열의 최소길이 3자를 맞추기 위한 조건
 &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))])&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><summary type="html">2021 KAKAO BLIND RECRUITMENT “신규 아이디 추천” 문제를 풀어보겠습니다.</summary></entry><entry><title type="html">테스트 포스팅</title><link href="https://jeon-repo.github.io/2021/07/09/%ED%9A%8C%EC%9B%90-%EC%8A%A4%EC%BC%80%EC%A4%84-%EA%B4%80%EB%A6%AC-%EC%9B%B9%EC%95%B1.html" rel="alternate" type="text/html" title="테스트 포스팅" /><published>2021-07-09T00:00:00+09:00</published><updated>2021-07-09T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/09/%ED%9A%8C%EC%9B%90-%EC%8A%A4%EC%BC%80%EC%A4%84-%EA%B4%80%EB%A6%AC-%EC%9B%B9%EC%95%B1</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/09/%ED%9A%8C%EC%9B%90-%EC%8A%A4%EC%BC%80%EC%A4%84-%EA%B4%80%EB%A6%AC-%EC%9B%B9%EC%95%B1.html">&lt;h1 id=&quot;회원-스케줄-관리-웹앱&quot;&gt;회원 스케줄 관리 웹앱&lt;/h1&gt;
-
-&lt;p&gt;purpose : 수익 실현
-개발에 시간을 투자할 가치&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;사용자를 모을 방법 (차별성) → 젤 어려움&lt;/li&gt;
-  &lt;li&gt;수익 실현&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;수익 실현 방법&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;광고 → &lt;a href=&quot;https://www.spaceotechnologies.com/how-do-free-apps-make-money/&quot;&gt;https://www.spaceotechnologies.com/how-do-free-apps-make-money/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;인앱 결제 → 광고 제거&lt;/li&gt;
-  &lt;li&gt;앱 유료화&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>janos</name></author><category term="Idea" /><category term="Health" /><category term="App" /><summary type="html">회원 스케줄 관리 웹앱</summary></entry><entry><title type="html">Dark Mode</title><link href="https://jeon-repo.github.io/2021/04/27/dark-mode.html" rel="alternate" type="text/html" title="Dark Mode" /><published>2021-04-27T00:00:00+09:00</published><updated>2021-04-27T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/04/27/dark-mode</id><content type="html" xml:base="https://jeon-repo.github.io/2021/04/27/dark-mode.html">&lt;p&gt;&lt;strong&gt;More colors with less light.&lt;/strong&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><summary type="html">2021 KAKAO BLIND RECRUITMENT “신규 아이디 추천” 문제를 풀어보겠습니다.</summary></entry><entry><title type="html">Dark Mode</title><link href="https://jeon-repo.github.io/2020/11/12/dark-mode.html" rel="alternate" type="text/html" title="Dark Mode" /><published>2020-11-12T00:00:00+09:00</published><updated>2020-11-12T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/12/dark-mode</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/12/dark-mode.html">&lt;p&gt;&lt;strong&gt;More colors with less light.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Click the half-moon most top-right button to turn the lights on/off.&lt;/p&gt;
 
@@ -325,7 +515,7 @@ A @&amp;gt;a&amp;gt;&amp;gt; B \\
 C @= D
 \end{CD}\]
 
-\[\utilde{AB}\]</content><author><name></name></author><category term="Katex" /><category term="Markdown" /><summary type="html">More colors with less light.</summary></entry><entry><title type="html">Sample post</title><link href="https://jeon-repo.github.io/2019/06/30/sample-post.html" rel="alternate" type="text/html" title="Sample post" /><published>2019-06-30T00:00:00+09:00</published><updated>2019-06-30T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2019/06/30/sample-post</id><content type="html" xml:base="https://jeon-repo.github.io/2019/06/30/sample-post.html">&lt;p&gt;Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. 
+\[\utilde{AB}\]</content><author><name></name></author><category term="Katex" /><category term="Markdown" /><summary type="html">More colors with less light.</summary></entry><entry><title type="html">Sample post</title><link href="https://jeon-repo.github.io/2020/11/11/sample-post.html" rel="alternate" type="text/html" title="Sample post" /><published>2020-11-11T00:00:00+09:00</published><updated>2020-11-11T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/11/sample-post</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/11/sample-post.html">&lt;p&gt;Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. 
 Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. 
 &lt;!--more--&gt;
 Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.&lt;/p&gt;
@@ -367,7 +557,7 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
       &lt;p&gt;&lt;span class=&quot;cit-authors&quot;&gt;John Smith&lt;/span&gt;, &lt;span class=&quot;cit-title&quot;&gt;A Title About Citations&lt;/span&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="A Tag" /><category term="Katex" /><summary type="html">Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</summary></entry><entry><title type="html">Color Post</title><link href="https://jeon-repo.github.io/2019/05/18/color-post.html" rel="alternate" type="text/html" title="Color Post" /><published>2019-05-18T00:00:00+09:00</published><updated>2019-05-18T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2019/05/18/color-post</id><content type="html" xml:base="https://jeon-repo.github.io/2019/05/18/color-post.html">&lt;h1 id=&quot;what-a-colorful-post&quot;&gt;What a colorful post!&lt;/h1&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="A Tag" /><category term="Katex" /><summary type="html">Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</summary></entry><entry><title type="html">Color Post</title><link href="https://jeon-repo.github.io/2020/11/10/color-post.html" rel="alternate" type="text/html" title="Color Post" /><published>2020-11-10T00:00:00+09:00</published><updated>2020-11-10T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/10/color-post</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/10/color-post.html">&lt;h1 id=&quot;what-a-colorful-post&quot;&gt;What a colorful post!&lt;/h1&gt;
 
 &lt;p&gt;This is an idea that came from &lt;a href=&quot;https://github.com/xukimseven/HardCandy-Jekyll&quot;&gt;xukimseven/HardCandy-Jekyll&lt;/a&gt; 
 looking at this cheerful and colorful theme, I wanted to enable something similar for Type-on-Strap.&lt;/p&gt;
@@ -401,7 +591,7 @@ If you want another one, put it in &lt;code class=&quot;language-plaintext highl
 
 &lt;blockquote&gt;
   &lt;p&gt;⚠️ It’s a bit hacking the css in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post.html&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Sylhare</name></author><category term="Test" /><category term="Color" /><summary type="html">What a colorful post! This is an idea that came from xukimseven/HardCandy-Jekyll looking at this cheerful and colorful theme, I wanted to enable something similar for Type-on-Strap. You can go fork and star HardCandy-Jekyll too! 😉</summary></entry><entry><title type="html">Bootstrap</title><link href="https://jeon-repo.github.io/2017/09/17/Use-Bootstrap.html" rel="alternate" type="text/html" title="Bootstrap" /><published>2017-09-17T00:00:00+09:00</published><updated>2017-09-17T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2017/09/17/Use-Bootstrap</id><content type="html" xml:base="https://jeon-repo.github.io/2017/09/17/Use-Bootstrap.html">&lt;p&gt;This theme is compatible with Bootstrap if you choose to use it in your pages or posts.
+&lt;/blockquote&gt;</content><author><name>Sylhare</name></author><category term="Test" /><category term="Color" /><summary type="html">What a colorful post! This is an idea that came from xukimseven/HardCandy-Jekyll looking at this cheerful and colorful theme, I wanted to enable something similar for Type-on-Strap. You can go fork and star HardCandy-Jekyll too! 😉</summary></entry><entry><title type="html">Bootstrap</title><link href="https://jeon-repo.github.io/2020/11/09/Use-Bootstrap.html" rel="alternate" type="text/html" title="Bootstrap" /><published>2020-11-09T00:00:00+09:00</published><updated>2020-11-09T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/09/Use-Bootstrap</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/09/Use-Bootstrap.html">&lt;p&gt;This theme is compatible with Bootstrap if you choose to use it in your pages or posts.
 Here is a little demo with a code snippet, look at the source to see how the HTML and markdown get tangled.&lt;/p&gt;
 
 &lt;h2 id=&quot;use-bootstrap&quot;&gt;Use bootstrap&lt;/h2&gt;
@@ -507,7 +697,7 @@ Here is a code snippet for the &lt;a href=&quot;https://getbootstrap.com/docs/4.
 &lt;p&gt;That’s just for demo though, you would need to properly integrate your javascript in your page.
 Usually you would put any custom javascript script in the &lt;em&gt;assets&lt;/em&gt; folder under js and reference it in your page from there.&lt;/p&gt;
 
-&lt;p&gt;So try it out using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bootstrap: true&lt;/code&gt; flag! 😉&lt;/p&gt;</content><author><name></name></author><category term="Test" /><summary type="html">This theme is compatible with Bootstrap if you choose to use it in your pages or posts. Here is a little demo with a code snippet, look at the source to see how the HTML and markdown get tangled.</summary></entry><entry><title type="html">Feature images</title><link href="https://jeon-repo.github.io/2014/11/29/feature-images.html" rel="alternate" type="text/html" title="Feature images" /><published>2014-11-29T00:00:00+09:00</published><updated>2014-11-29T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2014/11/29/feature-images</id><content type="html" xml:base="https://jeon-repo.github.io/2014/11/29/feature-images.html">&lt;p&gt;Hopefully you will find enough information about how to set images in your blog here.
+&lt;p&gt;So try it out using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bootstrap: true&lt;/code&gt; flag! 😉&lt;/p&gt;</content><author><name></name></author><category term="Test" /><summary type="html">This theme is compatible with Bootstrap if you choose to use it in your pages or posts. Here is a little demo with a code snippet, look at the source to see how the HTML and markdown get tangled.</summary></entry><entry><title type="html">Feature images</title><link href="https://jeon-repo.github.io/2020/11/08/feature-images.html" rel="alternate" type="text/html" title="Feature images" /><published>2020-11-08T00:00:00+09:00</published><updated>2020-11-08T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/08/feature-images</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/08/feature-images.html">&lt;p&gt;Hopefully you will find enough information about how to set images in your blog here.
 This is an example of a post which includes a feature image specified in the front matter of the post. 
 The feature image spans the full-width of the page, and is shown with the title on permalink pages:&lt;/p&gt;
 
@@ -577,7 +767,7 @@ However you can just use the Markdown way of doing it to get the image normal si
         &lt;img class=&quot;single&quot; src=&quot;/assets/img/pexels/computer.jpeg&quot; alt=&quot;computer.jpeg&quot; /&gt;
     &lt;/div&gt;
     
-&lt;/div&gt;</content><author><name></name></author><category term="Test" /><category term="Image" /><summary type="html">Hopefully you will find enough information about how to set images in your blog here. This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages:</summary></entry><entry><title type="html">Markdown and HTML</title><link href="https://jeon-repo.github.io/2014/11/28/markdown-and-html.html" rel="alternate" type="text/html" title="Markdown and HTML" /><published>2014-11-28T00:00:00+09:00</published><updated>2014-11-28T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2014/11/28/markdown-and-html</id><content type="html" xml:base="https://jeon-repo.github.io/2014/11/28/markdown-and-html.html">&lt;p&gt;Jekyll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="Test" /><category term="Image" /><summary type="html">Hopefully you will find enough information about how to set images in your blog here. This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages:</summary></entry><entry><title type="html">Markdown and HTML</title><link href="https://jeon-repo.github.io/2020/11/07/markdown-and-html.html" rel="alternate" type="text/html" title="Markdown and HTML" /><published>2020-11-07T00:00:00+09:00</published><updated>2020-11-07T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/07/markdown-and-html</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/07/markdown-and-html.html">&lt;p&gt;Jekyll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
 
 &lt;h2 id=&quot;title&quot;&gt;Title&lt;/h2&gt;
 
@@ -660,7 +850,7 @@ However you can just use the Markdown way of doing it to get the image normal si
 
 &lt;p&gt;Alternatively, they can be shown on a new line:&lt;/p&gt;
 
-\[f(x) = \int \frac{2x^2+4x+6}{x-2}\]</content><author><name>Rohan Chandra</name></author><category term="Katex" /><category term="Markdown" /><summary type="html">Jekyll supports the use of Markdown with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.</summary></entry><entry><title type="html">What’s your title</title><link href="https://jeon-repo.github.io/2014/11/27/whats-your-title.html" rel="alternate" type="text/html" title="What’s your title" /><published>2014-11-27T00:00:00+09:00</published><updated>2014-11-27T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2014/11/27/whats-your-title</id><content type="html" xml:base="https://jeon-repo.github.io/2014/11/27/whats-your-title.html">&lt;p&gt;This is an example of a post which includes a feature image that has a
+\[f(x) = \int \frac{2x^2+4x+6}{x-2}\]</content><author><name>Rohan Chandra</name></author><category term="Katex" /><category term="Markdown" /><summary type="html">Jekyll supports the use of Markdown with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.</summary></entry><entry><title type="html">What’s your title</title><link href="https://jeon-repo.github.io/2020/11/06/whats-your-title.html" rel="alternate" type="text/html" title="What’s your title" /><published>2020-11-06T00:00:00+09:00</published><updated>2020-11-06T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/06/whats-your-title</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/06/whats-your-title.html">&lt;p&gt;This is an example of a post which includes a feature image that has a
 text, where you don’t want to redisplay the title.
 Mind your image size in order for the text to be displayed where you want it to.
 The only limit is your imagination.&lt;/p&gt;
