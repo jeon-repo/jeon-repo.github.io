@@ -66,8 +66,8 @@
 <meta property="og:title" content="컴프리헨션(Comprehention)" />
 <meta name="author" content="janos" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 자료구조를 보다 쉽게 저장, 검색을 할 수 있게하는 문법이다. 컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있다." />
-<meta property="og:description" content="Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 자료구조를 보다 쉽게 저장, 검색을 할 수 있게하는 문법이다. 컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있다." />
+<meta name="description" content="컴프리헨션이란?" />
+<meta property="og:description" content="컴프리헨션이란?" />
 <link rel="canonical" href="https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html" />
 <meta property="og:url" content="https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html" />
 <meta property="og:site_name" content="Jeon Repository" />
@@ -76,7 +76,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="컴프리헨션(Comprehention)" />
 <script type="application/ld+json">
-{"datePublished":"2021-07-15T00:00:00+09:00","dateModified":"2021-07-15T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html"},"url":"https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","description":"Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 자료구조를 보다 쉽게 저장, 검색을 할 수 있게하는 문법이다. 컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있다.","headline":"컴프리헨션(Comprehention)","@context":"https://schema.org"}</script>
+{"datePublished":"2021-07-15T00:00:00+09:00","dateModified":"2021-07-15T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html"},"url":"https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","description":"컴프리헨션이란?","headline":"컴프리헨션(Comprehention)","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -85,7 +85,7 @@
 
     <!-- Twitter Cards -->
     <meta name="twitter:title" content="컴프리헨션(Comprehention)">
-    <meta name="twitter:description" content="  Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 자료구조를 보다 쉽게 저장, 검색을 할 수 있게하는 문법이다.  컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있다.  ⚠️ 컴프리헨션은 입력...">
+    <meta name="twitter:description" content="컴프리헨션이란?  Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 자료구조를 보다 쉽게 저장, 검색을 할 수 있게 하는 문법이다.  컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있다.  ⚠️ ...">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/feature-img/circuit.jpeg">
@@ -228,8 +228,10 @@
 
   <section class="post-content">
   
-      <ul>
-  <li>Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 자료구조를 보다 쉽게 저장, 검색을 할 수 있게하는 문법이다.</li>
+      <h2 id="컴프리헨션이란">컴프리헨션이란?</h2>
+
+<ul>
+  <li>Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 <code class="language-plaintext highlighter-rouge">자료구조를 보다 쉽게 저장, 검색을 할 수 있게 하는 문법</code>이다.</li>
   <li>컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있다.</li>
 </ul>
 
@@ -238,6 +240,8 @@
 → 하지만 이런 문제를 해결하기 위해서 Python에서는 <code class="language-plaintext highlighter-rouge">제너레이터</code> 표현식을 사용한다.</p>
 </blockquote>
 
+<hr />
+
 <h2 id="컴프리헨션-표현식-형태">컴프리헨션 표현식 형태</h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List       : [표현식 for 객체 in 순회가능객체] + 조건, 다중 반복문
@@ -245,79 +249,81 @@ Dictionary : {키_표현식 : 값_표현식 for 객체 in 순회가능객체} + 
 Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반복문
 </code></pre></div></div>
 
-<h2 id="리스트-컴프리헨션-list-comprehension">리스트 컴프리헨션 (List Comprehension)</h2>
+<ul>
+  <li>
+    <p><strong>리스트 컴프리헨션 (List Comprehension)</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">var_list</span> <span class="o">=</span> <span class="p">[]</span>
+	
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+      <span class="n">var_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+	
+  <span class="k">print</span><span class="p">(</span><span class="n">var_list</span><span class="p">)</span>
+  <span class="o">---------------------------------------------------</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</code></pre></div>    </div>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-	<span class="n">var_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <p>위의 코드는 반복문을 통해 1 ~ 5의 숫자를 갖는 list를 생성하는 코드이다.<br />
+  아래는 위의 코드와 동일하게 list를 생성하는 컴프리헨션이다.</p>
 
-<span class="k">print</span><span class="p">(</span><span class="n">var_list</span><span class="p">)</span>
-<span class="o">---------------------------------------------------</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</code></pre></div></div>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">var_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+	
+  <span class="k">print</span><span class="p">(</span><span class="n">var_list</span><span class="p">)</span>
+  <span class="o">---------------------------------------------------</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>딕셔너리 컴프리헨션 (Dictionary Comprehention)</strong></p>
 
-<p>위의 코드는 반복문을 통해 1 ~ 5의 숫자를 갖는 list를 생성하는 코드이다.</p>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s">'짱구'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">]</span>
+  <span class="n">var_dict</span> <span class="o">=</span> <span class="p">{}</span>
+	
+  <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+      <span class="n">var_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="s">'human'</span>
+	
+  <span class="k">print</span><span class="p">(</span><span class="n">var_dict</span><span class="p">)</span>
+  <span class="o">---------------------------------------------------</span>
+  <span class="p">{</span><span class="s">'짱구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">}</span>
+</code></pre></div>    </div>
 
-<p>아래는 위의 코드와 동일하게 list를 생성하는 컴프리헨션이다.</p>
+    <p>위의 코드는 students의 학생들을 <code class="language-plaintext highlighter-rouge">key</code> 로 ‘human’을 <code class="language-plaintext highlighter-rouge">value</code> 를 할당하는 dictionary를 생성하는 코드이다.<br />
+  아래는 위의 코드와 동일하게 dictionary를 생성하는 컴프리헨션이다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s">'짱구'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">]</span>
+  <span class="n">var_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">'human'</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">students</span><span class="p">}</span>
+	
+  <span class="k">print</span><span class="p">(</span><span class="n">var_dict</span><span class="p">)</span>
+  <span class="o">---------------------------------------------------</span>
+  <span class="p">{</span><span class="s">'짱구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>셋 컴프리헨션 (Set Comprehention)</p>
 
-<span class="k">print</span><span class="p">(</span><span class="n">var_list</span><span class="p">)</span>
-<span class="o">---------------------------------------------------</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</code></pre></div></div>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">var_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+	
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+      <span class="n">var_set</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+	
+  <span class="k">print</span><span class="p">(</span><span class="n">var_set</span><span class="p">)</span>
+  <span class="o">---------------------------------------------------</span>
+  <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+</code></pre></div>    </div>
 
-<h2 id="딕셔너리-컴프리헨션-dictionary-comprehention">딕셔너리 컴프리헨션 (Dictionary Comprehention)</h2>
+    <p>위의 코드는 반복문을 통해 1 ~ 5의 숫자를 갖는 set(집합)을 생성하는 코드이다.<br />
+  set(집합)은 괄호의 형태가 dictionary와 동일하기 때문에 <code class="language-plaintext highlighter-rouge">{}</code> 를 사용하지 않고 <code class="language-plaintext highlighter-rouge">set()</code> 을 사용하여 선언한다.<br />
+  아래는 위의 코드와 동일하게 set(집합)을 생성하는 컴프리헨션이다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s">'짱구'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">]</span>
-<span class="n">var_dict</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
-	<span class="n">var_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="s">'human'</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">var_dict</span><span class="p">)</span>
-<span class="o">---------------------------------------------------</span>
-<span class="p">{</span><span class="s">'짱구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">}</span>
-</code></pre></div></div>
-
-<p>위의 코드는 students의 학생들을 <code class="language-plaintext highlighter-rouge">key</code> 로 ‘human’의 <code class="language-plaintext highlighter-rouge">value</code> 를 할당하는 dictionary를 생성하는 코드이다.</p>
-
-<p>아래는 위의 코드와 동일하게 dictionary를 생성하는 컴프리헨션이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s">'짱구'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">]</span>
-<span class="n">var_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">'human'</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">students</span><span class="p">}</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">var_dict</span><span class="p">)</span>
-<span class="o">---------------------------------------------------</span>
-<span class="p">{</span><span class="s">'짱구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="셋-컴프리헨션-set-comprehention">셋 컴프리헨션 (Set Comprehention)</h2>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-	<span class="n">var_set</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">var_set</span><span class="p">)</span>
-<span class="o">---------------------------------------------------</span>
-<span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
-</code></pre></div></div>
-
-<p>위의 코드는 반복문을 통해 1 ~ 5의 숫자를 갖는 set(집합)을 생성하는 코드이다.</p>
-
-<p>set(집합)은 괄호의 형태가 dictionary와 동일하기 때문에 <code class="language-plaintext highlighter-rouge">{}</code> 를 사용하지 않고 <code class="language-plaintext highlighter-rouge">set()</code> 을 사용하여 선언한다.</p>
-
-<p>아래는 위의 코드와 동일하게 set(집합)을 생성하는 컴프리헨션이다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var_set</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)}</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">var_set</span><span class="p">)</span>
-<span class="o">---------------------------------------------------</span>
-<span class="c1"># set은 데이터의 순서를 구분하지 않아서 출력시 순서가 일정하지 않다.
-</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
-</code></pre></div></div>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">var_set</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)}</span>
+	
+  <span class="k">print</span><span class="p">(</span><span class="n">var_set</span><span class="p">)</span>
+  <span class="o">---------------------------------------------------</span>
+  <span class="c1"># set은 데이터의 순서를 구분하지 않아서 출력시 순서가 일정하지 않다.
+</span>  <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
     
   </section>
@@ -354,7 +360,7 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
         </li>
          
         <li>
-            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html&media=https://jeon-repo.github.io/assets/img/feature-img/circuit.jpeg$description=%0A++Python%EC%97%90%EC%84%9C+%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98%28Comprehension%29%EC%9D%B4%EB%9E%80+list%2C+dictionary%2C+set%EC%9D%98+%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EB%A5%BC+%EB%B3%B4%EB%8B%A4+%EC%89%BD%EA%B2%8C+%EC%A0%80%EC%9E%A5%2C+%EA%B2%80%EC%83%89%EC%9D%84+%ED%95%A0+%EC%88%98+%EC%9E%88%EA%B2%8C%ED%95%98%EB%8A%94+%EB%AC%B8%EB%B2%95%EC%9D%B4%EB%8B%A4.%0A++%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98%EC%9D%80+list%2C+dictionary%2C+set%EC%9D%98+%EB%82%B4%EB%B6%80%EC%97%90+%EC%BD%94%EB%93%9C%EB%A5%BC+%EC%9E%91%EC%84%B1%ED%95%98%EB%8A%94+%ED%8A%B9%EC%A7%95%EC%9D%B4+%EC%9E%88%EB%8B%A4.%0A%0A"
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html&media=https://jeon-repo.github.io/assets/img/feature-img/circuit.jpeg$description=%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98%EC%9D%B4%EB%9E%80%3F%0A"
                target="_blank" title="">
                 <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Pin it</span>
@@ -406,6 +412,10 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
           <p><i class="fas fa-tag fa-fw fa-sm"></i> Python</p>
         </a></li>
       
+        <li><a class="button" href="/tags#%EA%B8%B0%EB%B3%B8%EA%B8%B0">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 기본기</p>
+        </a></li>
+      
         <li><a class="button" href="/tags#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0">
           <p><i class="fas fa-tag fa-fw fa-sm"></i> 자료구조</p>
         </a></li>
@@ -420,6 +430,13 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
 <!-- Post navigation -->
 
 <div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="객체지향 프로그래밍(Object Oriented Programming)" href="/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html">
+            <p>이전 포스트</p>
+            객체지향 프로그래밍(Object Oriented Programming)
+        </a>
+    </div>
     
 
     

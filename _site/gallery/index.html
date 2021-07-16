@@ -80,7 +80,7 @@
 
     <!-- Twitter Cards -->
     <meta name="twitter:title" content="Gallery">
-    <meta name="twitter:description" content="This is a photo gallery made from the static files in the `assets/img/pexels` folder. I wanted to create automatically a simple gallery from a folder without...">
+    <meta name="twitter:description" content="{% include gallery.html gallery_path=page.gallery_path %}">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
@@ -207,7 +207,7 @@
       
         <h1 id="Gallery" class="title"> Gallery</h1>
         
-        <h2 class="subtitle">From the pexels folder</h2>
+        <h2 class="subtitle">그림도 잘 그리고 싶어서 만든 공간</h2>
         
       
     </div>
@@ -215,10 +215,7 @@
 
   <section class="post-content">
   
-	<p>This is a photo gallery made from the static files in the <code class="language-plaintext highlighter-rouge">assets/img/pexels</code> folder. 
-I wanted to create automatically a simple gallery from a folder without having to create a markdown page as you would for the portfolio.</p>
-
-<style>
+	<style>
 /* force scrollbar */
 html { overflow-y: scroll; }
     
@@ -437,33 +434,15 @@ html { overflow-y: scroll; }
   
 
   
-    
-        <img src="/assets/img/pexels/book-glass.jpeg" alt="" class="grid-item" style="padding: 0;" />
-      
+
   
 
   
-    
-        <img src="/assets/img/pexels/computer.jpeg" alt="" class="grid-item" style="padding: 0;" />
-      
+
   
 
   
-    
-        <img src="/assets/img/pexels/search-map.jpeg" alt="" class="grid-item" style="padding: 0;" />
-      
-  
 
-  
-    
-        <img src="/assets/img/pexels/travel.jpeg" alt="" class="grid-item" style="padding: 0;" />
-      
-  
-
-  
-    
-        <img src="/assets/img/pexels/triangular.jpeg" alt="" class="grid-item" style="padding: 0;" />
-      
   
 
   
@@ -557,8 +536,8 @@ html { overflow-y: scroll; }
       
 
       
-        <li><a class="button" href="/tags#Page">
-          <p><i class="fas fa-tag fa-fw fa-sm"></i> Page</p>
+        <li><a class="button" href="/tags#%EA%B7%B8%EB%A6%BC">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 그림</p>
         </a></li>
       
     </ul>

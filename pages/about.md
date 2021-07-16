@@ -6,7 +6,7 @@ feature-img: "assets/img/pexels/travel.jpeg"
 tags: [Introduction, Contact, Skill]
 ---
 
-Introduction
+Introduction 
 ---
 
 안녕하세요. 2년 차 벡엔드 개발자 전찬호입니다.
@@ -17,40 +17,16 @@ Introduction
 
 Clean Code와 Test에 대한 고민을 생활화합니다.
 
-아름다운 것과 운동🏋🏼, 그리고 **소통**에 관심이 많습니다.
+아름다운 것과 **운동**🏋🏼, 그리고 **소통**에 관심이 많습니다.
 
 Contact & Channel
 ---
 
-Email - jano.jeon@gmail.com
+`Email` - jano.jeon@gmail.com
 
-Github - [https://github.com/jeon-repo](https://github.com/jeon-repo)
+`Github` - [https://github.com/jeon-repo](https://github.com/jeon-repo)
 
-Blog - [https://jeon-repo.github.io/](https://jeon-repo.github.io/)
+`Blog` - [https://jeon-repo.github.io/](https://jeon-repo.github.io/)
 
 ---
-
-# Skill
-
-Backend
----
-- Python, Java, Node.js
-- Django, Flask, Express
-- Visual Studio Code
-- Git
-
-DevOps
----
-- Docker
-- MySQL, MongoDB
-- Tomcat
-
-Frontend
----
-- HTML5, CSS3, JS(ES6)
-- React
-- Jinja2
-
-Collaboration
----
-- Slack
+Skills 및 더 궁금한 점은 [About Me](https://spot-mosquito-8d3.notion.site/1ddfd1e275c341b3be7663518c54ff3e) 링크를 통해 확인할 수 있습니다.

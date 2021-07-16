@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.3.7
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Jeon Repository" href="https://jeon-repo.github.io/feed.xml"/>
+
+    
+
+    <!-- KaTeX 0.13.9 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 8.9.2 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://jeon-repo.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>객체지향 프로그래밍(Object Oriented Programming) | Jeon Repository</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="객체지향 프로그래밍(Object Oriented Programming)" />
+<meta name="author" content="janos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="객체지향 프로그래밍(OOP)이란 프로그래밍 방법론의 하나이다." />
+<meta property="og:description" content="객체지향 프로그래밍(OOP)이란 프로그래밍 방법론의 하나이다." />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html" />
+<meta property="og:site_name" content="Jeon Repository" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-16T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="객체지향 프로그래밍(Object Oriented Programming)" />
+<script type="application/ld+json">
+{"datePublished":"2021-07-16T00:00:00+09:00","dateModified":"2021-07-16T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html"},"url":"https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","description":"객체지향 프로그래밍(OOP)이란 프로그래밍 방법론의 하나이다.","headline":"객체지향 프로그래밍(Object Oriented Programming)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="객체지향 프로그래밍(Object Oriented Programming)">
+    <meta name="twitter:description" content="객체지향 프로그래밍(OOP)이란 프로그래밍 방법론의 하나이다.객체지향의 객체(Object) 란 데이터(정보, 속성 등)와 데이터를 처리하는 기능(함수)이 클래스로 캡슐화 된 컴퓨터 자원의 묶음(모듈)을 객체 라고 한다.결국 객체지향 프로그래밍이란 현실의 문제를 여러 개의 객체 단위...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
+    <meta name="twitter:image:alt" content="객체지향 프로그래밍(Object Oriented Programming)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/bike.png" />
+		</a>
+        
+        <a class="site-title" aria-label="Jeon Repository" href="/">
+        Jeon Repository
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                     About Me 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                     Portfolio 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="객체지향 프로그래밍(Object Oriented Programming) " aria-label="객체지향 프로그래밍(Object Oriented Programming)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image" >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%28Object+Oriented+Programming%29" class="title">객체지향 프로그래밍(Object Oriented Programming)</h1>
+      
+
+
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
+    <p class="meta">
+      janos - 
+      
+      July 16, 2021
+    </p></a></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <hr />
+<p>객체지향 프로그래밍(OOP)이란 프로그래밍 방법론의 하나이다.</p>
+
+<p>객체지향의 <code class="language-plaintext highlighter-rouge">객체(Object)</code> 란 데이터(정보, 속성 등)와 데이터를 처리하는 기능(함수)이 클래스로 <code class="language-plaintext highlighter-rouge">캡슐화</code> 된 컴퓨터 자원의 묶음(모듈)을 <code class="language-plaintext highlighter-rouge">객체</code> 라고 한다.</p>
+
+<p>결국 객체지향 프로그래밍이란 현실의 <strong>문제를 여러 개의 객체 단위로 구분하여 처리하는 방식</strong>을 말한다고 할 수 있다.</p>
+
+<p>객체지향 프로그래밍하면 주로 나오는 키워드가 있다.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#1-캡슐화-encapsulation" id="markdown-toc-1-캡슐화-encapsulation">1. 캡슐화 (Encapsulation)</a></li>
+  <li><a href="#2-상속성-inheritance" id="markdown-toc-2-상속성-inheritance">2. 상속성 (Inheritance)</a></li>
+  <li><a href="#3-추상화-abstraction" id="markdown-toc-3-추상화-abstraction">3. 추상화 (Abstraction)</a></li>
+  <li><a href="#4-다형성-polymorphism" id="markdown-toc-4-다형성-polymorphism">4. 다형성 (Polymorphism)</a></li>
+</ul>
+
+<h3 id="1-캡슐화-encapsulation">1. 캡슐화 (Encapsulation)</h3>
+
+<p>캡슐화는 <code class="language-plaintext highlighter-rouge">데이터와 데이터를 처리하는 함수를 하나로 묶는 것</code>을 의미하며, 아래와 같은 특징이 있다.</p>
+
+<ul>
+  <li>캡슐화된 객체 내부는 은닉되어 외부로부터 독립적이다.</li>
+  <li>독립적인 객체는 외부 모듈에 의한 영향이 적다.</li>
+  <li>독립적이기 때문에 객체 간의 결합도가 낮다.</li>
+  <li>캡슐화된 객체는 재사용이 용이하다.</li>
+</ul>
+
+<h3 id="2-상속성-inheritance">2. 상속성 (Inheritance)</h3>
+
+<p>상속성은 <code class="language-plaintext highlighter-rouge">이미 정의된 상위 개념의 특징을 하위 개념이 물려받는 것</code>을 의미하며, 아래와 같은 특징이 있다.</p>
+
+<ul>
+  <li>상속을 통해 상위 개념의 특징을 공유하기 때문에 재사용이 용이하다.</li>
+  <li>이미 정의된 개념을 하위 개념에서 상속받기 때문에 중복되는 코드 작성을 방지한다.</li>
+  <li>상속받은 특징 외에 새로운 특징을 추가하여 사용할 수 있다.</li>
+</ul>
+
+<h3 id="3-추상화-abstraction">3. 추상화 (Abstraction)</h3>
+
+<p>추상화는 <code class="language-plaintext highlighter-rouge">객체의 공통 특징이나 기능을 묶어서 통상적으로 표현하는 것</code>을 의미하며, 아래와 같은 특징이 있다.</p>
+
+<ul>
+  <li>코드의 중복 작성을 방지하고, 가독성을 높여준다.</li>
+  <li>추상화를 통하면 재사용이 용이하다.</li>
+</ul>
+
+<h3 id="4-다형성-polymorphism">4. 다형성 (Polymorphism)</h3>
+
+<p>다형성은 <code class="language-plaintext highlighter-rouge">하나의 시그널을 각 객체가 가지고 있는 고유 특성으로 처리 가능하게 구성하는 것</code>을 의미하며, 아래와 같은 특징이 있다.</p>
+
+<ul>
+  <li>시그널의 형태가 달라지면 처리되는 방식도 달라진다.</li>
+  <li>오버로딩, 오버라이딩 같은 기법을 사용하여 효율적인 작업이 가능하다.
+    <blockquote>
+      <p>📌 Python에서는 오버로딩 기능이 지원되지 않는다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%28Object+Oriented+Programming%29%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F07%2F16%2F%25EA%25B0%259D%25EC%25B2%25B4%25EC%25A7%2580%25ED%2596%25A5-%25ED%2594%2584%25EB%25A1%259C%25EA%25B7%25B8%25EB%259E%2598%25EB%25B0%258D-Object-Oriented-Programming.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html&quote=%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%28Object+Oriented+Programming%29%20%7C%20Jeon+Repository&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html&media=$description=%0A%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%28OOP%29%EC%9D%B4%EB%9E%80+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D+%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%9D%98+%ED%95%98%EB%82%98%EC%9D%B4%EB%8B%A4.%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html&title=%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%28Object+Oriented+Programming%29%20%7C%20Jeon+Repository"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html&title=%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%28Object+Oriented+Programming%29%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=객체지향 프로그래밍(Object Oriented Programming)%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#OOP">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> OOP</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#%EA%B8%B0%EB%B3%B8%EA%B8%B0">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 기본기</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="컴프리헨션(Comprehention)" href="/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html">
+            <p>다음 포스트</p>
+            컴프리헨션(Comprehention)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  
+  
+  .feature-image a { color: green !important; }
+  div#post-nav a { color: green !important; }
+  footer a { color: green !important; }
+  .site-header nav a:hover {  color: green !important; }
+  header#main { 
+      background-color: green !important;
+      background-image: url('/assets/img/lineart.png');
+  }
+  
+  
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Copyright 2021. jeon-repo all rights reserved.
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/sylhare"
+               title="Follow on Github"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
