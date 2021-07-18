@@ -12,7 +12,10 @@ html { overflow-y: scroll; }
 {% for image in site.static_files %}
   {% if image.path contains include.gallery_path %}
     {% unless image.path contains '.md' %}
-        <img src="{{ image.path | relative_url }}" alt="" class="grid-item" style="padding: 0;">
+      <img src="{{ image.path | relative_url }}" alt="" class="grid-item" style="padding: 0;">
+      <!-- <a class="grid-item" href="{{ item.url | relative_url }}"> -->
+        <!-- <img src="{{ image.path | relative_url }}" alt="" style="padding: 0;"> -->
+      <!-- </a> -->
     {% endunless %}  
   {% endif %}
 {% endfor %}

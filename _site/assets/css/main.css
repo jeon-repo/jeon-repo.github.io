@@ -4045,18 +4045,18 @@ nav a#pull i { margin-top: 13px; margin-right: 10px; float: right; }
 .grid:after { content: ''; display: block; clear: both; }
 
 /* ---- .grid-item within masonry ---- */
-.grid-sizer, .grid-item { /* state column width */ width: 32.6%; }
+.grid-sizer, .grid-item { /* state column width */ width: 45%; }
 
 .grid-item { float: left; border-radius: 5px; }
 
-.grid-item img { /* for image formatting in the masonry */ display: block; max-width: 100%; min-height: 30%; }
+.grid-item img { /* for image formatting in the masonry */ display: block; max-width: 100%; min-height: 40%; }
 
 /* --- Masonry gutter size --- */
-.gutter-sizer { width: 1%; }
+.gutter-sizer { width: 5%; }
 
-.grid-item:first-of-type { margin-bottom: 1%; }
+.grid-item:first-of-type { margin-bottom: 2.5%; }
 
-.grid-item { margin-bottom: 1%; }
+.grid-item { margin-bottom: 2.5%; }
 
 ul.share-buttons { list-style: none; padding: 1.5% 0 0.75% 0; margin: 0; text-align: center; }
 

@@ -1,5 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-16T17:39:43+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">객체지향 프로그래밍(Object Oriented Programming)</title><link href="https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html" rel="alternate" type="text/html" title="객체지향 프로그래밍(Object Oriented Programming)" /><published>2021-07-16T00:00:00+09:00</published><updated>2021-07-16T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html">&lt;hr /&gt;
-&lt;p&gt;객체지향 프로그래밍(OOP)이란 프로그래밍 방법론의 하나이다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-18T01:08:47+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">함수형 프로그래밍(Functional Programming)</title><link href="https://jeon-repo.github.io/2021/07/17/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html" rel="alternate" type="text/html" title="함수형 프로그래밍(Functional Programming)" /><published>2021-07-17T00:00:00+09:00</published><updated>2021-07-17T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/17/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/17/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html">&lt;hr /&gt;
+&lt;p&gt;함수형 프로그래밍이란 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;순수 함수(Pure Function)&lt;/code&gt;를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부작용(Side-Effect)&lt;/code&gt;을 피하여 프로그래밍하는 패러다임이다.&lt;/p&gt;
+
+&lt;p&gt;이전에 포스팅한 객체지향 프로그래밍과 약간 대조되는 패러다임이라고 생각이 들었다.&lt;br /&gt;
+그 주관적인 이유는 아래와 같다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;객체 단위의 효율적인 처리와 다르게 함수 단위의 독립적인 처리 방식을 고집한다.&lt;/li&gt;
+    &lt;li&gt;복잡한 구조로 구성되는 객체지향 프로그래밍과 달리 아주x2 간결한 구조로 구성된다.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;함수형 프로그래밍에는 몇 가지의 특징적인 함수의 형태와 개념이 존재한다.&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#특징적인-함수&quot; id=&quot;markdown-toc-특징적인-함수&quot;&gt;특징적인 함수&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-순수-함수-pure-function&quot; id=&quot;markdown-toc-1-순수-함수-pure-function&quot;&gt;1. 순수 함수 (Pure Function)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-익명-함수-anonymous-function&quot; id=&quot;markdown-toc-2-익명-함수-anonymous-function&quot;&gt;2. 익명 함수 (Anonymous Function)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-고계-함수-higher-order-function&quot; id=&quot;markdown-toc-3-고계-함수-higher-order-function&quot;&gt;3. 고계 함수 (Higher-Order Function)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#개념&quot; id=&quot;markdown-toc-개념&quot;&gt;개념&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-커링&quot; id=&quot;markdown-toc-1-커링&quot;&gt;1. 커링&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-스코프&quot; id=&quot;markdown-toc-2-스코프&quot;&gt;2. 스코프&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-call-by-name&quot; id=&quot;markdown-toc-3-call-by-name&quot;&gt;3. Call By Name&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-모나드&quot; id=&quot;markdown-toc-4-모나드&quot;&gt;4. 모나드&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;특징적인-함수&quot;&gt;특징적인 함수&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-순수-함수-pure-function&quot;&gt;1. 순수 함수 (Pure Function)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;순수 함수&lt;/code&gt;는 함수형 프로그래밍을 하기 위해서 반드시 사용해야하는 함수 형태이며, 아래와 같은 특징이 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;동일한 입력 값&lt;/strong&gt;을 넣었을 때는 항상 &lt;strong&gt;동일한 값을 반환&lt;/strong&gt;해야 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;어디서 호출되는지와 상관없이&lt;/strong&gt; 항상 &lt;strong&gt;동일한 값을 반환&lt;/strong&gt;해야 한다.&lt;/li&gt;
+  &lt;li&gt;입력 값을 제외하고 &lt;strong&gt;외부의 영향을 받지도, 주지도 않아야 한다.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-익명-함수-anonymous-function&quot;&gt;2. 익명 함수 (Anonymous Function)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;익명 함수&lt;/code&gt;는 &lt;strong&gt;생성 즉시 실행&lt;/strong&gt;되기 때문에 초기화 같은 작업에 효과적으로 사용되는 함수 형태이며, 아래와 같은 특징이 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일회성 함수이다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;선언 이전에 사용될 수 없다.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;📌 Javascript의 경우에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;호이스팅&lt;/code&gt;으로 인해서 선언 이전에도 함수를 사용할 수 있지만, 익명 함수의 경우에는 호이스팅이 적용되지 않아서 선언 이후에 사용해야 한다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;람다(Lambda)식을 통해 익명 함수를 수행할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-고계-함수-higher-order-function&quot;&gt;3. 고계 함수 (Higher-Order Function)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고계 함수&lt;/code&gt; 는 함수 자체도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;값(value)&lt;/code&gt; 으로 취급하여 사용하는 함수 형태이며, 아래와 같은 특징이 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;함수를 다른 함수의 입력 값으로 전달할 수 있다.&lt;/li&gt;
+  &lt;li&gt;함수의 반환 값 역시 함수로 반환할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;개념&quot;&gt;개념&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-커링&quot;&gt;1. 커링&lt;/h3&gt;
+
+&lt;h3 id=&quot;2-스코프&quot;&gt;2. 스코프&lt;/h3&gt;
+
+&lt;h3 id=&quot;3-call-by-name&quot;&gt;3. Call By Name&lt;/h3&gt;
+
+&lt;h3 id=&quot;4-모나드&quot;&gt;4. 모나드&lt;/h3&gt;
+
+&lt;p&gt;자바스크립트 커링 방법&lt;/p&gt;
+
+&lt;p&gt;스코프, call by name, 모나드&lt;/p&gt;</content><author><name>janos</name></author><category term="FP" /><category term="기본기" /><summary type="html">함수형 프로그래밍이란 순수 함수(Pure Function)를 통해 부작용(Side-Effect)을 피하여 프로그래밍하는 패러다임이다.</summary></entry><entry><title type="html">객체지향 프로그래밍(Object Oriented Programming)</title><link href="https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html" rel="alternate" type="text/html" title="객체지향 프로그래밍(Object Oriented Programming)" /><published>2021-07-16T00:00:00+09:00</published><updated>2021-07-16T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/16/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Object-Oriented-Programming.html">&lt;hr /&gt;
+&lt;p&gt;객체지향 프로그래밍(OOP)이란 프로그래밍 패러다임의 하나이다.&lt;/p&gt;
 
 &lt;p&gt;객체지향의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체(Object)&lt;/code&gt; 란 데이터(정보, 속성 등)와 데이터를 처리하는 기능(함수)이 클래스로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;캡슐화&lt;/code&gt; 된 컴퓨터 자원의 묶음(모듈)을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체&lt;/code&gt; 라고 한다.&lt;/p&gt;
 
@@ -55,7 +136,7 @@
       &lt;p&gt;📌 Python에서는 오버로딩 기능이 지원되지 않는다.&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>janos</name></author><category term="OOP" /><category term="기본기" /><summary type="html">객체지향 프로그래밍(OOP)이란 프로그래밍 방법론의 하나이다.</summary></entry><entry><title type="html">컴프리헨션(Comprehention)</title><link href="https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html" rel="alternate" type="text/html" title="컴프리헨션(Comprehention)" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html">&lt;h2 id=&quot;컴프리헨션이란&quot;&gt;컴프리헨션이란?&lt;/h2&gt;
+&lt;/ul&gt;</content><author><name>janos</name></author><category term="OOP" /><category term="기본기" /><summary type="html">객체지향 프로그래밍(OOP)이란 프로그래밍 패러다임의 하나이다.</summary></entry><entry><title type="html">컴프리헨션(Comprehention)</title><link href="https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html" rel="alternate" type="text/html" title="컴프리헨션(Comprehention)" /><published>2021-07-15T00:00:00+09:00</published><updated>2021-07-15T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/15/%EC%BB%B4%ED%94%84%EB%A6%AC%ED%97%A8%EC%85%98-Comprehention.html">&lt;h2 id=&quot;컴프리헨션이란&quot;&gt;컴프리헨션이란?&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자료구조를 보다 쉽게 저장, 검색을 할 수 있게 하는 문법&lt;/code&gt;이다.&lt;/li&gt;
@@ -871,74 +952,4 @@ Here is a code snippet for the &lt;a href=&quot;https://getbootstrap.com/docs/4.
 &lt;p&gt;That’s just for demo though, you would need to properly integrate your javascript in your page.
 Usually you would put any custom javascript script in the &lt;em&gt;assets&lt;/em&gt; folder under js and reference it in your page from there.&lt;/p&gt;
 
-&lt;p&gt;So try it out using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bootstrap: true&lt;/code&gt; flag! 😉&lt;/p&gt;</content><author><name></name></author><category term="Test" /><summary type="html">This theme is compatible with Bootstrap if you choose to use it in your pages or posts. Here is a little demo with a code snippet, look at the source to see how the HTML and markdown get tangled.</summary></entry><entry><title type="html">Feature images</title><link href="https://jeon-repo.github.io/2020/11/08/feature-images.html" rel="alternate" type="text/html" title="Feature images" /><published>2020-11-08T00:00:00+09:00</published><updated>2020-11-08T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/08/feature-images</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/08/feature-images.html">&lt;p&gt;Hopefully you will find enough information about how to set images in your blog here.
-This is an example of a post which includes a feature image specified in the front matter of the post. 
-The feature image spans the full-width of the page, and is shown with the title on permalink pages:&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;feature-img&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;assets/img/feature-img/desk-messy.jpeg&quot;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;thumbnail&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;assets/img/thumbnails/feature-img/desk-messy.jpeg&quot;&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;You can also use a thumbnail, a smaller version of the same image to improve loading of the page.
-The thumbnail will also be used when you share your article on other platform (linkedin, whatsapp, facebook, …).&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;And now it is working&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;You can also add images aligned in your post using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aligner&lt;/code&gt; include.
-Make sure to separate all of the image path from in a string separated with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;,&lt;/code&gt;.
-It by default look into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/img/&lt;/code&gt; so give the path from there, example:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% include &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aligner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;pexels/book-glass.jpeg,triangle.png&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-    
-    &lt;div class=&quot;column&quot;&gt;
-        &lt;img src=&quot;/assets/img/pexels/book-glass.jpeg&quot; alt=&quot;book-glass.jpeg&quot; /&gt;
-    &lt;/div&gt;
-    
-    &lt;div class=&quot;column&quot;&gt;
-        &lt;img src=&quot;/assets/img/feature-img/desk-messy.jpeg&quot; alt=&quot;desk-messy.jpeg&quot; /&gt;
-    &lt;/div&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Here you have two images side by side, but you can set more and set the amount per columns 
-(by specifying the number of columns or let it be automatic using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;auto&quot;&lt;/code&gt;):&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% include &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aligner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;portfolio/cabin.png,portfolio/cake.png,portfolio/circus.png&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-    
-    &lt;div style=&quot;flex: 33.333333333333336%&quot;&gt;
-        &lt;img src=&quot;/assets/img/portfolio/cabin.png&quot; alt=&quot;cabin.png&quot; /&gt;
-    &lt;/div&gt;
-    
-    &lt;div style=&quot;flex: 33.333333333333336%&quot;&gt;
-        &lt;img src=&quot;/assets/img/portfolio/cake.png&quot; alt=&quot;cake.png&quot; /&gt;
-    &lt;/div&gt;
-    
-    &lt;div style=&quot;flex: 33.333333333333336%&quot;&gt;
-        &lt;img src=&quot;/assets/img/portfolio/circus.png&quot; alt=&quot;circus.png&quot; /&gt;
-    &lt;/div&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;it also works with only one images, it is made to display it smaller than normally.
-However you can just use the Markdown way of doing it to get the image normal sized and centered.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Markdown way (bigger)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Travel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]({{&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/assets/img/pexels/computer.jpeg&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;relative_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}})&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Aligner with only One (50% of width)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% include &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aligner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;pexels/computer.jpeg&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-    
-    &lt;div class=&quot;column&quot;&gt;
-        &lt;img class=&quot;single&quot; src=&quot;/assets/img/pexels/computer.jpeg&quot; alt=&quot;computer.jpeg&quot; /&gt;
-    &lt;/div&gt;
-    
-&lt;/div&gt;</content><author><name></name></author><category term="Test" /><category term="Image" /><summary type="html">Hopefully you will find enough information about how to set images in your blog here. This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages:</summary></entry></feed>
+&lt;p&gt;So try it out using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bootstrap: true&lt;/code&gt; flag! 😉&lt;/p&gt;</content><author><name></name></author><category term="Test" /><summary type="html">This theme is compatible with Bootstrap if you choose to use it in your pages or posts. Here is a little demo with a code snippet, look at the source to see how the HTML and markdown get tangled.</summary></entry></feed>
