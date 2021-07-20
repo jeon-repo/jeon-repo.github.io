@@ -6,6 +6,8 @@ author: janos
 tags: [Python, 자료구조, 기본기]
 ---
 
+---
+
 ## 컴프리헨션이란?
 
 - Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 `자료구조를 보다 쉽게 저장, 검색을 할 수 있게 하는 문법`이다.
