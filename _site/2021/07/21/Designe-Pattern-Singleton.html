@@ -56,26 +56,25 @@
     
 
     <!-- seo tags -->
-    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
+    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/feature-img/pink-cloud-moon.jpg">
     
     <meta property="og:type" content="website" />
     
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Sample post | Jeon Repository</title>
+<title>[Design Pattern] 싱글턴 (Singleton) | Jeon Repository</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Sample post" />
+<meta property="og:title" content="[Design Pattern] 싱글턴 (Singleton)" />
+<meta name="author" content="janos" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur." />
-<meta property="og:description" content="Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur." />
-<link rel="canonical" href="https://jeon-repo.github.io/2020/11/11/sample-post.html" />
-<meta property="og:url" content="https://jeon-repo.github.io/2020/11/11/sample-post.html" />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html" />
 <meta property="og:site_name" content="Jeon Repository" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-11T00:00:00+09:00" />
+<meta property="article:published_time" content="2021-07-21T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Sample post" />
+<meta property="twitter:title" content="[Design Pattern] 싱글턴 (Singleton)" />
 <script type="application/ld+json">
-{"datePublished":"2020-11-11T00:00:00+09:00","dateModified":"2020-11-11T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2020/11/11/sample-post.html"},"url":"https://jeon-repo.github.io/2020/11/11/sample-post.html","@type":"BlogPosting","description":"Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.","headline":"Sample post","@context":"https://schema.org"}</script>
+{"datePublished":"2021-07-21T00:00:00+09:00","dateModified":"2021-07-21T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html"},"url":"https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","headline":"[Design Pattern] 싱글턴 (Singleton)","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -83,12 +82,12 @@
     <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="Sample post">
-    <meta name="twitter:description" content="Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et ...">
+    <meta name="twitter:title" content="[Design Pattern] 싱글턴 (Singleton)">
+    <meta name="twitter:description" content="[설명]먼저 위키백과의 설명을 한 번 보겠다.  클래스의 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고, 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴하는 방식의 디자인 유형을 Singleton 패턴이라고 한다.  “위키백과 - Single...">
     
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
-    <meta name="twitter:image:alt" content="Sample post">
+    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/feature-img/pink-cloud-moon.jpg">
+    <meta name="twitter:image:alt" content="[Design Pattern] 싱글턴 (Singleton)">
 </head>
 
   <body>
@@ -196,7 +195,7 @@
         
         
         <li class="separator"> | </li>
-        <li><a id="theme-toggle" title="Sample post " aria-label="Sample post" onclick="themeToggle()"></a></li>
+        <li><a id="theme-toggle" title="[Design Pattern] 싱글턴 (Singleton) " aria-label="[Design Pattern] 싱글턴 (Singleton)" onclick="themeToggle()"></a></li>
         
     </ul>
 
@@ -204,20 +203,22 @@
 </header>
 
     <div class="content">
-      <article >
+      <article class="feature-image" >
   <header id="main" style="">
     <div class="title-padder">
       
-      <h1 id="Sample+post" class="title">Sample post</h1>
+      <h1 id="%5BDesign+Pattern%5D+%EC%8B%B1%EA%B8%80%ED%84%B4+%28Singleton%29" class="title">[Design Pattern] 싱글턴 (Singleton)</h1>
       
 
 
-<div class="post-info">
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
     <p class="meta">
+      janos - 
       
-      
-      November 11, 2020
-    </p></div>
+      July 21, 2021
+    </p></a></div>
 
       
     </div>
@@ -225,49 +226,50 @@
 
   <section class="post-content">
   
-      <p>Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. 
-Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. 
-<!--more-->
-Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.</p>
+      <hr />
 
-<ul>
-  <li>Consectetur adipiscing elit</li>
-  <li>Donec a diam lectus</li>
-  <li>Sed sit amet ipsum mauris</li>
-</ul>
+<h3 id="설명">[설명]</h3>
 
-<p>Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
-
-<p>Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula <em>semper consectetur sagittis</em>, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.</p>
-
-<div class="row">
-    
-    <div style="flex: 100.0%">
-        <img class="single" src="/assets/img/pexels/travel.jpeg" alt="travel.jpeg" />
-    </div>
-    
-</div>
-
-<p>Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.</p>
+<p>먼저 위키백과의 설명을 한 번 보겠다.</p>
 
 <blockquote>
-  <p>Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque</p>
+  <p>클래스의 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고, 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴하는 방식의 디자인 유형을 Singleton 패턴이라고 한다.</p>
+
+  <p>“위키백과 - <a href="https://ko.wikipedia.org/wiki/%EC%8B%B1%EA%B8%80%ED%84%B4_%ED%8C%A8%ED%84%B4">Singleton Pattern</a>”</p>
 </blockquote>
 
-<p>Etiam luctus porttitor lorem, sed suscipit est rutrum non. Curabitur lobortis nisl a enim congue semper. Aenean commodo ultrices imperdiet. Vestibulum ut justo vel sapien venenatis tincidunt.</p>
+<ul>
+  <li>위키백과의 설명처럼 특정 객체를 여러곳에서 공유하기 위해서 사용하는 방식같다.</li>
+  <li>Python은 모듈 자체가 Singleton으로 구성되어있다.<br />
+→ 클래스 변수를 생성하면 해당 클래스의 객체가 생성된 어느 곳이던 같은 변수값이 반환된다.</li>
+  <li>Sigleton은 <code class="language-plaintext highlighter-rouge">다크 모드</code> 같은 시스템 상의 <code class="language-plaintext highlighter-rouge">공용 설정</code>에 이용하면 좋을 것 같다고 생각이 들었다.</li>
+</ul>
 
-\[\Theta \ne \Gamma\]
+<h3 id="예시-코드">[예시 코드]</h3>
 
-<p>Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. Aliquam ut massa in turpis dapibus convallis. Praesent elit lacus, vestibulum at malesuada et, ornare et est. Ut augue nunc, sodales ut euismod non, adipiscing vitae orci<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. Mauris ut placerat justo. Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices egestas quis ut quam. Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. Cras quis ligula sem, vel elementum mi. Phasellus non ullamcorper urna.</p>
+<p>클래스 객체 생성시에 instance란 변수가 없으면 변수를 생성, 있으면 그냥 반환</p>
 
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test_singleton.py
+</span>
+<span class="k">class</span> <span class="nc">Singleton</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="c1"># instance 존재 여부 확인
+</span>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="s">'instance'</span><span class="p">):</span>
+            <span class="n">cls</span><span class="p">.</span><span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">Singleton</span><span class="p">,</span> <span class="n">cls</span><span class="p">).</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="p">.</span><span class="n">instance</span>
 
-      <p><span class="cit-authors">John Smith</span>, <span class="cit-title">A Title About Citations</span> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">single_1</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'1번 세팅 : </span><span class="si">{</span><span class="n">single_1</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+    <span class="n">single_2</span> <span class="o">=</span> <span class="n">Singleton</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'2번 세팅 : </span><span class="si">{</span><span class="n">single_2</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="실행-결과">[실행 결과]</h3>
+
+<p>객체를 2번 생성시 최초 생성한 객체(1번)와 동일한 객체를 반환 받은 것을 확인할 수 있다.</p>
+
+<p><img src="/assets/img/post/2021-07-21-Designe-Pattern-Singleton/%EC%8B%B1%EA%B8%80%ED%84%B4-%EA%B2%B0%EA%B3%BC.png" alt="Result" /></p>
 
     
   </section>
@@ -280,7 +282,7 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         <li class="meta">Share</li>
         
         <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2020/11/11/sample-post.html" target="_blank"
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html" target="_blank"
                title=" Facebook">
                 <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Share on Facebook</span>
@@ -288,7 +290,7 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         </li>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?text=Sample+post%20https%3A%2F%2Fjeon-repo.github.io%2F2020%2F11%2F11%2Fsample-post.html"
+            <a href="https://twitter.com/intent/tweet?text=%5BDesign+Pattern%5D+%EC%8B%B1%EA%B8%80%ED%84%B4+%28Singleton%29%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F07%2F21%2FDesigne-Pattern-Singleton.html"
                target="_blank" title="">
                 <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Tweet</span>
@@ -296,7 +298,7 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         </li>
          
         <li>
-            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2020/11/11/sample-post.html&quote=Sample+post%20%7C%20Jeon+Repository&s="
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html&quote=%5BDesign+Pattern%5D+%EC%8B%B1%EA%B8%80%ED%84%B4+%28Singleton%29%20%7C%20Jeon+Repository&s="
                target="_blank" title=" Tumblr">
                 <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Share on Tumblr</span>
@@ -304,7 +306,7 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         </li>
          
         <li>
-            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2020/11/11/sample-post.html&media=$description=Consectetur+adipiscing+elit.+Donec+a+diam+lectus.+Sed+sit+amet+ipsum+mauris.+Maecenas+congue+ligula+ac+quam+viverra+nec+consectetur+ante+hendrerit.+Donec+et+mollis+dolor.+%0APraesent+et+diam+eget+libero+egestas+mattis+sit+amet+vitae+augue.+Nam+tincidunt+congue+enim%2C+ut+porta+lorem+lacinia+consectetur.%0A"
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html&media=https://jeon-repo.github.io/assets/img/feature-img/pink-cloud-moon.jpg$description=%0A"
                target="_blank" title="">
                 <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Pin it</span>
@@ -312,7 +314,7 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         </li>
           
         <li>
-            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2020/11/11/sample-post.html&title=Sample+post%20%7C%20Jeon+Repository"
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html&title=%5BDesign+Pattern%5D+%EC%8B%B1%EA%B8%80%ED%84%B4+%28Singleton%29%20%7C%20Jeon+Repository"
                target="_blank" title=" Reddit">
                 <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Share on Reddit</span>
@@ -320,7 +322,7 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         </li>
          
         <li>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2020/11/11/sample-post.html&title=Sample+post%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2020/11/11/sample-post.html"
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html&title=%5BDesign+Pattern%5D+%EC%8B%B1%EA%B8%80%ED%84%B4+%28Singleton%29%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html"
                target="_blank" title=" LinkedIn">
                 <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Share on LinkedIn</span>
@@ -328,7 +330,7 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
         </li>
           
         <li>
-            <a href="mailto:?subject=Sample post%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2020/11/11/sample-post.html"
+            <a href="mailto:?subject=[Design Pattern] 싱글턴 (Singleton)%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html"
                target="_blank" title="">
                 <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Email</span></a>
@@ -352,12 +354,12 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
       
 
       
-        <li><a class="button" href="/tags#A+Tag">
-          <p><i class="fas fa-tag fa-fw fa-sm"></i> A Tag</p>
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
         </a></li>
       
-        <li><a class="button" href="/tags#Katex">
-          <p><i class="fas fa-tag fa-fw fa-sm"></i> Katex</p>
+        <li><a class="button" href="/tags#%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 디자인패턴</p>
         </a></li>
       
     </ul>
@@ -371,19 +373,12 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
 
 <div id="post-nav">
     
-    <div id="previous-post">
-        <a alt="Dark Mode" href="/2020/11/12/dark-mode.html">
-            <p>이전 포스트</p>
-            Dark Mode
-        </a>
-    </div>
-    
 
     
     <div id="next-post">
-        <a alt="Color Post" href="/2020/11/10/color-post.html">
+        <a alt="카카오 코딩 테스트 - 순위 검색" href="/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89.html">
             <p>다음 포스트</p>
-            Color Post
+            카카오 코딩 테스트 - 순위 검색
         </a>
     </div>
     
@@ -410,6 +405,8 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
   
   
   
+  
+  header#main { background-image: url('/assets/img/feature-img/pink-cloud-moon.jpg'); }
   
 </style>
 

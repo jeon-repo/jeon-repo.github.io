@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-20T23:39:22+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">카카오 코딩 테스트 - 순위 검색</title><link href="https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 순위 검색" /><published>2021-07-20T00:00:00+09:00</published><updated>2021-07-20T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89.html">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-21T13:23:05+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">[Design Pattern] 싱글턴 (Singleton)</title><link href="https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html" rel="alternate" type="text/html" title="[Design Pattern] 싱글턴 (Singleton)" /><published>2021-07-21T00:00:00+09:00</published><updated>2021-07-21T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html">&lt;hr /&gt;
+
+&lt;h3 id=&quot;설명&quot;&gt;[설명]&lt;/h3&gt;
+
+&lt;p&gt;먼저 위키백과의 설명을 한 번 보겠다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;클래스의 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고, 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴하는 방식의 디자인 유형을 Singleton 패턴이라고 한다.&lt;/p&gt;
+
+  &lt;p&gt;“위키백과 - &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%8B%B1%EA%B8%80%ED%84%B4_%ED%8C%A8%ED%84%B4&quot;&gt;Singleton Pattern&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;위키백과의 설명처럼 특정 객체를 여러곳에서 공유하기 위해서 사용하는 방식같다.&lt;/li&gt;
+  &lt;li&gt;Python은 모듈 자체가 Singleton으로 구성되어있다.&lt;br /&gt;
+→ 클래스 변수를 생성하면 해당 클래스의 객체가 생성된 어느 곳이던 같은 변수값이 반환된다.&lt;/li&gt;
+  &lt;li&gt;Sigleton은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다크 모드&lt;/code&gt; 같은 시스템 상의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공용 설정&lt;/code&gt;에 이용하면 좋을 것 같다고 생각이 들었다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;예시-코드&quot;&gt;[예시 코드]&lt;/h3&gt;
+
+&lt;p&gt;클래스 객체 생성시에 instance란 변수가 없으면 변수를 생성, 있으면 그냥 반환&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# test_singleton.py
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__new__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# instance 존재 여부 확인
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;hasattr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;instance&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__new__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;__main__&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;single_1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;1번 세팅 : &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;single_1&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;single_2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;2번 세팅 : &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;single_2&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;실행-결과&quot;&gt;[실행 결과]&lt;/h3&gt;
+
+&lt;p&gt;객체를 2번 생성시 최초 생성한 객체(1번)와 동일한 객체를 반환 받은 것을 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-21-Designe-Pattern-Singleton/%EC%8B%B1%EA%B8%80%ED%84%B4-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="디자인패턴" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">카카오 코딩 테스트 - 순위 검색</title><link href="https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 순위 검색" /><published>2021-07-20T00:00:00+09:00</published><updated>2021-07-20T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89.html">&lt;hr /&gt;
 
 &lt;p&gt;2021 KAKAO BLIND RECRUITMENT “메뉴 리뉴얼” 문제를 풀어보겠습니다.&lt;/p&gt;
 
@@ -730,7 +773,7 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
         
     &lt;span class=&quot;c1&quot;&gt;# 문자열 형태로 출력하기 위한 처리
 &lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;menu&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">큐(Queue)</title><link href="https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue.html" rel="alternate" type="text/html" title="큐(Queue)" /><published>2021-07-13T00:00:00+09:00</published><updated>2021-07-13T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue.html">&lt;hr /&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">큐(Queue)</title><link href="https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue.html" rel="alternate" type="text/html" title="큐(Queue)" /><published>2021-07-13T00:00:00+09:00</published><updated>2021-07-13T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/13/%ED%81%90-Queue.html">&lt;hr /&gt;
 
 &lt;h2 id=&quot;큐queue란&quot;&gt;큐(Queue)란?&lt;/h2&gt;
 
@@ -754,7 +797,7 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
 &lt;h4 id=&quot;그림1&quot;&gt;[그림1]&lt;/h4&gt;
 &lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-13-%ED%81%90-Queue/%EA%B5%AC%EC%A1%B0001.jpeg&quot; alt=&quot;Chart&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;예제&quot;&gt;[예제]&lt;/h3&gt;
+&lt;h3 id=&quot;예시-코드&quot;&gt;[예시 코드]&lt;/h3&gt;
 
 &lt;p&gt;Python에서 Queue를 사용하는 간단한 예제이다.&lt;/p&gt;
 
@@ -949,7 +992,7 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
     &lt;span class=&quot;c1&quot;&gt;# 문자열의 최소길이 3자를 맞추기 위한 조건
 &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))])&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">Dark Mode</title><link href="https://jeon-repo.github.io/2020/11/12/dark-mode.html" rel="alternate" type="text/html" title="Dark Mode" /><published>2020-11-12T00:00:00+09:00</published><updated>2020-11-12T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/12/dark-mode</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/12/dark-mode.html">&lt;p&gt;&lt;strong&gt;More colors with less light.&lt;/strong&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">Dark Mode</title><link href="https://jeon-repo.github.io/2020/11/12/dark-mode.html" rel="alternate" type="text/html" title="Dark Mode" /><published>2020-11-12T00:00:00+09:00</published><updated>2020-11-12T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/12/dark-mode</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/12/dark-mode.html">&lt;p&gt;&lt;strong&gt;More colors with less light.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Click the half-moon most top-right button to turn the lights on/off.&lt;/p&gt;
 
@@ -1091,38 +1134,4 @@ Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit 
       &lt;p&gt;&lt;span class=&quot;cit-authors&quot;&gt;John Smith&lt;/span&gt;, &lt;span class=&quot;cit-title&quot;&gt;A Title About Citations&lt;/span&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="A Tag" /><category term="Katex" /><summary type="html">Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</summary></entry><entry><title type="html">Color Post</title><link href="https://jeon-repo.github.io/2020/11/10/color-post.html" rel="alternate" type="text/html" title="Color Post" /><published>2020-11-10T00:00:00+09:00</published><updated>2020-11-10T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/10/color-post</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/10/color-post.html">&lt;h1 id=&quot;what-a-colorful-post&quot;&gt;What a colorful post!&lt;/h1&gt;
-
-&lt;p&gt;This is an idea that came from &lt;a href=&quot;https://github.com/xukimseven/HardCandy-Jekyll&quot;&gt;xukimseven/HardCandy-Jekyll&lt;/a&gt; 
-looking at this cheerful and colorful theme, I wanted to enable something similar for Type-on-Strap.&lt;/p&gt;
-
-&lt;p&gt;You can go fork and star &lt;em&gt;HardCandy-Jekyll&lt;/em&gt; too! 😉&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
-
-&lt;p&gt;Basically you need to add just one thing, the color:&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Color Post&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;brown&lt;/span&gt;
-&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;It can either be a html color like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brown&lt;/code&gt; (which look like red to me). Or with the rgb:&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Color Post&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rgb(165,42,42)&lt;/span&gt;
-&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The background used is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lineart.png&lt;/code&gt; from &lt;a href=&quot;https://github.com/xukimseven&quot;&gt;xukimseven&lt;/a&gt; you can edit it in the config file. 
-If you want another one, put it in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/assets/img&lt;/code&gt; as well.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;⚠️ It’s a bit hacking the css in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post.html&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Sylhare</name></author><category term="Test" /><category term="Color" /><summary type="html">What a colorful post! This is an idea that came from xukimseven/HardCandy-Jekyll looking at this cheerful and colorful theme, I wanted to enable something similar for Type-on-Strap. You can go fork and star HardCandy-Jekyll too! 😉</summary></entry></feed>
+&lt;/div&gt;</content><author><name></name></author><category term="A Tag" /><category term="Katex" /><summary type="html">Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</summary></entry></feed>

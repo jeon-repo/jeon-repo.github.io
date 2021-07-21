@@ -1,6 +1,16 @@
 [
   
   {
+    "title"    : "[Design Pattern] 싱글턴 (Singleton)",
+    "category" : "",
+    "tags"     : " 디자인패턴, Algorithm",
+    "url"      : "/2021/07/21/Designe-Pattern-Singleton.html",
+    "date"     : "July 21, 2021",
+    "excerpt"  : "\n\n[설명]\n\n먼저 위키백과의 설명을 한 번 보겠다.\n\n\n  클래스의 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고, 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴하는 방식의 디자인 유형을 Singleton 패턴이라고 한다.\n\n  “위키백과 - Singleton Pattern”\n\n\n\n  위키백과의 설명처럼 특정 객체를 여러곳에서 공유하기 위해서 사용하는 방식같다.\n  Python은 모듈 자체가 Si...",
+  "content"  : "\n\n[설명]\n\n먼저 위키백과의 설명을 한 번 보겠다.\n\n\n  클래스의 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고, 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴하는 방식의 디자인 유형을 Singleton 패턴이라고 한다.\n\n  “위키백과 - Singleton Pattern”\n\n\n\n  위키백과의 설명처럼 특정 객체를 여러곳에서 공유하기 위해서 사용하는 방식같다.\n  Python은 모듈 자체가 Singleton으로 구성되어있다.\n→ 클래스 변수를 생성하면 해당 클래스의 객체가 생성된 어느 곳이던 같은 변수값이 반환된다.\n  Sigleton은 다크 모드 같은 시스템 상의 공용 설정에 이용하면 좋을 것 같다고 생각이 들었다.\n\n\n[예시 코드]\n\n클래스 객체 생성시에 instance란 변수가 없으면 변수를 생성, 있으면 그냥 반환\n\n# test_singleton.py\n\nclass Singleton():\n    def __new__(cls):\n        # instance 존재 여부 확인\n        if not hasattr(cls, &#39;instance&#39;):\n            cls.instance = super(Singleton, cls).__new__(cls)\n        return cls.instance\n\nif __name__ == &#39;__main__&#39;:\n    single_1 = Singleton()\n    print(f&#39;1번 세팅 : {single_1}&#39;)\n    single_2 = Singleton()\n    print(f&#39;2번 세팅 : {single_2}&#39;)\n\n\n[실행 결과]\n\n객체를 2번 생성시 최초 생성한 객체(1번)와 동일한 객체를 반환 받은 것을 확인할 수 있다.\n\n\n"
+} ,
+  
+  {
     "title"    : "카카오 코딩 테스트 - 순위 검색",
     "category" : "",
     "tags"     : " 카카오, 코테, Python, Algorithm",
@@ -43,7 +53,7 @@
   {
     "title"    : "카카오 코딩 테스트 - 메뉴 리뉴얼",
     "category" : "",
-    "tags"     : " 카카오, 코테, Python",
+    "tags"     : " 카카오, 코테, Python, Algorithm",
     "url"      : "/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC.html",
     "date"     : "July 14, 2021",
     "excerpt"  : "\n\n2021 KAKAO BLIND RECRUITMENT “메뉴 리뉴얼” 문제를 풀어보겠습니다.\n\n\n  여기를 누르면 설명을 건너뛸 수 있습니다.\n\n\n\n\n[문제 설명]\n\n레스토랑을 운영하던 스카피는 코로나19로 인한 불경기를 극복하고자 메뉴를 새로 구성하려고 고민하고 있습니다.\n기존에는 단품으로만 제공하던 메뉴를 조합해서 코스요리 형태로 재구성해서 새로운 메뉴를 제공하기로 결정했습니다. 어떤 단품메뉴들을 조합해서 코스요리 메뉴로 구성하면 좋...",
@@ -57,13 +67,13 @@
     "url"      : "/2021/07/13/%ED%81%90-Queue.html",
     "date"     : "July 13, 2021",
     "excerpt"  : "\n\n큐(Queue)란?\n\n컴퓨터의 기본적인 자료구조의 한 가지로, FIFO(First In First Out)구조로 데이터를 저장하는 형식이다.\n\n\n  스택(Stack)의 LIFO(Last In First Out)와 반대되는 개념\n\n\n[발단]\n\n혼자 작은 규모로 자동투자 프로그램을 개발하던 도중\n\n\n  실시간 데이터 감시\n  타겟 데이터 포착시 매매 요청\n\n\n2가지의 기능을 비동기로 구현해야하는 상황이 생겨서 [그림1]의 signal 부분...",
-  "content"  : "\n\n큐(Queue)란?\n\n컴퓨터의 기본적인 자료구조의 한 가지로, FIFO(First In First Out)구조로 데이터를 저장하는 형식이다.\n\n\n  스택(Stack)의 LIFO(Last In First Out)와 반대되는 개념\n\n\n[발단]\n\n혼자 작은 규모로 자동투자 프로그램을 개발하던 도중\n\n\n  실시간 데이터 감시\n  타겟 데이터 포착시 매매 요청\n\n\n2가지의 기능을 비동기로 구현해야하는 상황이 생겨서 [그림1]의 signal 부분을 Queue를 통해 구현하였다.\n\n[그림1]\n\n\n[예제]\n\nPython에서 Queue를 사용하는 간단한 예제이다.\n\n예제는 3개의 파일로 구성되어 있다.\n\n# test_signal.py\n\nfrom multiprocessing import Process, Queue\nfrom test_agent import Agent\nfrom test_trader import Buy, Sell\n\ndef run():\n    queue = Queue()\n    agent = Agent(queue)\n    scouter_price = Process(target=agent.scouter_price)\n    scouter_price.start()\n\n    while True:\n        if not queue.empty():\n            data = queue.get()\n            # scouter_price에서 얻은 데이터 활용\n            if data[0] == &#39;buy&#39;:\n                Buy(data[1])\n            if data[0] == &#39;sell&#39;:\n                Sell(data[1])\n            if data[0] == -1:\n                print(&#39;종료&#39;)\n                break\n\nif __name__ == &#39;__main__&#39;:\n    run()\n\n\n# test_agent.py\n\nfrom time import sleep\n\nclass Agent():\n    def __init__(self, queue):\n        self.queue = queue\n        \n    def scouter_price(self):\n        count = 0\n        while True:\n            # 감시 메커니즘 ...\n            count += 1\n            sleep(1)\n            print(f&#39;count: {count}&#39;)\n            if count == 3:\n                self.queue.put([&#39;buy&#39;, count])\n            if count == 6:\n                self.queue.put([&#39;sell&#39;, count])\n            if count == 7:\n                self.queue.put([-1])\n                break\n            else:\n                pass\n\n\n# test_trader.py\n\ndef Buy(data):\n\t# 매수 메커니즘 ...\n\tprint(f&#39;{data}로 매수 완료&#39;)\n\ndef Sell(data):\n\t# 매도 메커니즘 ...\n\tprint(f&#39;{data}로 매도 완료&#39;)\n\n\n[실행 결과]\n\n실행 카운트 3일 때 3으로 매수 완료, 6일 때 6으로 매도 완료, 7일 때 종료가 출력되고 모든 프로세스가 종료된다.\n\n\n"
+  "content"  : "\n\n큐(Queue)란?\n\n컴퓨터의 기본적인 자료구조의 한 가지로, FIFO(First In First Out)구조로 데이터를 저장하는 형식이다.\n\n\n  스택(Stack)의 LIFO(Last In First Out)와 반대되는 개념\n\n\n[발단]\n\n혼자 작은 규모로 자동투자 프로그램을 개발하던 도중\n\n\n  실시간 데이터 감시\n  타겟 데이터 포착시 매매 요청\n\n\n2가지의 기능을 비동기로 구현해야하는 상황이 생겨서 [그림1]의 signal 부분을 Queue를 통해 구현하였다.\n\n[그림1]\n\n\n[예시 코드]\n\nPython에서 Queue를 사용하는 간단한 예제이다.\n\n예제는 3개의 파일로 구성되어 있다.\n\n# test_signal.py\n\nfrom multiprocessing import Process, Queue\nfrom test_agent import Agent\nfrom test_trader import Buy, Sell\n\ndef run():\n    queue = Queue()\n    agent = Agent(queue)\n    scouter_price = Process(target=agent.scouter_price)\n    scouter_price.start()\n\n    while True:\n        if not queue.empty():\n            data = queue.get()\n            # scouter_price에서 얻은 데이터 활용\n            if data[0] == &#39;buy&#39;:\n                Buy(data[1])\n            if data[0] == &#39;sell&#39;:\n                Sell(data[1])\n            if data[0] == -1:\n                print(&#39;종료&#39;)\n                break\n\nif __name__ == &#39;__main__&#39;:\n    run()\n\n\n# test_agent.py\n\nfrom time import sleep\n\nclass Agent():\n    def __init__(self, queue):\n        self.queue = queue\n        \n    def scouter_price(self):\n        count = 0\n        while True:\n            # 감시 메커니즘 ...\n            count += 1\n            sleep(1)\n            print(f&#39;count: {count}&#39;)\n            if count == 3:\n                self.queue.put([&#39;buy&#39;, count])\n            if count == 6:\n                self.queue.put([&#39;sell&#39;, count])\n            if count == 7:\n                self.queue.put([-1])\n                break\n            else:\n                pass\n\n\n# test_trader.py\n\ndef Buy(data):\n\t# 매수 메커니즘 ...\n\tprint(f&#39;{data}로 매수 완료&#39;)\n\ndef Sell(data):\n\t# 매도 메커니즘 ...\n\tprint(f&#39;{data}로 매도 완료&#39;)\n\n\n[실행 결과]\n\n실행 카운트 3일 때 3으로 매수 완료, 6일 때 6으로 매도 완료, 7일 때 종료가 출력되고 모든 프로세스가 종료된다.\n\n\n"
 } ,
   
   {
     "title"    : "카카오 코딩 테스트 - 신규 아이디 추천",
     "category" : "",
-    "tags"     : " 카카오, 코테, Python",
+    "tags"     : " 카카오, 코테, Python, Algorithm",
     "url"      : "/2021/07/10/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EC%95%84%EC%9D%B4%EB%94%94-%EB%AC%B8%EC%A0%9C.html",
     "date"     : "July 10, 2021",
     "excerpt"  : "\n\n2021 KAKAO BLIND RECRUITMENT “신규 아이디 추천” 문제를 풀어보겠습니다.\n\n\n  여기를 누르면 설명을 건너뛸 수 있습니다.\n\n\n\n\n[문제 설명]\n\n카카오에 입사한 신입 개발자 네오는 &quot;카카오계정개발팀&quot;에 배치되어, 카카오 서비스에 가입하는 유저들의 아이디를 생성하는 업무를 담당하게 되었습니다. “네오”에게 주어진 첫 업무는 새로 가입하는 유저들이 카카오 아이디 규칙에 맞지 않는 아이디를 입력했을 때, 입력된 아이...",
