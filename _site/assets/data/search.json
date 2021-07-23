@@ -1,13 +1,23 @@
 [
   
   {
-    "title"    : "[Design Pattern] 싱글턴 (Singleton)",
+    "title"    : "[Design Pattern] 전략 패턴 (Strategy)",
+    "category" : "",
+    "tags"     : " 디자인패턴, Algorithm",
+    "url"      : "/2021/07/23/Designe-Pattern-Strategy.html",
+    "date"     : "July 23, 2021",
+    "excerpt"  : "\n\n설명\n\n위키백과에 나온 내용은 다음과 같다.\n\n\n  실행 중에 알고리즘을 선택할 수 있게 하는 행위 소프트웨어 디자인 패턴이다.\n\n  \n    특정한 계열의 알고리즘들을 정의\n    각 알고리즘을 캡슐화\n    알고리즘들을 해당 계열 안에서 상호 교체가 가능하게 만듬\n  \n\n  Strategy는 알고리즘을 사용하는 클라이언트와는 독립적으로 다양하게 만든다. Strategy는 유연하고 재사용 가능한 객체지향 소프트웨어를 어떻게 설계하는지...",
+  "content"  : "\n\n설명\n\n위키백과에 나온 내용은 다음과 같다.\n\n\n  실행 중에 알고리즘을 선택할 수 있게 하는 행위 소프트웨어 디자인 패턴이다.\n\n  \n    특정한 계열의 알고리즘들을 정의\n    각 알고리즘을 캡슐화\n    알고리즘들을 해당 계열 안에서 상호 교체가 가능하게 만듬\n  \n\n  Strategy는 알고리즘을 사용하는 클라이언트와는 독립적으로 다양하게 만든다. Strategy는 유연하고 재사용 가능한 객체지향 소프트웨어를 어떻게 설계하는지 기술하기 위해 디자인 패턴의 개념을 보급시킨 디자인 패턴이라는 영향력 있는 책에 포함된 패턴들 가운데 하나이다. (GoF 디자인 패턴에도 포함 )\n\n  “위키백과 - Strategy Pattern”\n\n\n\n  객체지향 프로그래밍 설계를 할 때 자주 발생하는 문제들을 피하기 위해 사용되는 패턴이라고 한다.\n  위키백과의 설명을 보면 알고리즘의 캡슐화를 통해 실행중에 알고리즘을 바꿔가며 사용하는 방식같다.\n  Strategy는 하나의 시스템에서 설정이 각각 다른 여러 모듈을 사용할 때 설정의 공통 부분에 이용하면 좋을 것 같다고 생각이 들었다.\n\n\n예시 코드\n\n클래스 선언시에 parameter가 없으면 클래스 내부 함수 호출, parameter가 있으면 전달받은 함수 호출\n\nclass Strategy():\n    # Python은 함수도 parameter로 전달하고, 전달받을 수 있다.\n    def __init__(self, obj=None):\n        # obj가 있으면 self.getFunction()에 할당\n        if obj:\n            self.getFunction = obj\n\n    def getFunction(self):\n        return &#39;Internal Function&#39;\n\ndef outFunction1():\n    return &#39;External Function 1&#39;\n\ndef outFunction2():\n    return &#39;External Function 2&#39;\n\nif __name__ == &#39;__main__&#39;:\n    strategy0 = Strategy()\n    strategy1 = Strategy(outFunction1)\n    strategy2 = Strategy(outFunction2)\n\n    print(f&#39;strategy0: {strategy0.getFunction()}&#39;)\n    print(f&#39;strategy1: {strategy1.getFunction()}&#39;)\n    print(f&#39;strategy2: {strategy2.getFunction()}&#39;)\n\n\n결과\n\nstrategy0, 1, 2의 결과가 각각 다른 것을 확인할 수 있다.\n\n\n"
+} ,
+  
+  {
+    "title"    : "[Design Pattern] 싱글턴 패턴 (Singleton)",
     "category" : "",
     "tags"     : " 디자인패턴, Algorithm",
     "url"      : "/2021/07/21/Designe-Pattern-Singleton.html",
     "date"     : "July 21, 2021",
     "excerpt"  : "\n\n[설명]\n\n먼저 위키백과의 설명을 한 번 보겠다.\n\n\n  클래스의 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고, 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴하는 방식의 디자인 유형을 Singleton 패턴이라고 한다.\n\n  “위키백과 - Singleton Pattern”\n\n\n\n  위키백과의 설명처럼 특정 객체를 여러곳에서 공유하기 위해서 사용하는 방식같다.\n  Python은 모듈 자체가 Si...",
-  "content"  : "\n\n[설명]\n\n먼저 위키백과의 설명을 한 번 보겠다.\n\n\n  클래스의 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고, 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴하는 방식의 디자인 유형을 Singleton 패턴이라고 한다.\n\n  “위키백과 - Singleton Pattern”\n\n\n\n  위키백과의 설명처럼 특정 객체를 여러곳에서 공유하기 위해서 사용하는 방식같다.\n  Python은 모듈 자체가 Singleton으로 구성되어있다.\n→ 클래스 변수를 생성하면 해당 클래스의 객체가 생성된 어느 곳이던 같은 변수값이 반환된다.\n  Sigleton은 다크 모드 같은 시스템 상의 공용 설정에 이용하면 좋을 것 같다고 생각이 들었다.\n\n\n[예시 코드]\n\n클래스 객체 생성시에 instance란 변수가 없으면 변수를 생성, 있으면 그냥 반환\n\n# test_singleton.py\n\nclass Singleton():\n    def __new__(cls):\n        # instance 존재 여부 확인\n        if not hasattr(cls, &#39;instance&#39;):\n            cls.instance = super(Singleton, cls).__new__(cls)\n        return cls.instance\n\nif __name__ == &#39;__main__&#39;:\n    single_1 = Singleton()\n    print(f&#39;1번 세팅 : {single_1}&#39;)\n    single_2 = Singleton()\n    print(f&#39;2번 세팅 : {single_2}&#39;)\n\n\n[실행 결과]\n\n객체를 2번 생성시 최초 생성한 객체(1번)와 동일한 객체를 반환 받은 것을 확인할 수 있다.\n\n\n"
+  "content"  : "\n\n[설명]\n\n먼저 위키백과의 설명을 한 번 보겠다.\n\n\n  클래스의 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고, 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴하는 방식의 디자인 유형을 Singleton 패턴이라고 한다.\n\n  “위키백과 - Singleton Pattern”\n\n\n\n  위키백과의 설명처럼 특정 객체를 여러곳에서 공유하기 위해서 사용하는 방식같다.\n  Python은 모듈 자체가 Singleton으로 구성되어있다.\n→ 클래스 변수를 생성하면 해당 클래스의 객체가 생성된 어느 곳이던 같은 변수값이 반환된다.\n  Singleton은 다크 모드 같은 시스템 상의 공용 설정에 이용하면 좋을 것 같다고 생각이 들었다.\n\n\n[예시 코드]\n\n클래스 객체 생성시에 instance란 변수가 없으면 변수를 생성, 있으면 그냥 반환\n\n# test_singleton.py\n\nclass Singleton():\n    def __new__(cls):\n        # instance 존재 여부 확인\n        if not hasattr(cls, &#39;instance&#39;):\n            cls.instance = super(Singleton, cls).__new__(cls)\n        return cls.instance\n\nif __name__ == &#39;__main__&#39;:\n    single_1 = Singleton()\n    print(f&#39;1번 세팅 : {single_1}&#39;)\n    single_2 = Singleton()\n    print(f&#39;2번 세팅 : {single_2}&#39;)\n\n\n[실행 결과]\n\n객체를 2번 생성시 최초 생성한 객체(1번)와 동일한 객체를 반환 받은 것을 확인할 수 있다.\n\n\n"
 } ,
   
   {

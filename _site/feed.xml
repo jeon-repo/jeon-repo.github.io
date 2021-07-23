@@ -1,4 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-21T13:23:05+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">[Design Pattern] 싱글턴 (Singleton)</title><link href="https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html" rel="alternate" type="text/html" title="[Design Pattern] 싱글턴 (Singleton)" /><published>2021-07-21T00:00:00+09:00</published><updated>2021-07-21T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-23T22:46:15+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">[Design Pattern] 전략 패턴 (Strategy)</title><link href="https://jeon-repo.github.io/2021/07/23/Designe-Pattern-Strategy.html" rel="alternate" type="text/html" title="[Design Pattern] 전략 패턴 (Strategy)" /><published>2021-07-23T00:00:00+09:00</published><updated>2021-07-23T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/23/Designe-Pattern-Strategy</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/23/Designe-Pattern-Strategy.html">&lt;hr /&gt;
+
+&lt;h3 id=&quot;설명&quot;&gt;설명&lt;/h3&gt;
+
+&lt;p&gt;위키백과에 나온 내용은 다음과 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;실행 중에 알고리즘을 선택할 수 있게 하는 행위 소프트웨어 디자인 패턴이다.&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;특정한 계열의 알고리즘들을 정의&lt;/li&gt;
+    &lt;li&gt;각 알고리즘을 캡슐화&lt;/li&gt;
+    &lt;li&gt;알고리즘들을 해당 계열 안에서 상호 교체가 가능하게 만듬&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;Strategy는 알고리즘을 사용하는 클라이언트와는 독립적으로 다양하게 만든다. Strategy는 유연하고 재사용 가능한 객체지향 소프트웨어를 어떻게 설계하는지 기술하기 위해 디자인 패턴의 개념을 보급시킨 디자인 패턴이라는 영향력 있는 책에 포함된 패턴들 가운데 하나이다. (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GoF 디자인 패턴에도 포함&lt;/code&gt; )&lt;/p&gt;
+
+  &lt;p&gt;“위키백과 - &lt;a href=&quot;https://ko.wikipedia.org/wiki/전략_패턴&quot;&gt;Strategy Pattern&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;객체지향 프로그래밍 설계를 할 때 자주 발생하는 문제들을 피하기 위해 사용되는 패턴이라고 한다.&lt;/li&gt;
+  &lt;li&gt;위키백과의 설명을 보면 알고리즘의 캡슐화를 통해 실행중에 알고리즘을 바꿔가며 사용하는 방식같다.&lt;/li&gt;
+  &lt;li&gt;Strategy는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의 시스템&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;설정이 각각 다른 여러 모듈&lt;/code&gt;을 사용할 때 설정의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공통 부분&lt;/code&gt;에 이용하면 좋을 것 같다고 생각이 들었다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;예시-코드&quot;&gt;예시 코드&lt;/h3&gt;
+
+&lt;p&gt;클래스 선언시에 parameter가 없으면 클래스 내부 함수 호출, parameter가 있으면 전달받은 함수 호출&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Strategy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Python은 함수도 parameter로 전달하고, 전달받을 수 있다.
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# obj가 있으면 self.getFunction()에 할당
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;Internal Function&apos;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;outFunction1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;External Function 1&apos;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;outFunction2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;External Function 2&apos;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;__main__&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;strategy0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Strategy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;strategy1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Strategy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outFunction1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;strategy2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Strategy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outFunction2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;strategy0: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strategy0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;strategy1: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strategy1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;strategy2: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strategy2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;결과&quot;&gt;결과&lt;/h3&gt;
+
+&lt;p&gt;strategy0, 1, 2의 결과가 각각 다른 것을 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-23-Designe-Pattern-Strategy/%EC%A0%84%EB%9E%B5-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="디자인패턴" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">[Design Pattern] 싱글턴 패턴 (Singleton)</title><link href="https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html" rel="alternate" type="text/html" title="[Design Pattern] 싱글턴 패턴 (Singleton)" /><published>2021-07-21T00:00:00+09:00</published><updated>2021-07-21T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/21/Designe-Pattern-Singleton.html">&lt;hr /&gt;
 
 &lt;h3 id=&quot;설명&quot;&gt;[설명]&lt;/h3&gt;
 
@@ -14,7 +74,7 @@
   &lt;li&gt;위키백과의 설명처럼 특정 객체를 여러곳에서 공유하기 위해서 사용하는 방식같다.&lt;/li&gt;
   &lt;li&gt;Python은 모듈 자체가 Singleton으로 구성되어있다.&lt;br /&gt;
 → 클래스 변수를 생성하면 해당 클래스의 객체가 생성된 어느 곳이던 같은 변수값이 반환된다.&lt;/li&gt;
-  &lt;li&gt;Sigleton은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다크 모드&lt;/code&gt; 같은 시스템 상의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공용 설정&lt;/code&gt;에 이용하면 좋을 것 같다고 생각이 들었다.&lt;/li&gt;
+  &lt;li&gt;Singleton은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다크 모드&lt;/code&gt; 같은 시스템 상의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공용 설정&lt;/code&gt;에 이용하면 좋을 것 같다고 생각이 들었다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;예시-코드&quot;&gt;[예시 코드]&lt;/h3&gt;
@@ -1092,46 +1152,4 @@ A @&amp;gt;a&amp;gt;&amp;gt; B \\
 C @= D
 \end{CD}\]
 
-\[\utilde{AB}\]</content><author><name></name></author><category term="Katex" /><category term="Markdown" /><summary type="html">More colors with less light.</summary></entry><entry><title type="html">Sample post</title><link href="https://jeon-repo.github.io/2020/11/11/sample-post.html" rel="alternate" type="text/html" title="Sample post" /><published>2020-11-11T00:00:00+09:00</published><updated>2020-11-11T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/11/sample-post</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/11/sample-post.html">&lt;p&gt;Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. 
-Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. 
-&lt;!--more--&gt;
-Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
-  &lt;li&gt;Donec a diam lectus&lt;/li&gt;
-  &lt;li&gt;Sed sit amet ipsum mauris&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.&lt;/p&gt;
-
-&lt;p&gt;Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula &lt;em&gt;semper consectetur sagittis&lt;/em&gt;, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.&lt;/p&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-    
-    &lt;div style=&quot;flex: 100.0%&quot;&gt;
-        &lt;img class=&quot;single&quot; src=&quot;/assets/img/pexels/travel.jpeg&quot; alt=&quot;travel.jpeg&quot; /&gt;
-    &lt;/div&gt;
-    
-&lt;/div&gt;
-
-&lt;p&gt;Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Etiam luctus porttitor lorem, sed suscipit est rutrum non. Curabitur lobortis nisl a enim congue semper. Aenean commodo ultrices imperdiet. Vestibulum ut justo vel sapien venenatis tincidunt.&lt;/p&gt;
-
-\[\Theta \ne \Gamma\]
-
-&lt;p&gt;Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. Aliquam ut massa in turpis dapibus convallis. Praesent elit lacus, vestibulum at malesuada et, ornare et est. Ut augue nunc, sodales ut euismod non, adipiscing vitae orci&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. Mauris ut placerat justo. Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices egestas quis ut quam. Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. Cras quis ligula sem, vel elementum mi. Phasellus non ullamcorper urna.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
-
-      &lt;p&gt;&lt;span class=&quot;cit-authors&quot;&gt;John Smith&lt;/span&gt;, &lt;span class=&quot;cit-title&quot;&gt;A Title About Citations&lt;/span&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="A Tag" /><category term="Katex" /><summary type="html">Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</summary></entry></feed>
+\[\utilde{AB}\]</content><author><name></name></author><category term="Katex" /><category term="Markdown" /><summary type="html">More colors with less light.</summary></entry></feed>

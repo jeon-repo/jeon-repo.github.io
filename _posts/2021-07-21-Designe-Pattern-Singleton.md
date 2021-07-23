@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Design Pattern] 싱글턴 (Singleton)"
+title: "[Design Pattern] 싱글턴 패턴 (Singleton)"
 feature-img: "assets/img/feature-img/pink-cloud-moon.jpg"
 author: janos
 tags: [디자인패턴, Algorithm]
