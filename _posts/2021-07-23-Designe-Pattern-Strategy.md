@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Design Pattern] 전략 패턴 (Strategy)"
-feature-img: "assets/img/feature-img/pink-cloud-moon.jpg"
+color: gray
 author: janos
 tags: [디자인패턴, Algorithm]
 ---
