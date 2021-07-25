@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "함수형 프로그래밍(Functional Programming)"
+title: "함수형 프로그래밍 (Functional Programming)-1"
 color: purple
 author: janos
 tags: [디자인패턴, Algorithm]
