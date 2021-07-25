@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-24T23:01:19+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">카카오 코딩 테스트 - 합승 택시 요금</title><link href="https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 합승 택시 요금" /><published>2021-07-24T00:00:00+09:00</published><updated>2021-07-24T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88.html">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-25T23:17:44+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">함수형 프로그래밍(Functional Programming)</title><link href="https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html" rel="alternate" type="text/html" title="함수형 프로그래밍(Functional Programming)" /><published>2021-07-25T00:00:00+09:00</published><updated>2021-07-25T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html">&lt;hr /&gt;
+
+&lt;p&gt;함수형 프로그래밍이란 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;순수 함수(Pure Function)&lt;/code&gt;를 통해 자료 처리를 수학적 함수의 계산으로 취급하고, 상태와 가변 데이터를 멀리하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부작용(Side-Effect)&lt;/code&gt;을 최소화며 프로그래밍하는 패러다임이다.&lt;/p&gt;
+
+&lt;p&gt;이전에 포스팅한 객체지향 프로그래밍과 약간 대조되는 패러다임이라고 생각이 들었다.&lt;/p&gt;
+
+&lt;p&gt;그 주관적인 이유는 아래와 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;객체 단위의 효율적인 처리와 다르게 함수 단위의 독립적인 처리 방식을 고집한다.&lt;/li&gt;
+    &lt;li&gt;일급 객체의 기준이 다음과 같다.&lt;br /&gt;
+ 함수형 - 객체(Object) vs 객체지향 - 함수(Function)&lt;/li&gt;
+    &lt;li&gt;복잡한 구조로 구성되는 객체지향 프로그래밍과 달리 아주x2 간결한 구조로 구성된다.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;📌 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일급 객체&lt;/code&gt;란 다른 객체들에 일반적으로 적용 가능한 연산을 모두 지원하는 객체를 가리킨다. 보통 매개변수로 넘기기, 수정하기, 변수에 대입하기와 같은 연산을 지원할 때 일급 객체라고 한다.&lt;/p&gt;
+
+  &lt;p&gt;“위키백과 - &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%9D%BC%EA%B8%89_%EA%B0%9D%EC%B2%B4&quot;&gt;일급 객체&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;함수형 프로그래밍에는 몇 가지의 특징적인 함수의 형태와 개념이 존재한다.&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#특징적인-함수&quot; id=&quot;markdown-toc-특징적인-함수&quot;&gt;특징적인 함수&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-순수-함수-pure-function&quot; id=&quot;markdown-toc-1-순수-함수-pure-function&quot;&gt;1. 순수 함수 (Pure Function)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-익명-함수-anonymous-function&quot; id=&quot;markdown-toc-2-익명-함수-anonymous-function&quot;&gt;2. 익명 함수 (Anonymous Function)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-고계-함수-higher-order-function&quot; id=&quot;markdown-toc-3-고계-함수-higher-order-function&quot;&gt;3. 고계 함수 (Higher-Order Function)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;특징적인-함수&quot;&gt;특징적인 함수&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-순수-함수-pure-function&quot;&gt;1. 순수 함수 (Pure Function)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;순수 함수&lt;/code&gt;는 함수형 프로그래밍을 하기 위해서 반드시 사용해야하는 함수 형태이며, 아래와 같은 특징이 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부작용(Side-Effect)&lt;/code&gt;이 없는 함수이다.&lt;/li&gt;
+  &lt;li&gt;함수의 &lt;strong&gt;실행&lt;/strong&gt;이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;외부에 영향&lt;/code&gt;을 끼치지 않아야 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동일한 입력 값&lt;/code&gt;을 넣었을 때는 항상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동일한 값을 반환&lt;/code&gt;해야 한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;어디서 호출되는지와 상관없이&lt;/strong&gt; 항상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동일한 값을 반환&lt;/code&gt;해야 한다.&lt;/li&gt;
+  &lt;li&gt;위의 특징들로 인해서 안정적인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;병렬 계산&lt;/code&gt;이 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-익명-함수-anonymous-function&quot;&gt;2. 익명 함수 (Anonymous Function)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;익명 함수&lt;/code&gt;는 이름이 없는 함수를 말한다. &lt;strong&gt;생성 즉시 실행&lt;/strong&gt;되기 때문에 초기화 같은 작업에 효과적으로 사용되는 함수 형태이며, 아래와 같은 특징이 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일회성 함수이다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;선언 이전에 사용될 수 없다.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;📌 Javascript의 경우에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;호이스팅&lt;/code&gt;으로 인해서 선언 이전에도 함수를 사용할 수 있지만, 익명 함수의 경우에는 호이스팅이 적용되지 않아서 선언 이후에 사용해야 한다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;람다(Lambda)식을 통해 익명 함수를 수행할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-고계-함수-higher-order-function&quot;&gt;3. 고계 함수 (Higher-Order Function)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고계 함수&lt;/code&gt; 는 함수 자체도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;값(value)&lt;/code&gt; 으로 취급하여 사용하는 함수 형태이며, 아래와 같은 특징이 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;함수를 다른 함수의 입력 값으로 전달할 수 있다.&lt;/li&gt;
+  &lt;li&gt;함수의 반환 값 역시 함수로 반환할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;📌 함수형 프로그래밍-2 에서 이어서 포스팅 하도록 하겠다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>janos</name></author><category term="디자인패턴" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">카카오 코딩 테스트 - 합승 택시 요금</title><link href="https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 합승 택시 요금" /><published>2021-07-24T00:00:00+09:00</published><updated>2021-07-24T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88.html">&lt;hr /&gt;
 
 &lt;p&gt;2021 KAKAO BLIND RECRUITMENT “합승 택시 요금” 문제를 풀어보겠습니다.&lt;/p&gt;
 
@@ -1190,104 +1265,4 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
     &lt;span class=&quot;c1&quot;&gt;# 문자열의 최소길이 3자를 맞추기 위한 조건
 &lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))])&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">Dark Mode</title><link href="https://jeon-repo.github.io/2020/11/12/dark-mode.html" rel="alternate" type="text/html" title="Dark Mode" /><published>2020-11-12T00:00:00+09:00</published><updated>2020-11-12T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2020/11/12/dark-mode</id><content type="html" xml:base="https://jeon-repo.github.io/2020/11/12/dark-mode.html">&lt;p&gt;&lt;strong&gt;More colors with less light.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Click the half-moon most top-right button to turn the lights on/off.&lt;/p&gt;
-
-&lt;h1 id=&quot;headers&quot;&gt;Headers&lt;/h1&gt;
-&lt;h2 id=&quot;level-2&quot;&gt;Level 2&lt;/h2&gt;
-&lt;h3 id=&quot;level-3&quot;&gt;Level 3&lt;/h3&gt;
-&lt;h4 id=&quot;level-4&quot;&gt;Level 4&lt;/h4&gt;
-&lt;h5 id=&quot;level-5&quot;&gt;Level 5&lt;/h5&gt;
-&lt;h6 id=&quot;level-6&quot;&gt;Level 6&lt;/h6&gt;
-
-&lt;h1 id=&quot;headers-with-links&quot;&gt;&lt;a href=&quot;http://localhost&quot;&gt;Headers with links&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id=&quot;level-2-1&quot;&gt;&lt;a href=&quot;http://localhost&quot;&gt;Level 2&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;level-3-1&quot;&gt;&lt;a href=&quot;http://localhost&quot;&gt;Level 3&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;level-4-1&quot;&gt;&lt;a href=&quot;http://localhost&quot;&gt;Level 4&lt;/a&gt;&lt;/h4&gt;
-&lt;h5 id=&quot;level-5-1&quot;&gt;&lt;a href=&quot;http://localhost&quot;&gt;Level 5&lt;/a&gt;&lt;/h5&gt;
-&lt;h6 id=&quot;level-6-1&quot;&gt;&lt;a href=&quot;http://localhost&quot;&gt;Level 6&lt;/a&gt;&lt;/h6&gt;
-
-&lt;h2 id=&quot;code-highlight&quot;&gt;Code highlight&lt;/h2&gt;
-&lt;p&gt;Mode specific code highlighting themes. &lt;a href=&quot;https://kramdown.gettalong.org/&quot;&gt;Kramdown&lt;/a&gt; which is responsible for the color highlighting may be more limited than your IDE.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-Test file for syntax
-&quot;&quot;&quot;&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# TODO: Use dark mode
-&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; 
-    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NameError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Variable bar is not defined&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;octal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\04&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Example &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__exit__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;exit&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u1111\xFF&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
-    
-    &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;staticmethod&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;il&quot;&gt;2L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;example&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;raw&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;unicode&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;hex&lt;/th&gt;
-      &lt;th&gt;dec&lt;/th&gt;
-      &lt;th&gt;oct&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;A&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-      &lt;td&gt;12&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;F&lt;/td&gt;
-      &lt;td&gt;16&lt;/td&gt;
-      &lt;td&gt;20&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;F5&lt;/td&gt;
-      &lt;td&gt;21&lt;/td&gt;
-      &lt;td&gt;25&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;katex&quot;&gt;KaTeX&lt;/h2&gt;
-
-&lt;p&gt;Some KaTeX diagrams to check in dark mode:&lt;/p&gt;
-
-\[\begin{CD}
-A @&amp;gt;a&amp;gt;&amp;gt; B \\
-@VbVV @AAcA \\
-C @= D
-\end{CD}\]
-
-\[\utilde{AB}\]</content><author><name></name></author><category term="Katex" /><category term="Markdown" /><summary type="html">More colors with less light.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><category term="Algorithm" /><summary type="html"></summary></entry></feed>
