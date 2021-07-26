@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.3.7
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Jeon Repository" href="https://jeon-repo.github.io/feed.xml"/>
+
+    
+
+    <!-- KaTeX 0.13.9 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 8.9.2 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://jeon-repo.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>[카카오 코딩 테스트] - 광고 삽입 | Jeon Repository</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="[카카오 코딩 테스트] - 광고 삽입" />
+<meta name="author" content="janos" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html" />
+<meta property="og:site_name" content="Jeon Repository" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-26T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[카카오 코딩 테스트] - 광고 삽입" />
+<script type="application/ld+json">
+{"url":"https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html","author":{"@type":"Person","name":"janos"},"headline":"[카카오 코딩 테스트] - 광고 삽입","dateModified":"2021-07-26T00:00:00+09:00","datePublished":"2021-07-26T00:00:00+09:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="[카카오 코딩 테스트] - 광고 삽입">
+    <meta name="twitter:description" content="2021 KAKAO BLIND RECRUITMENT “광고 삽입” 문제를 풀어보겠습니다.  여기를 누르면 설명을 건너뛸 수 있습니다.문제 설명카카오TV에서 유명한 크리에이터로 활동 중인 죠르디는 환경 단체로부터 자신의 가장 인기있는 동영상에 지구온난화의 심각성을 알리기 위한 공익광...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
+    <meta name="twitter:image:alt" content="[카카오 코딩 테스트] - 광고 삽입">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/bike.png" />
+		</a>
+        
+        <a class="site-title" aria-label="Jeon Repository" href="/">
+        Jeon Repository
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                     About Me 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                     Portfolio 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="[카카오 코딩 테스트] - 광고 삽입 " aria-label="[카카오 코딩 테스트] - 광고 삽입" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EA%B4%91%EA%B3%A0+%EC%82%BD%EC%9E%85" class="title">[카카오 코딩 테스트] - 광고 삽입</h1>
+      
+
+
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
+    <p class="meta">
+      janos - 
+      
+      July 26, 2021
+    </p></a></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <hr />
+
+<p>2021 KAKAO BLIND RECRUITMENT “광고 삽입” 문제를 풀어보겠습니다.</p>
+
+<blockquote>
+  <p><a href="#solution">여기</a>를 누르면 설명을 건너뛸 수 있습니다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="문제-설명"><strong>문제 설명</strong></h3>
+
+<p><code class="language-plaintext highlighter-rouge">카카오TV</code>에서 유명한 크리에이터로 활동 중인 <code class="language-plaintext highlighter-rouge">죠르디</code>는 환경 단체로부터 자신의 가장 인기있는 동영상에 지구온난화의 심각성을 알리기 위한 공익광고를 넣어 달라는 요청을 받았습니다. 평소에 환경 문제에 관심을 가지고 있던 “죠르디”는 요청을 받아들였고 광고효과를 높이기 위해 시청자들이 가장 많이 보는 구간에 공익광고를 넣으려고 합니다. “죠르디”는 시청자들이 해당 동영상의 어떤 구간을 재생했는 지 알 수 있는 재생구간 기록을 구했고, 해당 기록을 바탕으로 공익광고가 삽입될 최적의 위치를 고를 수 있었습니다.참고로 광고는 재생 중인 동영상의 오른쪽 아래에서 원래 영상과 <code class="language-plaintext highlighter-rouge">동시에 재생되는</code> PIP(Picture in Picture) 형태로 제공됩니다.</p>
+
+<p><img src="/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/2021_kakao_cf_01.png" alt="Result" /></p>
+
+<p>다음은 “죠르디”가 공익광고가 삽입될 최적의 위치를 고르는 과정을 그림으로 설명한 것입니다.</p>
+
+<p><img src="/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/2021_kakao_cf_02.png" alt="Result" /></p>
+
+<ul>
+  <li>그림의 파란색 선은 광고를 검토 중인 “죠르디” 동영상의 전체 재생 구간을 나타냅니다.
+    <ul>
+      <li>위 그림에서, “죠르디” 동영상의 총 재생시간은 <code class="language-plaintext highlighter-rouge">02시간 03분 55초</code> 입니다.</li>
+    </ul>
+  </li>
+  <li>그림의 검은색 선들은 각 시청자들이 “죠르디”의 동영상을 재생한 구간의 위치를 표시하고 있습니다.
+    <ul>
+      <li>검은색 선의 가운데 숫자는 각 재생 기록을 구분하는 ID를 나타냅니다.</li>
+      <li>검은색 선에 표기된 왼쪽 끝 숫자와 오른쪽 끝 숫자는 시청자들이 재생한 동영상 구간의 시작 시각과 종료 시각을 나타냅니다.</li>
+      <li>위 그림에서, 3번 재생 기록은 <code class="language-plaintext highlighter-rouge">00시 25분 50초</code> 부터 <code class="language-plaintext highlighter-rouge">00시 48분 29초</code> 까지 총 <code class="language-plaintext highlighter-rouge">00시간 22분 39초</code> 동안 죠르디의 동영상을 재생했습니다.</li>
+      <li>위 그림에서, 1번 재생 기록은 <code class="language-plaintext highlighter-rouge">01시 20분 15초</code> 부터 <code class="language-plaintext highlighter-rouge">01시 45분 14초</code> 까지 총 <code class="language-plaintext highlighter-rouge">00시간 24분 59초</code> 동안 죠르디의 동영상을 재생했습니다.</li>
+    </ul>
+  </li>
+  <li>그림의 빨간색 선은 “죠르디”가 선택한 최적의 공익광고 위치를 나타냅니다.
+    <ul>
+      <li>만약 공익광고의 재생시간이 <code class="language-plaintext highlighter-rouge">00시간 14분 15초</code>라면, 위의 그림처럼 <code class="language-plaintext highlighter-rouge">01시 30분 59초</code> 부터 <code class="language-plaintext highlighter-rouge">01시 45분 14초</code> 까지 공익광고를 삽입하는 것이 가장 좋습니다. 이 구간을 시청한 시청자들의 누적 재생시간이 가장 크기 때문입니다.</li>
+      <li><code class="language-plaintext highlighter-rouge">01시 30분 59초</code> 부터 <code class="language-plaintext highlighter-rouge">01시 45분 14초</code> 까지의 누적 재생시간은 다음과 같이 계산됩니다.
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">01시 30분 59초</code> 부터 <code class="language-plaintext highlighter-rouge">01시 37분 44초</code> 까지 : 4번, 1번 재생 기록이 두차례 있으므로 재생시간의 합은 <code class="language-plaintext highlighter-rouge">00시간 06분 45초</code> X 2 = <code class="language-plaintext highlighter-rouge">00시간 13분 30초</code></li>
+          <li><code class="language-plaintext highlighter-rouge">01시 37분 44초</code> 부터 <code class="language-plaintext highlighter-rouge">01시 45분 14초</code> 까지 : 4번, 1번, 5번 재생 기록이 세차례 있으므로 재생시간의 합은 <code class="language-plaintext highlighter-rouge">00시간 07분 30초</code> X 3 = <code class="language-plaintext highlighter-rouge">00시간 22분 30초</code></li>
+          <li>따라서, 이 구간 시청자들의 누적 재생시간은 <code class="language-plaintext highlighter-rouge">00시간 13분 30초</code> + <code class="language-plaintext highlighter-rouge">00시간 22분 30초</code> = <code class="language-plaintext highlighter-rouge">00시간 36분 00초</code>입니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="문제"><strong>[문제]</strong></h3>
+
+<p>“죠르디”의 동영상 재생시간 길이 play_time, 공익광고의 재생시간 길이 adv_time, 시청자들이 해당 동영상을 재생했던 구간 정보 logs가 매개변수로 주어질 때, 시청자들의 누적 재생시간이 가장 많이 나오는 곳에 공익광고를 삽입하려고 합니다. 이때, 공익광고가 들어갈 <code class="language-plaintext highlighter-rouge">시작 시각</code>을 구해서 return 하도록 solution 함수를 완성해주세요. 만약, 시청자들의 누적 재생시간이 가장 많은 곳이 여러 곳이라면, 그 중에서 <code class="language-plaintext highlighter-rouge">가장 빠른 시작 시각</code>을 return 하도록 합니다.</p>
+
+<h3 id="제한사항"><strong>[제한사항]</strong></h3>
+
+<ul>
+  <li>play_time, adv_time은 길이 8로 고정된 문자열입니다.
+    <ul>
+      <li>play_time, adv_time은 <code class="language-plaintext highlighter-rouge">HH:MM:SS</code> 형식이며, <code class="language-plaintext highlighter-rouge">00:00:01</code> 이상 <code class="language-plaintext highlighter-rouge">99:59:59</code> 이하입니다.</li>
+      <li>즉, 동영상 재생시간과 공익광고 재생시간은 <code class="language-plaintext highlighter-rouge">00시간 00분 01초</code> 이상 <code class="language-plaintext highlighter-rouge">99시간 59분 59초</code> 이하입니다.</li>
+      <li>공익광고 재생시간은 동영상 재생시간보다 짧거나 같게 주어집니다.</li>
+    </ul>
+  </li>
+  <li>logs는 크기가 1 이상 300,000 이하인 문자열 배열입니다.
+    <ul>
+      <li>logs 배열의 각 원소는 시청자의 재생 구간을 나타냅니다.</li>
+      <li>logs 배열의 각 원소는 길이가 17로 고정된 문자열입니다.</li>
+      <li>logs 배열의 각 원소는 <code class="language-plaintext highlighter-rouge">H1:M1:S1-H2:M2:S2</code> 형식입니다.
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">H1:M1:S1</code>은 동영상이 시작된 시각, <code class="language-plaintext highlighter-rouge">H2:M2:S2</code>는 동영상이 종료된 시각을 나타냅니다.</li>
+          <li><code class="language-plaintext highlighter-rouge">H1:M1:S1</code>는 <code class="language-plaintext highlighter-rouge">H2:M2:S2</code>보다 1초 이상 이전 시각으로 주어집니다.</li>
+          <li><code class="language-plaintext highlighter-rouge">H1:M1:S1</code>와 <code class="language-plaintext highlighter-rouge">H2:M2:S2</code>는 play_time 이내의 시각입니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>시간을 나타내는 <code class="language-plaintext highlighter-rouge">HH, H1, H2</code>의 범위는 00~99, 분을 나타내는 <code class="language-plaintext highlighter-rouge">MM, M1, M2</code>의 범위는 00~59, 초를 나타내는 <code class="language-plaintext highlighter-rouge">SS, S1, S2</code>의 범위는 00~59까지 사용됩니다. 잘못된 시각은 입력으로 주어지지 않습니다. (예: <code class="language-plaintext highlighter-rouge">04:60:24</code>, <code class="language-plaintext highlighter-rouge">11:12:78</code>, <code class="language-plaintext highlighter-rouge">123:12:45</code> 등)</li>
+  <li>return 값의 형식
+    <ul>
+      <li>공익광고를 삽입할 시각을 <code class="language-plaintext highlighter-rouge">HH:MM:SS</code> 형식의 8자리 문자열로 반환합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예"><strong>[입출력 예]</strong></h3>
+
+<h3 id="입출력-예에-대한-설명"><strong>입출력 예에 대한 설명</strong></h3>
+
+<hr />
+
+<p><strong>입출력 예 #1</strong>문제 예시와 같습니다.</p>
+
+<p><strong>입출력 예 #2</strong></p>
+
+<p><img src="/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/2021_kakao_cf_03.png" alt="Result" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">01:00:00</code>에 공익광고를 삽입하면 <code class="language-plaintext highlighter-rouge">26:00:00</code>까지 재생되며, 이곳이 가장 좋은 위치입니다. 이 구간의 시청자 누적 재생시간은 다음과 같습니다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">01:00:00-11:00:00</code> : 해당 구간이 1회(2번 기록) 재생되었으므로 누적 재생시간은 <code class="language-plaintext highlighter-rouge">10시간 00분 00초</code> 입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">11:00:00-21:00:00</code> : 해당 구간이 2회(2번, 4번 기록) 재생되었으므로 누적 재생시간은 <code class="language-plaintext highlighter-rouge">20시간 00분 00초</code> 입니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">21:00:00-26:00:00</code> : 해당 구간이 1회(4번 기록) 재생되었으므로 누적 재생시간은 <code class="language-plaintext highlighter-rouge">05시간 00분 00초</code> 입니다.</li>
+  <li>따라서, 이 구간의 시청자 누적 재생시간은 <code class="language-plaintext highlighter-rouge">10시간 00분 00초</code> + <code class="language-plaintext highlighter-rouge">20시간 00분 00초</code> + <code class="language-plaintext highlighter-rouge">05시간 00분 00초</code> = <code class="language-plaintext highlighter-rouge">35시간 00분 00초</code> 입니다.</li>
+  <li>초록색으로 표시된 구간(<code class="language-plaintext highlighter-rouge">69:59:59-94:59:59</code>)에 광고를 삽입해도 동일한 결과를 얻을 수 있으나, <code class="language-plaintext highlighter-rouge">01:00:00</code>이 <code class="language-plaintext highlighter-rouge">69:59:59</code> 보다 빠른 시각이므로, <code class="language-plaintext highlighter-rouge">"01:00:00"</code>을 return 합니다.</li>
+</ul>
+
+<p><strong>입출력 예 #3</strong></p>
+
+<p><img src="/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/2021_kakao_cf_04.png" alt="Result" /></p>
+
+<p>동영상 재생시간과 공익광고 재생시간이 같으므로, 삽입할 수 있는 위치는 맨 처음(<code class="language-plaintext highlighter-rouge">00:00:00</code>)이 유일합니다.</p>
+
+<hr />
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">동영상 재생시간 = 재생이 종료된 시각 - 재생이 시작된 시각</code>(예를 들어, <code class="language-plaintext highlighter-rouge">00시 00분 01초</code>부터 <code class="language-plaintext highlighter-rouge">00시 00분 10초</code>까지 동영상이 재생되었다면, 동영상 재생시간은 <code class="language-plaintext highlighter-rouge">9초</code> 입니다.)</li>
+</ol>
+
+<hr />
+
+<h1 id="solution">Solution</h1>
+
+<h3 id="문제-이해">[문제 이해]</h3>
+
+<ul>
+  <li>우선 시간 계산을 효율적으로 하기 위해서 시, 분 단위를 초로 변경해야 겠다고 생각했다.</li>
+  <li>로그 데이터의 합집합을 구하는 방식이 좋은 접근이라고 생각했다.</li>
+  <li>리스트(배열)로 전체 영상 길이 구조를 만들어서 연산을 진행해야 한다고 생각이 들었다.</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>로그 데이터의 합집합을 따로 구하기 보다는 리스트(배열) 구조에 시청자 수를 매핑하는 방식이 효율적</li>
+    <li>리스트(배열) 구조를  잘 정제하여 브루트 포스 사용</li>
+    <li>결과는 영상 구간중 시청자 수가 가장 많은 구간</li>
+  </ul>
+</blockquote>
+
+<h3 id="코드">[코드]</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">play_time</span><span class="p">,</span> <span class="n">adv_time</span><span class="p">,</span> <span class="n">logs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">play_time</span> <span class="o">==</span> <span class="n">adv_time</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">'00:00:00'</span>
+
+    <span class="c1"># 문자열 시간 -&gt; 인트형 초단위
+</span>    <span class="n">str_to_int</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">:]))</span>
+    <span class="c1"># 인트형 초단위 -&gt; 문자열 시간
+</span>    <span class="n">int_to_str</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">//</span> <span class="mi">3600</span><span class="p">).</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s">:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3600</span> <span class="o">//</span> <span class="mi">60</span><span class="p">).</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s">:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">3600</span> <span class="o">%</span> <span class="mi">60</span><span class="p">).</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s">'</span>
+
+    <span class="c1"># 영상 전체 길이 초단위 변환
+</span>    <span class="n">playSec</span> <span class="o">=</span> <span class="n">str_to_int</span><span class="p">(</span><span class="n">play_time</span><span class="p">)</span>
+    <span class="c1"># 광고 길이 초단위 변환
+</span>    <span class="n">advSec</span> <span class="o">=</span> <span class="n">str_to_int</span><span class="p">(</span><span class="n">adv_time</span><span class="p">)</span>
+    <span class="c1"># 영상 전체 길이 구조 생성
+</span>    <span class="n">total</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">playSec</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+
+    <span class="c1"># 시청 기록 시작, 끝 시간을 영상 전체 길이 구조에 기록
+</span>    <span class="k">for</span> <span class="n">log</span> <span class="ow">in</span> <span class="n">logs</span><span class="p">:</span>
+        <span class="n">s_l</span><span class="p">,</span> <span class="n">e_l</span> <span class="o">=</span> <span class="n">log</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'-'</span><span class="p">)</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">str_to_int</span><span class="p">(</span><span class="n">s_l</span><span class="p">)</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">str_to_int</span><span class="p">(</span><span class="n">e_l</span><span class="p">)</span>
+        <span class="n">total</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">total</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="c1"># 시청자 수를 영상 길이 구조에 기록
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">playSec</span><span class="p">):</span>
+        <span class="n">total</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">total</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">new_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">total</span><span class="p">[:</span><span class="n">advSec</span><span class="p">])</span>
+    <span class="c1"># 광고 영상 길이동안 총 시청자 수
+</span>    <span class="n">max_sum</span> <span class="o">=</span> <span class="n">new_sum</span>
+    <span class="c1"># 총 시청자 수가 max인 인덱스
+</span>    <span class="n">max_idx</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># 광고 영상 끝 시간 ~ 영상 전체 길이 구간동안 반복
+</span>    <span class="c1"># -&gt; new_sum을 구하며 광고 영상 끝 시간 이전은 연산 했기 때문에 제외
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">advSec</span><span class="p">,</span> <span class="n">playSec</span><span class="p">):</span>
+        <span class="c1"># 인덱스 1칸 이동하며 시청자 수 계산
+</span>        <span class="n">new_sum</span> <span class="o">=</span> <span class="n">new_sum</span> <span class="o">+</span> <span class="n">total</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">total</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">advSec</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">max_sum</span> <span class="o">&lt;</span> <span class="n">new_sum</span><span class="p">:</span>
+            <span class="n">max_sum</span> <span class="o">=</span> <span class="n">new_sum</span>
+            <span class="n">max_idx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">advSec</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">int_to_str</span><span class="p">(</span><span class="n">max_idx</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<h3 id="여담">[여담]</h3>
+
+<p>다른 사람의 풀이를 보았을 때, 대부분 비슷한 방식으로 문제를 해결했다.</p>
+
+<p>점점 브루트 포스 유형의 문제에 익숙해지고 있는 느낌이 들었다.</p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EA%B4%91%EA%B3%A0+%EC%82%BD%EC%9E%85%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F07%2F26%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-%25EC%25BD%2594%25EB%2594%25A9%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8-%25EA%25B4%2591%25EA%25B3%25A0-%25EC%2582%25BD%25EC%259E%2585.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html&quote=%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EA%B4%91%EA%B3%A0+%EC%82%BD%EC%9E%85%20%7C%20Jeon+Repository&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html&media=$description=%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html&title=%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EA%B4%91%EA%B3%A0+%EC%82%BD%EC%9E%85%20%7C%20Jeon+Repository"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html&title=%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EA%B4%91%EA%B3%A0+%EC%82%BD%EC%9E%85%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=[카카오 코딩 테스트] - 광고 삽입%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/tags#Algorithm">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Algorithm</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#Python">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Python</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#%EC%B9%B4%EC%B9%B4%EC%98%A4">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 카카오</p>
+        </a></li>
+      
+        <li><a class="button" href="/tags#%EC%BD%94%ED%85%8C">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 코테</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="함수형 프로그래밍 (Functional Programming)-1" href="/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html">
+            <p>다음 포스트</p>
+            함수형 프로그래밍 (Functional Programming)-1
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  
+  
+  
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Copyright 2021. jeon-repo all rights reserved.
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/sylhare"
+               title="Follow on Github"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>

@@ -1,4 +1,199 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-25T23:19:51+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">함수형 프로그래밍(Functional Programming)</title><link href="https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html" rel="alternate" type="text/html" title="함수형 프로그래밍(Functional Programming)" /><published>2021-07-25T00:00:00+09:00</published><updated>2021-07-25T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-07-26T23:15:47+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle></subtitle><entry><title type="html">[카카오 코딩 테스트] - 광고 삽입</title><link href="https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html" rel="alternate" type="text/html" title="[카카오 코딩 테스트] - 광고 삽입" /><published>2021-07-26T00:00:00+09:00</published><updated>2021-07-26T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/26/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85.html">&lt;hr /&gt;
+
+&lt;p&gt;2021 KAKAO BLIND RECRUITMENT “광고 삽입” 문제를 풀어보겠습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;#solution&quot;&gt;여기&lt;/a&gt;를 누르면 설명을 건너뛸 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;문제-설명&quot;&gt;&lt;strong&gt;문제 설명&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;카카오TV&lt;/code&gt;에서 유명한 크리에이터로 활동 중인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;죠르디&lt;/code&gt;는 환경 단체로부터 자신의 가장 인기있는 동영상에 지구온난화의 심각성을 알리기 위한 공익광고를 넣어 달라는 요청을 받았습니다. 평소에 환경 문제에 관심을 가지고 있던 “죠르디”는 요청을 받아들였고 광고효과를 높이기 위해 시청자들이 가장 많이 보는 구간에 공익광고를 넣으려고 합니다. “죠르디”는 시청자들이 해당 동영상의 어떤 구간을 재생했는 지 알 수 있는 재생구간 기록을 구했고, 해당 기록을 바탕으로 공익광고가 삽입될 최적의 위치를 고를 수 있었습니다.참고로 광고는 재생 중인 동영상의 오른쪽 아래에서 원래 영상과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동시에 재생되는&lt;/code&gt; PIP(Picture in Picture) 형태로 제공됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/2021_kakao_cf_01.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음은 “죠르디”가 공익광고가 삽입될 최적의 위치를 고르는 과정을 그림으로 설명한 것입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/2021_kakao_cf_02.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;그림의 파란색 선은 광고를 검토 중인 “죠르디” 동영상의 전체 재생 구간을 나타냅니다.
+    &lt;ul&gt;
+      &lt;li&gt;위 그림에서, “죠르디” 동영상의 총 재생시간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;02시간 03분 55초&lt;/code&gt; 입니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그림의 검은색 선들은 각 시청자들이 “죠르디”의 동영상을 재생한 구간의 위치를 표시하고 있습니다.
+    &lt;ul&gt;
+      &lt;li&gt;검은색 선의 가운데 숫자는 각 재생 기록을 구분하는 ID를 나타냅니다.&lt;/li&gt;
+      &lt;li&gt;검은색 선에 표기된 왼쪽 끝 숫자와 오른쪽 끝 숫자는 시청자들이 재생한 동영상 구간의 시작 시각과 종료 시각을 나타냅니다.&lt;/li&gt;
+      &lt;li&gt;위 그림에서, 3번 재생 기록은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시 25분 50초&lt;/code&gt; 부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시 48분 29초&lt;/code&gt; 까지 총 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 22분 39초&lt;/code&gt; 동안 죠르디의 동영상을 재생했습니다.&lt;/li&gt;
+      &lt;li&gt;위 그림에서, 1번 재생 기록은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 20분 15초&lt;/code&gt; 부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 45분 14초&lt;/code&gt; 까지 총 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 24분 59초&lt;/code&gt; 동안 죠르디의 동영상을 재생했습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그림의 빨간색 선은 “죠르디”가 선택한 최적의 공익광고 위치를 나타냅니다.
+    &lt;ul&gt;
+      &lt;li&gt;만약 공익광고의 재생시간이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 14분 15초&lt;/code&gt;라면, 위의 그림처럼 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 30분 59초&lt;/code&gt; 부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 45분 14초&lt;/code&gt; 까지 공익광고를 삽입하는 것이 가장 좋습니다. 이 구간을 시청한 시청자들의 누적 재생시간이 가장 크기 때문입니다.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 30분 59초&lt;/code&gt; 부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 45분 14초&lt;/code&gt; 까지의 누적 재생시간은 다음과 같이 계산됩니다.
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 30분 59초&lt;/code&gt; 부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 37분 44초&lt;/code&gt; 까지 : 4번, 1번 재생 기록이 두차례 있으므로 재생시간의 합은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 06분 45초&lt;/code&gt; X 2 = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 13분 30초&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 37분 44초&lt;/code&gt; 부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01시 45분 14초&lt;/code&gt; 까지 : 4번, 1번, 5번 재생 기록이 세차례 있으므로 재생시간의 합은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 07분 30초&lt;/code&gt; X 3 = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 22분 30초&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;따라서, 이 구간 시청자들의 누적 재생시간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 13분 30초&lt;/code&gt; + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 22분 30초&lt;/code&gt; = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 36분 00초&lt;/code&gt;입니다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;문제&quot;&gt;&lt;strong&gt;[문제]&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;“죠르디”의 동영상 재생시간 길이 play_time, 공익광고의 재생시간 길이 adv_time, 시청자들이 해당 동영상을 재생했던 구간 정보 logs가 매개변수로 주어질 때, 시청자들의 누적 재생시간이 가장 많이 나오는 곳에 공익광고를 삽입하려고 합니다. 이때, 공익광고가 들어갈 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시작 시각&lt;/code&gt;을 구해서 return 하도록 solution 함수를 완성해주세요. 만약, 시청자들의 누적 재생시간이 가장 많은 곳이 여러 곳이라면, 그 중에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가장 빠른 시작 시각&lt;/code&gt;을 return 하도록 합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;제한사항&quot;&gt;&lt;strong&gt;[제한사항]&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;play_time, adv_time은 길이 8로 고정된 문자열입니다.
+    &lt;ul&gt;
+      &lt;li&gt;play_time, adv_time은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HH:MM:SS&lt;/code&gt; 형식이며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00:00:01&lt;/code&gt; 이상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;99:59:59&lt;/code&gt; 이하입니다.&lt;/li&gt;
+      &lt;li&gt;즉, 동영상 재생시간과 공익광고 재생시간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시간 00분 01초&lt;/code&gt; 이상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;99시간 59분 59초&lt;/code&gt; 이하입니다.&lt;/li&gt;
+      &lt;li&gt;공익광고 재생시간은 동영상 재생시간보다 짧거나 같게 주어집니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;logs는 크기가 1 이상 300,000 이하인 문자열 배열입니다.
+    &lt;ul&gt;
+      &lt;li&gt;logs 배열의 각 원소는 시청자의 재생 구간을 나타냅니다.&lt;/li&gt;
+      &lt;li&gt;logs 배열의 각 원소는 길이가 17로 고정된 문자열입니다.&lt;/li&gt;
+      &lt;li&gt;logs 배열의 각 원소는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;H1:M1:S1-H2:M2:S2&lt;/code&gt; 형식입니다.
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;H1:M1:S1&lt;/code&gt;은 동영상이 시작된 시각, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;H2:M2:S2&lt;/code&gt;는 동영상이 종료된 시각을 나타냅니다.&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;H1:M1:S1&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;H2:M2:S2&lt;/code&gt;보다 1초 이상 이전 시각으로 주어집니다.&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;H1:M1:S1&lt;/code&gt;와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;H2:M2:S2&lt;/code&gt;는 play_time 이내의 시각입니다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;시간을 나타내는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HH, H1, H2&lt;/code&gt;의 범위는 00~99, 분을 나타내는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MM, M1, M2&lt;/code&gt;의 범위는 00~59, 초를 나타내는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SS, S1, S2&lt;/code&gt;의 범위는 00~59까지 사용됩니다. 잘못된 시각은 입력으로 주어지지 않습니다. (예: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;04:60:24&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;11:12:78&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;123:12:45&lt;/code&gt; 등)&lt;/li&gt;
+  &lt;li&gt;return 값의 형식
+    &lt;ul&gt;
+      &lt;li&gt;공익광고를 삽입할 시각을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HH:MM:SS&lt;/code&gt; 형식의 8자리 문자열로 반환합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;입출력-예&quot;&gt;&lt;strong&gt;[입출력 예]&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;입출력-예에-대한-설명&quot;&gt;&lt;strong&gt;입출력 예에 대한 설명&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;입출력 예 #1&lt;/strong&gt;문제 예시와 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;입출력 예 #2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/2021_kakao_cf_03.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01:00:00&lt;/code&gt;에 공익광고를 삽입하면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;26:00:00&lt;/code&gt;까지 재생되며, 이곳이 가장 좋은 위치입니다. 이 구간의 시청자 누적 재생시간은 다음과 같습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01:00:00-11:00:00&lt;/code&gt; : 해당 구간이 1회(2번 기록) 재생되었으므로 누적 재생시간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10시간 00분 00초&lt;/code&gt; 입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;11:00:00-21:00:00&lt;/code&gt; : 해당 구간이 2회(2번, 4번 기록) 재생되었으므로 누적 재생시간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;20시간 00분 00초&lt;/code&gt; 입니다.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;21:00:00-26:00:00&lt;/code&gt; : 해당 구간이 1회(4번 기록) 재생되었으므로 누적 재생시간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;05시간 00분 00초&lt;/code&gt; 입니다.&lt;/li&gt;
+  &lt;li&gt;따라서, 이 구간의 시청자 누적 재생시간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10시간 00분 00초&lt;/code&gt; + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;20시간 00분 00초&lt;/code&gt; + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;05시간 00분 00초&lt;/code&gt; = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;35시간 00분 00초&lt;/code&gt; 입니다.&lt;/li&gt;
+  &lt;li&gt;초록색으로 표시된 구간(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;69:59:59-94:59:59&lt;/code&gt;)에 광고를 삽입해도 동일한 결과를 얻을 수 있으나, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;01:00:00&lt;/code&gt;이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;69:59:59&lt;/code&gt; 보다 빠른 시각이므로, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;01:00:00&quot;&lt;/code&gt;을 return 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;입출력 예 #3&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/2021_kakao_cf_04.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;동영상 재생시간과 공익광고 재생시간이 같으므로, 삽입할 수 있는 위치는 맨 처음(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00:00:00&lt;/code&gt;)이 유일합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동영상 재생시간 = 재생이 종료된 시각 - 재생이 시작된 시각&lt;/code&gt;(예를 들어, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시 00분 01초&lt;/code&gt;부터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;00시 00분 10초&lt;/code&gt;까지 동영상이 재생되었다면, 동영상 재생시간은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;9초&lt;/code&gt; 입니다.)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;solution&quot;&gt;Solution&lt;/h1&gt;
+
+&lt;h3 id=&quot;문제-이해&quot;&gt;[문제 이해]&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;우선 시간 계산을 효율적으로 하기 위해서 시, 분 단위를 초로 변경해야 겠다고 생각했다.&lt;/li&gt;
+  &lt;li&gt;로그 데이터의 합집합을 구하는 방식이 좋은 접근이라고 생각했다.&lt;/li&gt;
+  &lt;li&gt;리스트(배열)로 전체 영상 길이 구조를 만들어서 연산을 진행해야 한다고 생각이 들었다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;로그 데이터의 합집합을 따로 구하기 보다는 리스트(배열) 구조에 시청자 수를 매핑하는 방식이 효율적&lt;/li&gt;
+    &lt;li&gt;리스트(배열) 구조를  잘 정제하여 브루트 포스 사용&lt;/li&gt;
+    &lt;li&gt;결과는 영상 구간중 시청자 수가 가장 많은 구간&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;코드&quot;&gt;[코드]&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;play_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adv_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;play_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adv_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;00:00:00&apos;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# 문자열 시간 -&amp;gt; 인트형 초단위
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;str_to_int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]))&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 인트형 초단위 -&amp;gt; 문자열 시간
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;int_to_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zfill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zfill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zfill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# 영상 전체 길이 초단위 변환
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;playSec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str_to_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;play_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 광고 길이 초단위 변환
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;advSec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str_to_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adv_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 영상 전체 길이 구조 생성
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playSec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# 시청 기록 시작, 끝 시간을 영상 전체 길이 구조에 기록
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;s_l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e_l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;-&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str_to_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s_l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str_to_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e_l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# 시청자 수를 영상 길이 구조에 기록
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;playSec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;new_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;advSec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 광고 영상 길이동안 총 시청자 수
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;max_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_sum&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 총 시청자 수가 max인 인덱스
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;max_idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# 광고 영상 끝 시간 ~ 영상 전체 길이 구간동안 반복
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# -&amp;gt; new_sum을 구하며 광고 영상 끝 시간 이전은 연산 했기 때문에 제외
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;advSec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;playSec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# 인덱스 1칸 이동하며 시청자 수 계산
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;new_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;advSec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;max_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_sum&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;max_idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;advSec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int_to_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;여담&quot;&gt;[여담]&lt;/h3&gt;
+
+&lt;p&gt;다른 사람의 풀이를 보았을 때, 대부분 비슷한 방식으로 문제를 해결했다.&lt;/p&gt;
+
+&lt;p&gt;점점 브루트 포스 유형의 문제에 익숙해지고 있는 느낌이 들었다.&lt;/p&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">함수형 프로그래밍 (Functional Programming)-1</title><link href="https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html" rel="alternate" type="text/html" title="함수형 프로그래밍 (Functional Programming)-1" /><published>2021-07-25T00:00:00+09:00</published><updated>2021-07-25T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html">&lt;hr /&gt;
 
 &lt;p&gt;함수형 프로그래밍이란 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;순수 함수(Pure Function)&lt;/code&gt;를 통해 자료 처리를 수학적 함수의 계산으로 취급하고, 상태와 가변 데이터를 멀리하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부작용(Side-Effect)&lt;/code&gt;을 최소화며 프로그래밍하는 패러다임이다.&lt;/p&gt;
 
@@ -73,7 +268,7 @@
 
 &lt;blockquote&gt;
   &lt;p&gt;📌 함수형 프로그래밍-2 에서 이어서 포스팅 하도록 하겠다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>janos</name></author><category term="디자인패턴" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">카카오 코딩 테스트 - 합승 택시 요금</title><link href="https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 합승 택시 요금" /><published>2021-07-24T00:00:00+09:00</published><updated>2021-07-24T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88.html">&lt;hr /&gt;
+&lt;/blockquote&gt;</content><author><name>janos</name></author><category term="디자인패턴" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">[카카오 코딩 테스트] - 합승 택시 요금</title><link href="https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88.html" rel="alternate" type="text/html" title="[카카오 코딩 테스트] - 합승 택시 요금" /><published>2021-07-24T00:00:00+09:00</published><updated>2021-07-24T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/24/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88.html">&lt;hr /&gt;
 
 &lt;p&gt;2021 KAKAO BLIND RECRUITMENT “합승 택시 요금” 문제를 풀어보겠습니다.&lt;/p&gt;
 
@@ -396,7 +591,7 @@
 
 &lt;p&gt;객체를 2번 생성시 최초 생성한 객체(1번)와 동일한 객체를 반환 받은 것을 확인할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-21-Designe-Pattern-Singleton/%EC%8B%B1%EA%B8%80%ED%84%B4-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="디자인패턴" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">카카오 코딩 테스트 - 순위 검색</title><link href="https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 순위 검색" /><published>2021-07-20T00:00:00+09:00</published><updated>2021-07-20T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89.html">&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-21-Designe-Pattern-Singleton/%EC%8B%B1%EA%B8%80%ED%84%B4-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="디자인패턴" /><category term="Algorithm" /><summary type="html"></summary></entry><entry><title type="html">[카카오 코딩 테스트] - 순위 검색</title><link href="https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89.html" rel="alternate" type="text/html" title="[카카오 코딩 테스트] - 순위 검색" /><published>2021-07-20T00:00:00+09:00</published><updated>2021-07-20T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/20/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89.html">&lt;hr /&gt;
 
 &lt;p&gt;2021 KAKAO BLIND RECRUITMENT “메뉴 리뉴얼” 문제를 풀어보겠습니다.&lt;/p&gt;
 
@@ -820,7 +1015,7 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
 &lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>janos</name></author><category term="Python" /><category term="자료구조" /><category term="기본기" /><summary type="html"></summary></entry><entry><title type="html">카카오 코딩 테스트 - 메뉴 리뉴얼</title><link href="https://jeon-repo.github.io/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 메뉴 리뉴얼" /><published>2021-07-14T00:00:00+09:00</published><updated>2021-07-14T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC.html">&lt;hr /&gt;
+&lt;/ul&gt;</content><author><name>janos</name></author><category term="Python" /><category term="자료구조" /><category term="기본기" /><summary type="html"></summary></entry><entry><title type="html">[카카오 코딩 테스트] - 메뉴 리뉴얼</title><link href="https://jeon-repo.github.io/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC.html" rel="alternate" type="text/html" title="[카카오 코딩 테스트] - 메뉴 리뉴얼" /><published>2021-07-14T00:00:00+09:00</published><updated>2021-07-14T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/14/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC.html">&lt;hr /&gt;
 
 &lt;p&gt;2021 KAKAO BLIND RECRUITMENT “메뉴 리뉴얼” 문제를 풀어보겠습니다.&lt;/p&gt;
 
@@ -1145,124 +1340,4 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
 
 &lt;p&gt;실행 카운트 3일 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3으로 매수 완료&lt;/code&gt;, 6일 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;6으로 매도 완료&lt;/code&gt;, 7일 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;종료&lt;/code&gt;가 출력되고 모든 프로세스가 종료된다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-13-%ED%81%90-Queue/%EA%B5%AC%EC%A1%B0001-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="자료구조" /><category term="알고리즘" /><category term="기본기" /><summary type="html"></summary></entry><entry><title type="html">카카오 코딩 테스트 - 신규 아이디 추천</title><link href="https://jeon-repo.github.io/2021/07/10/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EC%95%84%EC%9D%B4%EB%94%94-%EB%AC%B8%EC%A0%9C.html" rel="alternate" type="text/html" title="카카오 코딩 테스트 - 신규 아이디 추천" /><published>2021-07-10T00:00:00+09:00</published><updated>2021-07-10T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/10/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EC%95%84%EC%9D%B4%EB%94%94-%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/10/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%8B%A0%EA%B7%9C-%EC%95%84%EC%9D%B4%EB%94%94-%EB%AC%B8%EC%A0%9C.html">&lt;hr /&gt;
-
-&lt;p&gt;2021 KAKAO BLIND RECRUITMENT “신규 아이디 추천” 문제를 풀어보겠습니다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;#solution&quot;&gt;여기&lt;/a&gt;를 누르면 설명을 건너뛸 수 있습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;문제-설명&quot;&gt;[문제 설명]&lt;/h3&gt;
-
-&lt;p&gt;카카오에 입사한 신입 개발자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;네오&lt;/code&gt;는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;카카오계정개발팀&quot;&lt;/code&gt;에 배치되어, 카카오 서비스에 가입하는 유저들의 아이디를 생성하는 업무를 담당하게 되었습니다. “네오”에게 주어진 첫 업무는 새로 가입하는 유저들이 카카오 아이디 규칙에 맞지 않는 아이디를 입력했을 때, 입력된 아이디와 유사하면서 규칙에 맞는 아이디를 추천해주는 프로그램을 개발하는 것입니다.
-다음은 카카오 아이디의 규칙입니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 아이디의 길이는 3자 이상 15자 이하여야 합니다.
-- 아이디는 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.) 문자만 사용할 수 있습니다.
-- 단, 마침표(.)는 처음과 끝에 사용할 수 없으며 또한 연속으로 사용할 수 없습니다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;“네오”는 다음과 같이 7단계의 순차적인 처리 과정을 통해 신규 유저가 입력한 아이디가 카카오 아이디 규칙에 맞는 지 검사하고 규칙에 맞지 않은 경우 규칙에 맞는 새로운 아이디를 추천해 주려고 합니다.
-신규 유저가 입력한 아이디가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new_id&lt;/code&gt; 라고 한다면,&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다.
-2단계 new_id에서 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를 제외한 모든 문자를 제거합니다.
-3단계 new_id에서 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환합니다.
-4단계 new_id에서 마침표(.)가 처음이나 끝에 위치한다면 제거합니다.
-5단계 new_id가 빈 문자열이라면, new_id에 &quot;a&quot;를 대입합니다.
-6단계 new_id의 길이가 16자 이상이면, new_id의 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거합니다.
-만약 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거합니다.
-7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;문제&quot;&gt;[문제]&lt;/h3&gt;
-
-&lt;p&gt;신규 유저가 입력한 아이디를 나타내는 new_id가 매개변수로 주어질 때, “네오”가 설계한 7단계의 처리 과정을 거친 후의 추천 아이디를 return 하도록 solution 함수를 완성해 주세요.&lt;/p&gt;
-
-&lt;h3 id=&quot;제한사항&quot;&gt;[제한사항]&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;new_id는 길이 1 이상 1,000 이하인 문자열입니다.&lt;/li&gt;
-  &lt;li&gt;new_id는 알파벳 대문자, 알파벳 소문자, 숫자, 특수문자로 구성되어 있습니다.&lt;/li&gt;
-  &lt;li&gt;new_id에 나타날 수 있는 특수문자는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-_.~!@#$%^&amp;amp;*()=+[{]}:?,&amp;lt;&amp;gt;/&lt;/code&gt;로 한정됩니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;입출력-예&quot;&gt;[입출력 예]&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;no&lt;/th&gt;
-      &lt;th&gt;new_id&lt;/th&gt;
-      &lt;th&gt;result&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;예1&lt;/td&gt;
-      &lt;td&gt;“…!@BaT#*..y.abcdefghijklm”&lt;/td&gt;
-      &lt;td&gt;“bat.y.abcdefghi”&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;예2&lt;/td&gt;
-      &lt;td&gt;“z-+.^.”&lt;/td&gt;
-      &lt;td&gt;“z–”&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;예3&lt;/td&gt;
-      &lt;td&gt;”=.=”&lt;/td&gt;
-      &lt;td&gt;“aaa”&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;예4&lt;/td&gt;
-      &lt;td&gt;“123_.def”&lt;/td&gt;
-      &lt;td&gt;“123_.def”&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;예5&lt;/td&gt;
-      &lt;td&gt;“abcdefghijklmn.p”&lt;/td&gt;
-      &lt;td&gt;“abcdefghijklmn”&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;solution&quot;&gt;Solution&lt;/h1&gt;
-
-&lt;h3 id=&quot;문제-이해&quot;&gt;[문제 이해]&lt;/h3&gt;
-
-&lt;p&gt;내가 이해한 내용은 다음과 같았다.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;주어진 조건에 따라 구현하기&lt;/li&gt;
-    &lt;li&gt;정규식 활용하기&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;이해한 내용을 바탕으로 코드 작성을 해보았다.&lt;/p&gt;
-
-&lt;h3 id=&quot;코드&quot;&gt;[코드]&lt;/h3&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 모두 소문자화
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 알파벳과 숫자, -, _, . 을 제외한 문자 제거
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;[^a-z0-9\-_.]&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# .이 1개 이상인 경우 . 1개로 치환
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;\.+&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;.&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 시작 or 끝의 . 제거
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;^[.]|[.]$&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 문자열의 길이가 0인 경우 a 대입 or 15번째까지 인덱싱
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;a&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 변경된 문자열의 시작 or 끝의 . 제거
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;^[.]|[.]$&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# 문자열의 최소길이 3자를 맞추기 위한 조건
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))])&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;answer&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="카카오" /><category term="코테" /><category term="Python" /><category term="Algorithm" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-13-%ED%81%90-Queue/%EA%B5%AC%EC%A1%B0001-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="자료구조" /><category term="알고리즘" /><category term="기본기" /><summary type="html"></summary></entry></feed>
