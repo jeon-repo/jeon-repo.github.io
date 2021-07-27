@@ -3,12 +3,12 @@ layout: post
 title: "[Design Pattern] 싱글턴 패턴 (Singleton)"
 feature-img: "assets/img/feature-img/pink-cloud-moon.jpg"
 author: janos
-tags: [디자인패턴, Algorithm]
+tags: [디자인패턴]
 ---
 
 ---
 
-### [설명]
+### 설명
 
 먼저 위키백과의 설명을 한 번 보겠다.
 
@@ -21,7 +21,7 @@ tags: [디자인패턴, Algorithm]
 → 클래스 변수를 생성하면 해당 클래스의 객체가 생성된 어느 곳이던 같은 변수값이 반환된다.
 - Singleton은 `다크 모드` 같은 시스템 상의 `공용 설정`에 이용하면 좋을 것 같다고 생각이 들었다.
 
-### [예시 코드]
+### 예시 코드
 
 클래스 객체 생성시에 instance란 변수가 없으면 변수를 생성, 있으면 그냥 반환
 
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     print(f'2번 세팅 : {single_2}')
 ```
 
-### [실행 결과]
+### 실행 결과
 
 객체를 2번 생성시 최초 생성한 객체(1번)와 동일한 객체를 반환 받은 것을 확인할 수 있다.
 

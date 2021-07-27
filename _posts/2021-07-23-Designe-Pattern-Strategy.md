@@ -3,7 +3,7 @@ layout: post
 title: "[Design Pattern] 전략 패턴 (Strategy)"
 color: gray
 author: janos
-tags: [디자인패턴, Algorithm]
+tags: [디자인패턴]
 ---
 
 ---
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     print(f'strategy2: {strategy2.getFunction()}')
 ```
 
-### 결과
+### 실행 결과
 
 strategy0, 1, 2의 결과가 각각 다른 것을 확인할 수 있다.
 

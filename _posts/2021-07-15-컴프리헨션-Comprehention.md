@@ -3,7 +3,7 @@ layout: post
 title: "컴프리헨션(Comprehention)"
 feature-img: "assets/img/feature-img/circuit.jpeg"
 author: janos
-tags: [Python, 자료구조, 기본기]
+tags: [Python]
 ---
 
 ---

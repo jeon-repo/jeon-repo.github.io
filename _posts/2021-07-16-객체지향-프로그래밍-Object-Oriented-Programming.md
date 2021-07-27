@@ -3,7 +3,7 @@ layout: post
 title: "객체지향 프로그래밍(Object Oriented Programming)"
 color: green
 author: janos
-tags: [OOP, 기본기]
+tags: [기본기]
 ---
 
 ---
