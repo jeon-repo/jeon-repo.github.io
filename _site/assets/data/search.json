@@ -123,7 +123,7 @@
   {
     "title"    : "Dark Mode",
     "category" : "",
-    "tags"     : " Katex, Markdown",
+    "tags"     : " ",
     "url"      : "/2020/11/12/dark-mode.html",
     "date"     : "November 12, 2020",
     "excerpt"  : "More colors with less light.\n\nClick the half-moon most top-right button to turn the lights on/off.\n\nHeaders\nLevel 2\nLevel 3\nLevel 4\nLevel 5\nLevel 6\n\nHeaders with links\nLevel 2\nLevel 3\nLevel 4\nLevel 5\nLevel 6\n\nCode highlight\nMode specific code high...",
@@ -133,7 +133,7 @@
   {
     "title"    : "Sample post",
     "category" : "",
-    "tags"     : " A Tag, Katex",
+    "tags"     : " ",
     "url"      : "/2020/11/11/sample-post.html",
     "date"     : "November 11, 2020",
     "excerpt"  : "Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. \nPraesent et diam eget libero egestas mattis sit amet vitae augue. Nam tinci...",
@@ -143,7 +143,7 @@
   {
     "title"    : "Color Post",
     "category" : "",
-    "tags"     : " Test, Color",
+    "tags"     : " ",
     "url"      : "/2020/11/10/color-post.html",
     "date"     : "November 10, 2020",
     "excerpt"  : "What a colorful post!\n\nThis is an idea that came from xukimseven/HardCandy-Jekyll \nlooking at this cheerful and colorful theme, I wanted to enable something similar for Type-on-Strap.\n\nYou can go fork and star HardCandy-Jekyll too! 😉\n\n\n\nHow does i...",
@@ -153,7 +153,7 @@
   {
     "title"    : "Bootstrap",
     "category" : "",
-    "tags"     : " Test",
+    "tags"     : " ",
     "url"      : "/2020/11/09/Use-Bootstrap.html",
     "date"     : "November 9, 2020",
     "excerpt"  : "This theme is compatible with Bootstrap if you choose to use it in your pages or posts.\nHere is a little demo with a code snippet, look at the source to see how the HTML and markdown get tangled.\n\nUse bootstrap\n\nAdd some custom Bootstrap in the cu...",
@@ -163,7 +163,7 @@
   {
     "title"    : "Feature images",
     "category" : "",
-    "tags"     : " Test, Image",
+    "tags"     : " ",
     "url"      : "/2020/11/08/feature-images.html",
     "date"     : "November 8, 2020",
     "excerpt"  : "Hopefully you will find enough information about how to set images in your blog here.\nThis is an example of a post which includes a feature image specified in the front matter of the post. \nThe feature image spans the full-width of the page, and i...",
@@ -173,7 +173,7 @@
   {
     "title"    : "Markdown and HTML",
     "category" : "",
-    "tags"     : " Katex, Markdown",
+    "tags"     : " ",
     "url"      : "/2020/11/07/markdown-and-html.html",
     "date"     : "November 7, 2020",
     "excerpt"  : "Jekyll supports the use of Markdown with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.\n\nTitle\n\nSub title\n\nTables have also bee...",
@@ -183,7 +183,7 @@
   {
     "title"    : "What&#39;s your title",
     "category" : "",
-    "tags"     : " Test, Image",
+    "tags"     : " ",
     "url"      : "/2020/11/06/whats-your-title.html",
     "date"     : "November 6, 2020",
     "excerpt"  : "This is an example of a post which includes a feature image that has a\ntext, where you don’t want to redisplay the title.\nMind your image size in order for the text to be displayed where you want it to.\nThe only limit is your imagination.\n\nHere is...",
@@ -193,7 +193,7 @@
   {
     "title"    : "The Real Lorem Ipsum",
     "category" : "",
-    "tags"     : " Image, Color",
+    "tags"     : " ",
     "url"      : "/2020/11/05/lorem-ipsum.html",
     "date"     : "November 5, 2020",
     "excerpt"  : "Lorem Ipsum\n\nfrom “de Finibus Bonorum et Malorum” written by Cicero in 45 BC.\n \nFind out more on lipsum.com. And if you like colors, check out the http color trends from w3schools.\n\nThe standard Lorem Ipsum passage (since 1500s)\n\n“Lorem ipsum dolo...",
@@ -203,7 +203,7 @@
   {
     "title"    : "Markup: Syntax Highlighting",
     "category" : "",
-    "tags"     : " Highlight, Markdown",
+    "tags"     : " ",
     "url"      : "/2020/11/04/Markup-Syntax-Highlighting.html",
     "date"     : "November 4, 2020",
     "excerpt"  : "Syntax highlighting1 is a feature that displays source code. \nThis feature facilitates writing in a structured language such as a programming language or a markup language as it makes import things visually distinct.\n\nGFM Code Blocks\n\nGitHub Flavo...",
@@ -213,7 +213,7 @@
   {
     "title"    : "Generate a table of content",
     "category" : "",
-    "tags"     : " Kramdown, Customization",
+    "tags"     : " ",
     "url"      : "/2020/11/03/Generate-a-table-of-content.html",
     "date"     : "November 3, 2020",
     "excerpt"  : "Using Kramdown GFM \n\n\n\n  Using Kramdown GFM     \n      Basic Usage\n    \n  \n  Using toc.js    \n      Customize with toc.js        \n          Use with this jekyll template\n        \n      \n      Basic Usage\n      How it would look like\n    \n  \n\n\nBasi...",
@@ -223,7 +223,7 @@
   {
     "title"    : "Tech Stuff example",
     "category" : "",
-    "tags"     : " Mermaid, Highlight, Markdown",
+    "tags"     : " ",
     "url"      : "/2020/11/02/Tech-stuff-example.html",
     "date"     : "November 2, 2020",
     "excerpt"  : "Because if you put some code in your blog, you would at least make it:\n\n\n  Searchable\n  Good-looking\n\n\nSearch on code\n\nSearch should be working even for complicated escape symbols.\n\nsed -i &#39;s/\\&quot;hostname\\&quot;\\:.*$/\\&quot;hostname\\&quot;\\: \\&quot;&#39;$IPADDR&#39;\\&quot;\\,/g&#39; ope...",
@@ -233,7 +233,7 @@
   {
     "title"    : "Blogging with title ",
     "category" : "",
-    "tags"     : " Test, Image",
+    "tags"     : " ",
     "url"      : "/2020/11/01/blogging-with-title.html",
     "date"     : "November 1, 2020",
     "excerpt"  : "I am a BIG title\n\nThis is a very tiny tiny post with less than 250 letters.\n\n",
