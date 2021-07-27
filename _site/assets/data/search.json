@@ -246,7 +246,7 @@
   
   "title"    : "Ninja",
   "category" : "",
-  "tags"     : " Lorem",
+  "tags"     : " ",
   "url"      : "/portfolio/ninja",
   "date"     : "April 8, 2014",
   "excerpt"  : "\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, \neaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \nNemo enim ipsam voluptatem ...",
@@ -258,7 +258,7 @@
   
   "title"    : "Creative",
   "category" : "",
-  "tags"     : " Ipsum",
+  "tags"     : " ",
   "url"      : "/portfolio/safe",
   "date"     : "August 16, 2014",
   "excerpt"  : "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, \ntotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \nNemo enim ipsam voluptatem qu...",
@@ -270,7 +270,7 @@
   
   "title"    : "Circus",
   "category" : "",
-  "tags"     : " Ipsum",
+  "tags"     : " ",
   "url"      : "/portfolio/circus",
   "date"     : "September 1, 2014",
   "excerpt"  : "\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, \neaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \nNemo enim ipsam voluptatem ...",
@@ -306,7 +306,7 @@
   
   "title"    : "Cake",
   "category" : "",
-  "tags"     : " Lorem, Ipsum",
+  "tags"     : " ",
   "url"      : "/portfolio/cake",
   "date"     : "September 27, 2015",
   "excerpt"  : "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, \ntotam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \nNemo enim ipsam voluptatem qu...",
@@ -342,7 +342,7 @@
   
   "title"    : "Github",
   "category" : "",
-  "tags"     : " Lorem",
+  "tags"     : " ",
   "url"      : "/portfolio/gitlecture",
   "date"     : "October 20, 2017",
   "excerpt"  : "\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, \neaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. \nNemo enim ipsam voluptatem ...",
