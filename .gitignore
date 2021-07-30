@@ -3,3 +3,5 @@
 .jekyll-cache/
 .jekyll-metadata
 **/2020-11-*.md
+
+git_update.sh
