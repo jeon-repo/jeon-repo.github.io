@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.3.7
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Jeon Repository" href="https://jeon-repo.github.io/feed.xml"/>
+
+    
+
+    <!-- KaTeX 0.13.9 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 8.9.2 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://jeon-repo.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>[Design Pattern] 모나드 패턴 (Monad) | Jeon Repository</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="[Design Pattern] 모나드 패턴 (Monad)" />
+<meta name="author" content="janos" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html" />
+<meta property="og:site_name" content="Jeon Repository" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-01T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[Design Pattern] 모나드 패턴 (Monad)" />
+<script type="application/ld+json">
+{"datePublished":"2021-08-01T00:00:00+09:00","dateModified":"2021-08-01T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html"},"url":"https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","headline":"[Design Pattern] 모나드 패턴 (Monad)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="[Design Pattern] 모나드 패턴 (Monad)">
+    <meta name="twitter:description" content="모나드라는 개념을 찾아보며 이해한 부분만 요약하여 정리한 글이라 내용이 다소 생략되어있다.설명  하스켈 등 함수형 프로그래밍 언어에서 입출력 및 데이터 구조를 다룰 때 쓰인다.  “위키백과 - Monad - version of Korean”뭔가 부족하다, 영어 버전으로 찾아보았다....">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
+    <meta name="twitter:image:alt" content="[Design Pattern] 모나드 패턴 (Monad)">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/bike.png" />
+		</a>
+        
+        <a class="site-title" aria-label="Jeon Repository" href="/">
+        Jeon Repository
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                     About Me 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                     Portfolio 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="[Design Pattern] 모나드 패턴 (Monad) " aria-label="[Design Pattern] 모나드 패턴 (Monad)" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image" >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="%5BDesign+Pattern%5D+%EB%AA%A8%EB%82%98%EB%93%9C+%ED%8C%A8%ED%84%B4+%28Monad%29" class="title">[Design Pattern] 모나드 패턴 (Monad)</h1>
+      
+
+
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
+    <p class="meta">
+      janos - 
+      
+      August 01, 2021
+    </p></a></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <hr />
+
+<p>모나드라는 개념을 찾아보며 이해한 부분만 요약하여 정리한 글이라 내용이 다소 생략되어있다.</p>
+
+<h3 id="설명">설명</h3>
+
+<blockquote>
+  <p>하스켈 등 함수형 프로그래밍 언어에서 입출력 및 데이터 구조를 다룰 때 쓰인다.</p>
+
+  <p>“위키백과 - <a href="[https://ko.wikipedia.org/wiki/모나드_(범주론)#역사](https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%82%98%EB%93%9C_(%EB%B2%94%EC%A3%BC%EB%A1%A0)#%EC%97%AD%EC%82%AC)">Monad</a> - version of Korean”</p>
+</blockquote>
+
+<p>뭔가 부족하다, 영어 버전으로 찾아보았다.</p>
+
+<blockquote>
+  <p>함수형 프로그래밍에서 모나드는 일반적으로 프로그램을 구조화할 수 있는 추상적 개념이다. 모나드는 두 가지 절차를 따라서 특정한 계산 형태를 나타내는 자체 데이터 type을 제공하여 달성한다.</p>
+
+  <ul>
+    <li>모나드 내에서 기본 유형의 값을 <strong>래핑</strong>하는 것 (모나드 값 생성)</li>
+    <li><strong>모나딕</strong> 값을 출력하는 함수를 구성하는 것 (모나딕 함수라고 함)</li>
+  </ul>
+
+  <p>이를 통해 모나드는 광범위한 문제를 단순화할 수 있다.</p>
+
+  <p>“위키백과 - <a href="[https://en.wikipedia.org/wiki/Monad_(functional_programming)](https://en.wikipedia.org/wiki/Monad_(functional_programming))">Monad</a> - version of English”</p>
+</blockquote>
+
+<ul>
+  <li>모나드 패턴을 사용하기 위한 절차를 따르면 순수 함수형 프로그래밍의 이점을 많이 얻을 수 있다고 한다.</li>
+  <li>모나드의 구조가 <code class="language-plaintext highlighter-rouge">데코레이터</code> 패턴과 유사하다고 생각이 들었다.</li>
+</ul>
+
+<h3 id="예시-코드-1">예시 코드 1</h3>
+
+<p>아래의 코드는 입력값 x에 1,2,3을 더한 값을 반환하는 코드이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+</code></pre></div></div>
+
+<p>위의 코드를 이용해 x, x+1, x+1+2, x+1+2+3의 값을 구하는 코드를 작성해보면 아래와 같이 할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># x가 1인 경우로 가정
+</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">f1</span><span class="p">(</span><span class="n">_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+<span class="n">temp</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="n">_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+<span class="n">temp</span> <span class="o">=</span> <span class="n">f3</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="n">_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">((</span><span class="n">temp</span><span class="p">,</span> <span class="n">_list</span><span class="p">))</span>
+<span class="o">---------------------------------------------------</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>하지만 위 방식의 단점은 새로운 함수 f4, f5가 추가될 때 마다 리스트에 값을 수동으로 추가해야 하는 문제가 있다.</p>
+
+<p>여기서 모나드 패턴을 사용해보면</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">unit</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">bind</span><span class="p">(</span><span class="n">_list</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">res</span><span class="p">])</span>
+
+<span class="c1"># x가 1인 경우로 가정
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">bind</span><span class="p">(</span><span class="n">bind</span><span class="p">(</span><span class="n">bind</span><span class="p">(</span><span class="n">unit</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">f1</span><span class="p">),</span> <span class="n">f2</span><span class="p">),</span> <span class="n">f3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>재귀 함수의 느낌과 비슷했다.</p>
+
+<h3 id="예시-코드-2">예시 코드 2</h3>
+
+<p>이번엔 객체지향의 특징을 살려서 접근해보겠다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Employee</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">get_boss</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Return the employess's boss
+</span>
+    <span class="k">def</span> <span class="nf">get_wage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Compute the wage
+</span>
+<span class="c1"># janos라는 직원 객체 생성
+</span><span class="n">janos</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span>
+<span class="c1"># janos라는 직원의 보스를 얻고, 보스의 임금을 얻기
+</span><span class="n">janos</span><span class="p">.</span><span class="n">get_boss</span><span class="p">().</span><span class="n">get_wage</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>위의 경우에 get_boss()의 반환값이 None인 경우 get_wage()는 Error가 발생한다.</p>
+
+<p>이런 Error는 아래와 같은 방법으로 방지할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">janos</span><span class="p">:</span>
+    <span class="n">boss</span> <span class="o">=</span> <span class="n">janos</span><span class="p">.</span><span class="n">get_boss</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">boss</span><span class="p">:</span>
+        <span class="n">wage</span> <span class="o">=</span> <span class="n">boss</span><span class="p">.</span><span class="n">get_wage</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">wage</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">wage</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>하지만 위의 코드는 <strong>파이썬 철학</strong> <code class="language-plaintext highlighter-rouge">Beautiful is better than ugly (아름다운 것이 추한 것보다 낫다)</code> 를 지키지 못한 <strong>추한</strong> 코드라고 할 수 있다.</p>
+
+<p>이 코드를 <strong>아름답게</strong> 만들기 위해 다시 한 번 모나드 패턴을 사용하면 아래와 같은 호출 형태로 result를 구할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">unit</span><span class="p">(</span><span class="n">emp</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">emp</span>
+
+<span class="k">def</span> <span class="nf">bind</span><span class="p">(</span><span class="n">emp</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">None</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">emp</span> <span class="k">else</span> <span class="n">f</span><span class="p">(</span><span class="n">emp</span><span class="p">)</span>
+
+<span class="n">janos</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">bind</span><span class="p">(</span><span class="n">bind</span><span class="p">(</span><span class="n">unit</span><span class="p">(</span><span class="n">john</span><span class="p">),</span> <span class="n">Employee</span><span class="p">.</span><span class="n">get_boss</span><span class="p">),</span> <span class="n">Employee</span><span class="p">.</span><span class="n">get_wage</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>위의 코드를 아래의 함수를 추가해서 한 번 더 <strong>아름답게</strong> 만들 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">pipeline</span><span class="p">(</span><span class="n">emp</span><span class="p">,</span> <span class="o">*</span><span class="n">fs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fs</span><span class="p">:</span>
+        <span class="n">emp</span> <span class="o">=</span> <span class="n">bind</span><span class="p">(</span><span class="n">emp</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">emp</span>
+</code></pre></div></div>
+
+<p>전체적인 코드를 보면</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">unit</span><span class="p">(</span><span class="n">emp</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">emp</span>
+
+<span class="k">def</span> <span class="nf">bind</span><span class="p">(</span><span class="n">emp</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">None</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">emp</span> <span class="k">else</span> <span class="n">f</span><span class="p">(</span><span class="n">emp</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">pipeline</span><span class="p">(</span><span class="n">emp</span><span class="p">,</span> <span class="o">*</span><span class="n">fs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fs</span><span class="p">:</span>
+        <span class="n">emp</span> <span class="o">=</span> <span class="n">bind</span><span class="p">(</span><span class="n">emp</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">emp</span>
+
+<span class="n">janos</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">unit</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>pipeline</strong> 함수를 추가하면서 result를 구하는 <code class="language-plaintext highlighter-rouge">bind(bind(...</code> 부분을 단순한 형태로 대체할 수 있다.</p>
+
+<p><strong>pipeline</strong> 함수의 형태를 사용하면 이후에 추가될 수 있는 f4, f5, f6와 같은 추가 함수도 쉽게 활용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">unit</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span><span class="p">,</span> <span class="n">f4</span><span class="p">,</span> <span class="n">f5</span><span class="p">,</span> <span class="n">f6</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="결론">결론</h3>
+
+<p><em>모나드는 함수 구성을 위한 간단하고 강력한 디자인 패턴이다.</em></p>
+
+<p>이해에 큰 도움이 되었던 페이지 링크를 첨부한다.</p>
+
+<p>Reference - <a href="https://nikgrozev.com/2013/12/10/monads-in-15-minutes/">https://nikgrozev.com/2013/12/10/monads-in-15-minutes/</a></p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=%5BDesign+Pattern%5D+%EB%AA%A8%EB%82%98%EB%93%9C+%ED%8C%A8%ED%84%B4+%28Monad%29%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F08%2F01%2F%25EB%25AA%25A8%25EB%2582%2598%25EB%2593%259C-Monad.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html&quote=%5BDesign+Pattern%5D+%EB%AA%A8%EB%82%98%EB%93%9C+%ED%8C%A8%ED%84%B4+%28Monad%29%20%7C%20Jeon+Repository&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html&media=$description=%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html&title=%5BDesign+Pattern%5D+%EB%AA%A8%EB%82%98%EB%93%9C+%ED%8C%A8%ED%84%B4+%28Monad%29%20%7C%20Jeon+Repository"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html&title=%5BDesign+Pattern%5D+%EB%AA%A8%EB%82%98%EB%93%9C+%ED%8C%A8%ED%84%B4+%28Monad%29%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=[Design Pattern] 모나드 패턴 (Monad)%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="/tags#%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 디자인패턴</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="커링 (Currying)" href="/2021/07/31/%EC%BB%A4%EB%A7%81-Currying.html">
+            <p>다음 포스트</p>
+            커링 (Currying)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  
+  
+  .feature-image a { color: orange !important; }
+  div#post-nav a { color: orange !important; }
+  footer a { color: orange !important; }
+  .site-header nav a:hover {  color: orange !important; }
+  header#main { 
+      background-color: orange !important;
+      background-image: url('/assets/img/lineart.png');
+  }
+  
+  
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Copyright 2021. jeon-repo all rights reserved.
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/jeon-repo"
+               title="Follow on Github"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto://jano.jeon@gmail.com"
+               title="Follow on Mail"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
