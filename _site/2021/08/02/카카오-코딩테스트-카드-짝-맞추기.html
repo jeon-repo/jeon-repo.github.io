@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.3.7
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Jeon Repository" href="https://jeon-repo.github.io/feed.xml"/>
+
+    
+
+    <!-- KaTeX 0.13.9 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 8.9.2 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://jeon-repo.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>[카카오 코딩 테스트] - 카드 짝 맞추기 | Jeon Repository</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="[카카오 코딩 테스트] - 카드 짝 맞추기" />
+<meta name="author" content="janos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="그림도 잘 그리고 싶은 개발자" />
+<meta property="og:description" content="그림도 잘 그리고 싶은 개발자" />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html" />
+<meta property="og:site_name" content="Jeon Repository" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-02T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[카카오 코딩 테스트] - 카드 짝 맞추기" />
+<script type="application/ld+json">
+{"datePublished":"2021-08-02T00:00:00+09:00","dateModified":"2021-08-02T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html"},"url":"https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","description":"그림도 잘 그리고 싶은 개발자","headline":"[카카오 코딩 테스트] - 카드 짝 맞추기","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="[카카오 코딩 테스트] - 카드 짝 맞추기">
+    <meta name="twitter:description" content="2021 KAKAO BLIND RECRUITMENT “카드 짝 맞추기” 문제를 풀어보겠습니다.  여기를 누르면 설명을 건너뛸 수 있습니다.문제 설명게임 개발자인 베로니는 개발 연습을 위해 다음과 같은 간단한 카드 짝맞추기 보드 게임을 개발해 보려고 합니다.게임이 시작되면 화면에는 ...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
+    <meta name="twitter:image:alt" content="[카카오 코딩 테스트] - 카드 짝 맞추기">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/bike.png" />
+		</a>
+        
+        <a class="site-title" aria-label="Jeon Repository" href="/">
+        Jeon Repository
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                     About Me 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                     Portfolio 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="[카카오 코딩 테스트] - 카드 짝 맞추기 " aria-label="[카카오 코딩 테스트] - 카드 짝 맞추기" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EC%B9%B4%EB%93%9C+%EC%A7%9D+%EB%A7%9E%EC%B6%94%EA%B8%B0" class="title">[카카오 코딩 테스트] - 카드 짝 맞추기</h1>
+      
+
+
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
+    <p class="meta">
+      janos - 
+      
+      August 02, 2021
+    </p></a></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <hr />
+
+<p>2021 KAKAO BLIND RECRUITMENT “카드 짝 맞추기” 문제를 풀어보겠습니다.</p>
+
+<blockquote>
+  <p><a href="#solution">여기</a>를 누르면 설명을 건너뛸 수 있습니다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="문제-설명"><strong>문제 설명</strong></h3>
+
+<p>게임 개발자인 <code class="language-plaintext highlighter-rouge">베로니</code>는 개발 연습을 위해 다음과 같은 간단한 카드 짝맞추기 보드 게임을 개발해 보려고 합니다.게임이 시작되면 화면에는 카드 16장이 뒷면을 위로하여 <code class="language-plaintext highlighter-rouge">4 x 4</code> 크기의 격자 형태로 표시되어 있습니다. 각 카드의 앞면에는 카카오프렌즈 캐릭터 그림이 그려져 있으며, 8가지의 캐릭터 그림이 그려진 카드가 각기 2장씩 화면에 무작위로 배치되어 있습니다.유저가 카드를 2장 선택하여 앞면으로 뒤집었을 때 같은 그림이 그려진 카드면 해당 카드는 게임 화면에서 사라지며, 같은 그림이 아니라면 원래 상태로 뒷면이 보이도록 뒤집힙니다. 이와 같은 방법으로 모든 카드를 화면에서 사라지게 하면 게임이 종료됩니다.</p>
+
+<p>게임에서 카드를 선택하는 방법은 다음과 같습니다.</p>
+
+<ul>
+  <li>카드는 <code class="language-plaintext highlighter-rouge">커서</code>를 이용해서 선택할 수 있습니다.
+    <ul>
+      <li>커서는 4 x 4 화면에서 유저가 선택한 현재 위치를 표시하는 “굵고 빨간 테두리 상자”를 의미합니다.</li>
+    </ul>
+  </li>
+  <li>커서는 [Ctrl] 키와 방향키에 의해 이동되며 키 조작법은 다음과 같습니다.
+    <ul>
+      <li>방향키 ←, ↑, ↓, → 중 하나를 누르면, 커서가 누른 키 방향으로 1칸 이동합니다.</li>
+      <li>[Ctrl] 키를 누른 상태에서 방향키 ←, ↑, ↓, → 중 하나를 누르면, 누른 키 방향에 있는 가장 가까운 카드로 한번에 이동합니다.
+        <ul>
+          <li>만약, 해당 방향에 카드가 하나도 없다면 그 방향의 가장 마지막 칸으로 이동합니다.</li>
+        </ul>
+      </li>
+      <li>만약, 누른 키 방향으로 이동 가능한 카드 또는 빈 공간이 없어 이동할 수 없다면 커서는 움직이지 않습니다.</li>
+    </ul>
+  </li>
+  <li>커서가 위치한 카드를 뒤집기 위해서는 [Enter] 키를 입력합니다.
+    <ul>
+      <li>[Enter] 키를 입력해서 카드를 뒤집었을 때
+        <ul>
+          <li>앞면이 보이는 카드가 1장 뿐이라면 그림을 맞출 수 없으므로 두번째 카드를 뒤집을 때 까지 앞면을 유지합니다.</li>
+          <li>앞면이 보이는 카드가 2장이 된 경우, 두개의 카드에 그려진 그림이 같으면 해당 카드들이 화면에서 사라지며, 그림이 다르다면 두 카드 모두 뒷면이 보이도록 다시 뒤집힙니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>“베로니”는 게임 진행 중 카드의 짝을 맞춰 몇 장 제거된 상태에서 카드 앞면의 그림을 알고 있다면, 남은 카드를 모두 제거하는데 필요한 키 조작 횟수의 최솟값을 구해 보려고 합니다. 키 조작 횟수는 방향키와 [Enter] 키를 누르는 동작을 각각 조작 횟수 <code class="language-plaintext highlighter-rouge">1</code>로 계산하며, [Ctrl] 키와 방향키를 함께 누르는 동작 또한 조작 횟수 <code class="language-plaintext highlighter-rouge">1</code>로 계산합니다.</p>
+
+<p>다음은 카드가 몇 장 제거된 상태의 게임 화면에서 커서를 이동하는 예시입니다.아래 그림에서 빈 칸은 이미 카드가 제거되어 없어진 칸을 의미하며, 그림이 그려진 칸은 카드 앞 면에 그려진 그림을 나타냅니다.</p>
+
+<p><img src="/assets/img/post/2021-08-02-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0/2021_kakao_card_01.png" alt="Result" /></p>
+
+<p>예시에서 커서는 두번째 행, 첫번째 열 위치에서 시작하였습니다.</p>
+
+<p><img src="/assets/img/post/2021-08-02-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0/2021_kakao_card_02.png" alt="Result" /></p>
+
+<p>[Enter] 입력, ↓ 이동, [Ctrl]+→ 이동, [Enter] 입력 = 키 조작 4회</p>
+
+<p><img src="/assets/img/post/2021-08-02-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0/2021_kakao_card_03.png" alt="Result" /></p>
+
+<p>[Ctrl]+↑ 이동, [Enter] 입력, [Ctrl]+← 이동, [Ctrl]+↓ 이동, [Enter] 입력 = 키 조작 5회</p>
+
+<p><img src="/assets/img/post/2021-08-02-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0/2021_kakao_card_04.png" alt="Result" /></p>
+
+<p>[Ctrl]+→ 이동, [Enter] 입력, [Ctrl]+↑ 이동, [Ctrl]+← 이동, [Enter] 입력 = 키 조작 5회</p>
+
+<p>위와 같은 방법으로 커서를 이동하여 카드를 선택하고 그림을 맞추어 카드를 모두 제거하기 위해서는 총 14번(방향 이동 8번, [Enter] 키 입력 6번)의 키 조작 횟수가 필요합니다.</p>
+
+<hr />
+
+<h3 id="문제"><strong>[문제]</strong></h3>
+
+<p>현재 카드가 놓인 상태를 나타내는 2차원 배열 board와 커서의 처음 위치 r, c가 매개변수로 주어질 때, 모든 카드를 제거하기 위한 키 조작 횟수의 최솟값을 return 하도록 solution 함수를 완성해 주세요.</p>
+
+<h3 id="제한사항"><strong>[제한사항]</strong></h3>
+
+<ul>
+  <li>board는 4 x 4 크기의 2차원 배열입니다.</li>
+  <li>board 배열의 각 원소는 0 이상 6 이하인 자연수입니다.
+    <ul>
+      <li>0은 카드가 제거된 빈 칸을 나타냅니다.</li>
+      <li>1 부터 6까지의 자연수는 2개씩 들어있으며 같은 숫자는 같은 그림의 카드를 의미합니다.</li>
+      <li>뒤집을 카드가 없는 경우(board의 모든 원소가 0인 경우)는 입력으로 주어지지 않습니다.</li>
+    </ul>
+  </li>
+  <li>r은 커서의 최초 세로(행) 위치를 의미합니다.</li>
+  <li>c는 커서의 최초 가로(열) 위치를 의미합니다.</li>
+  <li>r과 c는 0 이상 3 이하인 정수입니다.</li>
+  <li>게임 화면의 좌측 상단이 (0, 0), 우측 하단이 (3, 3) 입니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예"><strong>[입출력 예]</strong></h3>
+
+<p><a href="https://www.notion.so/29eeae52144947a08a2143d04ea9e490">제목 없음</a></p>
+
+<h3 id="입출력-예에-대한-설명"><strong>입출력 예에 대한 설명</strong></h3>
+
+<hr />
+
+<p><strong>입출력 예 #1</strong>문제의 예시와 같습니다.</p>
+
+<p><strong>입출력 예 #2</strong>입력으로 주어진 게임 화면은 아래 그림과 같습니다.</p>
+
+<p><img src="/assets/img/post/2021-08-02-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0/2021_kakao_card_05.png" alt="Result" /></p>
+
+<p>위 게임 화면에서 모든 카드를 제거하기 위한 키 조작 횟수의 최솟값은 16번 입니다.</p>
+
+<hr />
+
+<h1 id="solution">Solution</h1>
+
+<h3 id="문제-이해">[문제 이해]</h3>
+
+<p>문제의 의도를 제대로 이해하지 못해서 구현 문제에도 불구하고 검색을 하게 되었다.</p>
+
+<p>우선 작성한 코드를 보겠다.</p>
+
+<h3 id="실패한-코드">[실패한 코드]</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="n">deck</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+    <span class="c1"># 카드별 위치 덱 생성
+</span>    <span class="k">for</span> <span class="n">y</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">arr</span> <span class="o">==</span> <span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="p">[]:</span>
+                <span class="n">deck</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">append</span><span class="p">([</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+
+    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">now_loc</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
+    <span class="c1"># deck 다 찾으면 끝나게 루프 구성
+</span>    <span class="k">while</span> <span class="n">deck</span><span class="p">:</span>
+        <span class="n">min_dis</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">'inf'</span><span class="p">)</span>
+        <span class="c1"># 가까운 카드 위치 찾기
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">deck</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">deck</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+                <span class="n">new_dis</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">j</span>
+                <span class="k">if</span> <span class="n">now_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">new_dis</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">now_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">j</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">new_dis</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">new_dis</span> <span class="o">&lt;</span> <span class="n">min_dis</span><span class="p">:</span>
+                    <span class="n">min_dis</span> <span class="o">=</span> <span class="n">new_dis</span>
+                    <span class="n">min_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">idx</span><span class="p">]</span>
+
+        <span class="c1"># 현재 위치 및 카운트 갱신
+</span>        <span class="n">now_loc</span> <span class="o">=</span> <span class="n">min_pos</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">answer</span> <span class="o">+=</span> <span class="n">min_dis</span>
+        <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># 카드 짝 위치 찾기
+</span>        <span class="n">couple_loc</span> <span class="o">=</span> <span class="n">deck</span><span class="p">[</span><span class="n">min_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]][</span><span class="nb">int</span><span class="p">(</span><span class="ow">not</span> <span class="n">min_pos</span><span class="p">[</span><span class="mi">3</span><span class="p">])]</span>
+
+        <span class="c1"># 현재 위치 및 카운트 갱신
+</span>        <span class="k">if</span> <span class="n">now_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">couple_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">now_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">couple_loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">now_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">couple_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">now_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">couple_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># 짝 찾은 카드 제거 -&gt; 덱을 비우면 루프 탈출
+</span>        <span class="k">del</span> <span class="n">deck</span><span class="p">[</span><span class="n">min_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+        
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<p>처음 테스트 케이스 2개는 통과했지만 채점할 때는 수많은 실패를 보여준 코드이다.</p>
+
+<p>내가 이해한 의도는 가장 짧은 이동 경로를 통해 카드 뒤집기를 끝내야하는 것으로 이해했지만, 검색을 해보니 사실 문제의 의도는 모든 경우의 수를 빠르게 확인해 봐야 하는 것이라고 했다.</p>
+
+<p>문제 의도 파악 실패와 공개된 테스트 케이스 예시에만 포커싱을 해서 코딩을 한 결과 같다.</p>
+
+<p>그래서 검색을 통해 구성에 필요한 요소들을 인지했다.</p>
+
+<ul>
+  <li>Queue → deque 사용</li>
+  <li>전체 이동경로 탐색</li>
+</ul>
+
+<p>그리고 다시 코드를 작성했다.</p>
+
+<h3 id="성공한-코드">[성공한 코드]</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span> <span class="k">as</span> <span class="n">dq</span>
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+    <span class="n">SIZE</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">DELTAS</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    
+    <span class="c1"># 입력 좌표가 가장자리인지 확인
+</span>    <span class="k">def</span> <span class="nf">_is_in_range</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">SIZE</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">SIZE</span>
+
+    <span class="c1"># 짝 맞추기 후 board 비우기
+</span>    <span class="k">def</span> <span class="nf">_is_empty</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">bd</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">bd</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+
+    <span class="c1"># 🔽, ◀️, 🔼, ▶️ 방향 탐색
+</span>    <span class="k">def</span> <span class="nf">_yield_moves</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">bd</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">dr</span><span class="p">,</span> <span class="n">dc</span> <span class="ow">in</span> <span class="n">DELTAS</span><span class="p">:</span>
+            <span class="n">nr</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">dr</span>
+            <span class="n">nc</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">dc</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_in_range</span><span class="p">(</span><span class="n">nr</span><span class="p">,</span> <span class="n">nc</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="c1"># 제너레이터를 반환하여 효율성 향상 -&gt; yield
+</span>            <span class="c1"># 탐색마다 현재 길이를 추가해서 반환 -&gt; d + 1
+</span>            <span class="k">yield</span><span class="p">(</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">nr</span><span class="p">,</span> <span class="n">nc</span><span class="p">)</span>
+            <span class="k">while</span> <span class="n">_is_empty</span><span class="p">(</span><span class="n">nr</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">bd</span><span class="p">)</span> <span class="ow">and</span> <span class="n">_is_in_range</span><span class="p">(</span><span class="n">nr</span><span class="o">+</span><span class="n">dr</span><span class="p">,</span> <span class="n">nc</span><span class="o">+</span><span class="n">dc</span><span class="p">):</span>
+                <span class="n">nr</span> <span class="o">=</span> <span class="n">nr</span> <span class="o">+</span> <span class="n">dr</span>
+                <span class="n">nc</span> <span class="o">=</span> <span class="n">nc</span> <span class="o">+</span> <span class="n">dc</span>
+            <span class="k">yield</span><span class="p">(</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">nr</span><span class="p">,</span> <span class="n">nc</span><span class="p">)</span>
+
+    <span class="c1"># 기준 좌표(r, c)에서 현재 좌표(nr, nc)로 이동하기 위한 함수
+</span>    <span class="k">def</span> <span class="nf">go</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">nr</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">bd</span><span class="p">):</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">dq</span><span class="p">()</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        
+        <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">popleft</span><span class="p">()</span>
+            <span class="c1"># 기준 좌표와 현재 좌표가 같으면 현재 길이 반환
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">nr</span><span class="p">,</span> <span class="n">nc</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">d</span>
+            <span class="c1"># 기준 좌표가 방문한적이 있는 좌표인지 확인
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="n">visited</span><span class="p">.</span><span class="n">add</span><span class="p">((</span><span class="n">d</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+                <span class="c1"># 움직일 방향을 탐색하여 다음 이동 경로를 큐에 담음
+</span>                <span class="k">for</span> <span class="n">next_cursor</span> <span class="ow">in</span> <span class="n">_yield_moves</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">bd</span><span class="p">):</span>
+                    <span class="n">q</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_cursor</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="n">deck</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># 전체 board에서 짝을 맞출 카드가 있는 좌표와 카드 종류를 탐색 -&gt; (종류, y, x)
+</span>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">arr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">deck</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="n">val</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+
+    <span class="c1"># 맞춘 짝을 체크하기 위한 리스트 생성 -&gt; deck이 짝이 있는 카드 뭉치
+</span>    <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">l</span>
+
+    <span class="c1"># chosen -&gt; 짝을 맞추기 위해 선택한 카드
+</span>    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">chosen</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">board</span><span class="p">,</span> <span class="n">moves</span><span class="p">):</span>
+        <span class="k">nonlocal</span> <span class="n">answer</span><span class="p">,</span> <span class="n">used</span><span class="p">,</span> <span class="n">l</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span> <span class="o">==</span> <span class="n">l</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">moves</span><span class="o">+</span><span class="n">l</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">chosen</span> <span class="ow">and</span> <span class="n">chosen</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">deck</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]):</span>
+                    <span class="n">chosen</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">deck</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                    <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="c1"># deck에 담겨있는 목표 좌표 얻기
+</span>                    <span class="n">nowX</span><span class="p">,</span> <span class="n">nowY</span> <span class="o">=</span> <span class="n">deck</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">deck</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+                    <span class="c1"># deck에서 얻은 목표 좌표로 이동
+</span>                    <span class="n">n</span> <span class="o">=</span> <span class="n">go</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">nowX</span><span class="p">,</span> <span class="n">nowY</span><span class="p">,</span> <span class="n">board</span><span class="p">)</span>
+                    <span class="c1"># 이동한 위치의 카드 추출
+</span>                    <span class="n">card</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">nowX</span><span class="p">][</span><span class="n">nowY</span><span class="p">]</span>
+                    <span class="n">board</span><span class="p">[</span><span class="n">nowX</span><span class="p">][</span><span class="n">nowY</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+                    <span class="n">check</span><span class="p">(</span><span class="n">chosen</span><span class="p">,</span> <span class="n">nowX</span><span class="p">,</span> <span class="n">nowY</span><span class="p">,</span> <span class="n">board</span><span class="p">,</span> <span class="n">moves</span><span class="o">+</span><span class="n">n</span><span class="p">)</span>
+                    
+                    <span class="c1"># 추출한 카드 재자리
+</span>                    <span class="n">board</span><span class="p">[</span><span class="n">nowX</span><span class="p">][</span><span class="n">nowY</span><span class="p">]</span> <span class="o">=</span> <span class="n">card</span>
+                    <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">chosen</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">return</span>
+        
+    <span class="n">check</span><span class="p">([],</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">board</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">answer</span>
+</code></pre></div></div>
+
+<h3 id="여담">[여담]</h3>
+
+<p>이번 문제는 이전 문제들보다 의도치 않게 구글의 도움을 많이 받아서 풀게 되었다.</p>
+
+<p>아직 부족함을 많이 느끼게 해준 문제였다.</p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EC%B9%B4%EB%93%9C+%EC%A7%9D+%EB%A7%9E%EC%B6%94%EA%B8%B0%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F08%2F02%2F%25EC%25B9%25B4%25EC%25B9%25B4%25EC%2598%25A4-%25EC%25BD%2594%25EB%2594%25A9%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8-%25EC%25B9%25B4%25EB%2593%259C-%25EC%25A7%259D-%25EB%25A7%259E%25EC%25B6%2594%25EA%25B8%25B0.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html&quote=%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EC%B9%B4%EB%93%9C+%EC%A7%9D+%EB%A7%9E%EC%B6%94%EA%B8%B0%20%7C%20Jeon+Repository&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html&media=$description=%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html&title=%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EC%B9%B4%EB%93%9C+%EC%A7%9D+%EB%A7%9E%EC%B6%94%EA%B8%B0%20%7C%20Jeon+Repository"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html&title=%5B%EC%B9%B4%EC%B9%B4%EC%98%A4+%EC%BD%94%EB%94%A9+%ED%85%8C%EC%8A%A4%ED%8A%B8%5D+-+%EC%B9%B4%EB%93%9C+%EC%A7%9D+%EB%A7%9E%EC%B6%94%EA%B8%B0%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=[카카오 코딩 테스트] - 카드 짝 맞추기%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/08/02/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%B9%B4%EB%93%9C-%EC%A7%9D-%EB%A7%9E%EC%B6%94%EA%B8%B0.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="/tags#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 알고리즘</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="[Design Pattern] 모나드 패턴 (Monad)" href="/2021/08/01/%EB%AA%A8%EB%82%98%EB%93%9C-Monad.html">
+            <p>다음 포스트</p>
+            [Design Pattern] 모나드 패턴 (Monad)
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  
+  
+  
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Copyright 2021. jeon-repo all rights reserved.
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/jeon-repo"
+               title="Follow on Github"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto://jano.jeon@gmail.com"
+               title="Follow on Mail"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
