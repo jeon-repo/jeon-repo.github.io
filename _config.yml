@@ -4,7 +4,7 @@ url: "https://jeon-repo.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 title: Jeon Repository                                  # site's title
-description: ""                                         # used by search engines
+description: "그림도 잘 그리고 싶은 개발자"                                         # used by search engines
 avatar: assets/img/bike.png                             # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
