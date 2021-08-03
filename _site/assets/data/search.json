@@ -1,6 +1,16 @@
 [
   
   {
+    "title"    : "스코프 (Scope)",
+    "category" : "",
+    "tags"     : " 기본기",
+    "url"      : "/2021/08/03/%EC%8A%A4%EC%BD%94%ED%94%84-Scope.html",
+    "date"     : "August 3, 2021",
+    "excerpt"  : "\n\n먼저 위키백과의 내용을 보면 아래와 같다.\n\n\n  컴퓨터 프로그래밍에서 변수 영역은 변수가 유효성을 갖는 영역을 가리킨다. 프로그램은 영역을 벗어난 변수를 가리킬 수 없다.\n\n  변수의 영역을 지정하는 규칙은 크게 정적 영역 규칙과 동적 영역 규칙으로 나뉜다. 정적 영역 규칙을 따르는 언어에서는 변수의 유효 영역이 컴파일 타임에 결정되며, 동적 영역 규칙은 실행 시간에 결정된다. 대부분의 현대 언어는 정적 영역 규칙을 따른다.\n\n  “...",
+  "content"  : "\n\n먼저 위키백과의 내용을 보면 아래와 같다.\n\n\n  컴퓨터 프로그래밍에서 변수 영역은 변수가 유효성을 갖는 영역을 가리킨다. 프로그램은 영역을 벗어난 변수를 가리킬 수 없다.\n\n  변수의 영역을 지정하는 규칙은 크게 정적 영역 규칙과 동적 영역 규칙으로 나뉜다. 정적 영역 규칙을 따르는 언어에서는 변수의 유효 영역이 컴파일 타임에 결정되며, 동적 영역 규칙은 실행 시간에 결정된다. 대부분의 현대 언어는 정적 영역 규칙을 따른다.\n\n  “위키백과 - 변수 영역\n\n\n\n  1. 전역\n  2. 모듈 영역\n  3. 파일 영역\n  4. 함수 영역\n  5. 블록 영역\n  6. 표현식 영역\n\n\n1. 전역\n\n소스 코드 상의 모든 곳에서 사용할 수 있는 전역 변수이다. 대부분의 언어에서 나쁜 습관으로 취급되는 전역 변수지만, 함수명이나 클래스명은 대부분 전역에서 접근할 수 있다.\n\nnamespace를 사용하면 전역 영역에서 변수나 함수명이 충돌하는 것을 막을 수 있다.\n\n\n  Python에서는 함수 안에서 상위 범위(Scope)의 변수를 사용하기 위해서 global , nonlocal 키워드를 사용한다.\n  global은 전역\n  nonlocal은 상위 함수\n\n\n[global - 예시 코드]\n\nglobal_var = &#39;global&#39;\n\ndef test_func():\n    global global_var\n    global_var += &#39; local&#39;\n\nglobal_var += &#39; end&#39;\ntest_func()\nprint(global_var)\n---------------------------------------------------\n&#39;global end local&#39;\n\n\n[nonlocal - 예시 코드]\n\ndef parents_func():\n    local_var = &#39;local&#39;\n\n    def child_func():\n        nonlocal local_var\n        local_var += &#39; child&#39;\n\n    child_func()\n    print(local_var)\nparents_func()\n---------------------------------------------------\n&#39;local child&#39;\n\n\n2. 모듈 영역\n\nPython과 같이 모듈을 지원하는 프로그래밍 언어에서는 모듈 단위 변수를 선언할 수 있다. 모듈 밖에서는 변수를 볼 수 없다.\n\n3. 파일 영역\n\nC와 C++ 및 그 유사 언어에서만 지원하는 개념이다. 파일 영역은 보다 원시적인 형태의 모듈 영역이라고 할 수 있다.\n\n4. 함수 영역\n\n거의 모든의 프로그래밍 언어는 함수 내에서만 유효한 지역 변수를 제공한다. 함수안에 지역 변수는 함수가 반환되면 더 이상 사용할 수 없다.\n\n[예시 코드]\n\ndef parents_func():\n    local_var = &#39;local&#39;\n\ndef child_func():\n    print(local_var)\n\nchild_func()\n---------------------------------------------------\nNameError: name &#39;local_var&#39; is not defined\n\n\nparents_func() 함수의 영역에 있는 변수 local_var 을 child_func() 함수 영역에서 접근하면 선언되지 않았다는 에러가 발생한다.\n\n5. 블록 영역\n\n코드 블록(if, for, try, catch 등) 영역에서만 유효한 지역 변수이다.\n\n[예시 코드]\n\nfor (let i=0; i&amp;lt;10; i++){\n    // somthing code\n}\n\n\n위 코드에서 i 는 for 반복문 안에서만 접근이 가능하다.\n\n6. 표현식 영역\n\n특정 표현식 안에서만 유효한 지역 변수이다.\n대부분의 함수형 프로그래밍 언어는 let 키워드를 지원한다.\n간단하게 Javascript의 예시를 보면 아래와 같다.\n\n[예시 코드]\n\ntest = lambda x : x + 1\nprint(test(1))\nprint(x)\n---------------------------------------------------\n2\nNameError: name &#39;x&#39; is not defined\n\n\n변수 x는 표현식 안에서만 접근 가능하기 때문에 에러가 발생한다.\n\n\n  📌 Python은 변수를 찾는 스코프에 LEGB 규칙을 따른다고 한다.\nLocal -&amp;gt; Enclosing -&amp;gt; Global -&amp;gt; Built-in\n\n"
+} ,
+  
+  {
     "title"    : "[카카오 코딩 테스트] - 카드 짝 맞추기",
     "category" : "",
     "tags"     : " 알고리즘",
