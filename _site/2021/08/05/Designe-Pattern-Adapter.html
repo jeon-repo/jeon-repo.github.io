@@ -61,21 +61,22 @@
     <meta property="og:type" content="website" />
     
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>The Real Lorem Ipsum | Jeon Repository</title>
+<title>[Design Pattern] 어댑터 패턴 (Adapter) | Jeon Repository</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="The Real Lorem Ipsum" />
+<meta property="og:title" content="[Design Pattern] 어댑터 패턴 (Adapter)" />
+<meta name="author" content="janos" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Lorem Ipsum from “de Finibus Bonorum et Malorum” written by Cicero in 45 BC." />
-<meta property="og:description" content="Lorem Ipsum from “de Finibus Bonorum et Malorum” written by Cicero in 45 BC." />
-<link rel="canonical" href="https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html" />
-<meta property="og:url" content="https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html" />
+<meta name="description" content="그림도 잘 그리고 싶은 개발자" />
+<meta property="og:description" content="그림도 잘 그리고 싶은 개발자" />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html" />
 <meta property="og:site_name" content="Jeon Repository" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-05T00:00:00+09:00" />
+<meta property="article:published_time" content="2021-08-05T00:00:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="The Real Lorem Ipsum" />
+<meta property="twitter:title" content="[Design Pattern] 어댑터 패턴 (Adapter)" />
 <script type="application/ld+json">
-{"datePublished":"2020-11-05T00:00:00+09:00","dateModified":"2020-11-05T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html"},"url":"https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html","@type":"BlogPosting","description":"Lorem Ipsum from “de Finibus Bonorum et Malorum” written by Cicero in 45 BC.","headline":"The Real Lorem Ipsum","@context":"https://schema.org"}</script>
+{"datePublished":"2021-08-05T00:00:00+09:00","dateModified":"2021-08-05T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html"},"url":"https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","description":"그림도 잘 그리고 싶은 개발자","headline":"[Design Pattern] 어댑터 패턴 (Adapter)","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -83,12 +84,12 @@
     <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="The Real Lorem Ipsum">
-    <meta name="twitter:description" content="Lorem Ipsumfrom “de Finibus Bonorum et Malorum” written by Cicero in 45 BC. Find out more on lipsum.com. And if you like colors, check out the http color tre...">
+    <meta name="twitter:title" content="[Design Pattern] 어댑터 패턴 (Adapter)">
+    <meta name="twitter:description" content="설명항상 보던 위키백과를 보겠다.  클래스의 인터페이스를 사용자가 기대하는 다른 인터페이스로 변환하는 패턴으로, 호환성이 없는 인터페이스 때문에 함께 동작할 수 없는 클래스들이 함께 작동하도록 해준다. (GoF 구조에 포함)  “위키백과 - Adapter”  가장 설명이 간결한 디...">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/pexels/triangular.jpeg">
-    <meta name="twitter:image:alt" content="The Real Lorem Ipsum">
+    <meta name="twitter:image:alt" content="[Design Pattern] 어댑터 패턴 (Adapter)">
 </head>
 
   <body>
@@ -202,7 +203,7 @@
         
         
         <li class="separator"> | </li>
-        <li><a id="theme-toggle" title="The Real Lorem Ipsum " aria-label="The Real Lorem Ipsum" onclick="themeToggle()"></a></li>
+        <li><a id="theme-toggle" title="[Design Pattern] 어댑터 패턴 (Adapter) " aria-label="[Design Pattern] 어댑터 패턴 (Adapter)" onclick="themeToggle()"></a></li>
         
     </ul>
 
@@ -214,16 +215,18 @@
   <header id="main" style="">
     <div class="title-padder">
       
-      <h1 id="The+Real+Lorem+Ipsum" class="title">The Real Lorem Ipsum</h1>
+      <h1 id="%5BDesign+Pattern%5D+%EC%96%B4%EB%8C%91%ED%84%B0+%ED%8C%A8%ED%84%B4+%28Adapter%29" class="title">[Design Pattern] 어댑터 패턴 (Adapter)</h1>
       
 
 
-<div class="post-info">
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
     <p class="meta">
+      janos - 
       
-      
-      November 05, 2020
-    </p></div>
+      August 05, 2021
+    </p></a></div>
 
       
     </div>
@@ -231,34 +234,47 @@
 
   <section class="post-content">
   
-      <h2 id="lorem-ipsum">Lorem Ipsum</h2>
+      <hr />
 
-<p>from <em>“de Finibus Bonorum et Malorum”</em> written by Cicero in 45 BC.
- <!--more-->
-Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you like colors, check out the <a href="https://www.w3schools.com/colors/colors_trends.asp">http color trends</a> from w3schools.</p>
+<h3 id="설명">설명</h3>
 
-<h3 id="the-standard-lorem-ipsum-passage-since-1500s">The standard Lorem Ipsum passage (since 1500s)</h3>
+<p>항상 보던 위키백과를 보겠다.</p>
 
-<p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”</p>
+<blockquote>
+  <p>클래스의 인터페이스를 사용자가 기대하는 다른 인터페이스로 변환하는 패턴으로, 호환성이 없는 인터페이스 때문에 함께 동작할 수 없는 클래스들이 함께 작동하도록 해준다. (<code class="language-plaintext highlighter-rouge">GoF 구조</code>에 포함)</p>
 
-<h3 id="section-11032">Section 1.10.32</h3>
+  <p>“위키백과 - <a href="https://ko.wikipedia.org/wiki/%EC%96%B4%EB%8C%91%ED%84%B0_%ED%8C%A8%ED%84%B4">Adapter</a>”</p>
+</blockquote>
 
-<h4 id="latin">Latin</h4>
-<p>“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?”</p>
+<ul>
+  <li>가장 설명이 간결한 디자인 패턴 같다.</li>
+  <li>기존 구조에 외부 기능을 접목시킬 때, 중간자 역할을 구성하는 방식이다.</li>
+</ul>
 
-<h4 id="translation-by-h-rackham-1914">Translation by H. Rackham (1914)</h4>
-<p>“But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?”</p>
+<h3 id="예시-코드">예시 코드</h3>
 
-<h3 id="section-11033">Section 1.10.33</h3>
+<p>위키백과의 예제를 가져왔다.</p>
 
-<h4 id="latin-1">Latin</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Target</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">specific_request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">'Hello Adapter Pattern'</span>
 
-<p>“At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.”</p>
+<span class="k">class</span> <span class="nc">Adapter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">adapter</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">adapter</span> <span class="o">=</span> <span class="n">adapter</span>
 
-<h4 id="translation-by-h-rackham-1914-1">Translation by H. Rackham (1914)</h4>
+    <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">adapter</span><span class="p">.</span><span class="n">specific_request</span><span class="p">()</span>
 
-<p>“On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.”</p>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Adapter</span><span class="p">(</span><span class="n">Target</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">())</span>
+</code></pre></div></div>
 
+<h3 id="결과">결과</h3>
+
+<p>Target 클래스의 specific_request() 함수를 바로 호출할 수 없어서 Adapter 클래스의 request() 함수를 통해 Target 클래스의 specific_request() 함수를 호출하였다.</p>
+
+<p><img src="/assets/img/post/2021-08-05-Designe-Pattern-Adapter/%EC%96%B4%EB%8C%91%ED%84%B0-%EA%B2%B0%EA%B3%BC.png" alt="Result" /></p>
 
     
   </section>
@@ -271,7 +287,7 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
         <li class="meta">Share</li>
         
         <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html" target="_blank"
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html" target="_blank"
                title=" Facebook">
                 <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Share on Facebook</span>
@@ -279,7 +295,7 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
         </li>
          
         <li>
-            <a href="https://twitter.com/intent/tweet?text=The+Real+Lorem+Ipsum%20https%3A%2F%2Fjeon-repo.github.io%2F2020%2F11%2F05%2Florem-ipsum.html"
+            <a href="https://twitter.com/intent/tweet?text=%5BDesign+Pattern%5D+%EC%96%B4%EB%8C%91%ED%84%B0+%ED%8C%A8%ED%84%B4+%28Adapter%29%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F08%2F05%2FDesigne-Pattern-Adapter.html"
                target="_blank" title="">
                 <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Tweet</span>
@@ -287,7 +303,7 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
         </li>
          
         <li>
-            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html&quote=The+Real+Lorem+Ipsum%20%7C%20Jeon+Repository&s="
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html&quote=%5BDesign+Pattern%5D+%EC%96%B4%EB%8C%91%ED%84%B0+%ED%8C%A8%ED%84%B4+%28Adapter%29%20%7C%20Jeon+Repository&s="
                target="_blank" title=" Tumblr">
                 <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Share on Tumblr</span>
@@ -295,7 +311,7 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
         </li>
          
         <li>
-            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html&media=$description=Lorem+Ipsum%0A%0Afrom+%E2%80%9Cde+Finibus+Bonorum+et+Malorum%E2%80%9D+written+by+Cicero+in+45+BC.%0A%0A"
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html&media=$description=%0A"
                target="_blank" title="">
                 <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Pin it</span>
@@ -303,7 +319,7 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
         </li>
           
         <li>
-            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html&title=The+Real+Lorem+Ipsum%20%7C%20Jeon+Repository"
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html&title=%5BDesign+Pattern%5D+%EC%96%B4%EB%8C%91%ED%84%B0+%ED%8C%A8%ED%84%B4+%28Adapter%29%20%7C%20Jeon+Repository"
                target="_blank" title=" Reddit">
                 <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Share on Reddit</span>
@@ -311,7 +327,7 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
         </li>
          
         <li>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html&title=The+Real+Lorem+Ipsum%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html"
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html&title=%5BDesign+Pattern%5D+%EC%96%B4%EB%8C%91%ED%84%B0+%ED%8C%A8%ED%84%B4+%28Adapter%29%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html"
                target="_blank" title=" LinkedIn">
                 <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Share on LinkedIn</span>
@@ -319,7 +335,7 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
         </li>
           
         <li>
-            <a href="mailto:?subject=The Real Lorem Ipsum%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2020/11/05/lorem-ipsum.html"
+            <a href="mailto:?subject=[Design Pattern] 어댑터 패턴 (Adapter)%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html"
                target="_blank" title="">
                 <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
                 <span class="sr-only">Email</span></a>
@@ -336,7 +352,19 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
   
 
 
-  <div class="tag-list"></div>
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="/tags#%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 디자인패턴</p>
+        </a></li>
+      
+    </ul>
+  </div>
 
 
 
@@ -346,19 +374,12 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
 
 <div id="post-nav">
     
-    <div id="previous-post">
-        <a alt="What's your title" href="/2020/11/06/whats-your-title.html">
-            <p>이전 포스트</p>
-            What's your title
-        </a>
-    </div>
-    
 
     
     <div id="next-post">
-        <a alt="Markup: Syntax Highlighting" href="/2020/11/04/Markup-Syntax-Highlighting.html">
+        <a alt="[Design Pattern] 커맨드 패턴 (Command)" href="/2021/08/04/Designe-Pattern-Command.html">
             <p>다음 포스트</p>
-            Markup: Syntax Highlighting
+            [Design Pattern] 커맨드 패턴 (Command)
         </a>
     </div>
     
@@ -384,12 +405,12 @@ Find out more on <a href="https://www.lipsum.com/">lipsum.com</a>. And if you li
   }
   
   
-  .feature-image a { color: turquoise !important; }
-  div#post-nav a { color: turquoise !important; }
-  footer a { color: turquoise !important; }
-  .site-header nav a:hover {  color: turquoise !important; }
+  .feature-image a { color: purple !important; }
+  div#post-nav a { color: purple !important; }
+  footer a { color: purple !important; }
+  .site-header nav a:hover {  color: purple !important; }
   header#main { 
-      background-color: turquoise !important;
+      background-color: purple !important;
       background-image: url('/assets/img/lineart.png');
   }
   

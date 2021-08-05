@@ -1,6 +1,16 @@
 [
   
   {
+    "title"    : "[Design Pattern] 어댑터 패턴 (Adapter)",
+    "category" : "",
+    "tags"     : " 디자인패턴",
+    "url"      : "/2021/08/05/Designe-Pattern-Adapter.html",
+    "date"     : "August 5, 2021",
+    "excerpt"  : "\n\n설명\n\n항상 보던 위키백과를 보겠다.\n\n\n  클래스의 인터페이스를 사용자가 기대하는 다른 인터페이스로 변환하는 패턴으로, 호환성이 없는 인터페이스 때문에 함께 동작할 수 없는 클래스들이 함께 작동하도록 해준다. (GoF 구조에 포함)\n\n  “위키백과 - Adapter”\n\n\n\n  가장 설명이 간결한 디자인 패턴 같다.\n  기존 구조에 외부 기능을 접목시킬 때, 중간자 역할을 구성하는 방식이다.\n\n\n예시 코드\n\n위키백과의 예제를 가져왔다....",
+  "content"  : "\n\n설명\n\n항상 보던 위키백과를 보겠다.\n\n\n  클래스의 인터페이스를 사용자가 기대하는 다른 인터페이스로 변환하는 패턴으로, 호환성이 없는 인터페이스 때문에 함께 동작할 수 없는 클래스들이 함께 작동하도록 해준다. (GoF 구조에 포함)\n\n  “위키백과 - Adapter”\n\n\n\n  가장 설명이 간결한 디자인 패턴 같다.\n  기존 구조에 외부 기능을 접목시킬 때, 중간자 역할을 구성하는 방식이다.\n\n\n예시 코드\n\n위키백과의 예제를 가져왔다.\n\nclass Target(object):\n    def specific_request(self):\n        return &#39;Hello Adapter Pattern&#39;\n\nclass Adapter(object):\n    def __init__(self, adapter):\n        self.adapter = adapter\n\n    def request(self):\n        return self.adapter.specific_request()\n\nclient = Adapter(Target())\nprint(client.request())\n\n\n결과\n\nTarget 클래스의 specific_request() 함수를 바로 호출할 수 없어서 Adapter 클래스의 request() 함수를 통해 Target 클래스의 specific_request() 함수를 호출하였다.\n\n\n"
+} ,
+  
+  {
     "title"    : "[Design Pattern] 커맨드 패턴 (Command)",
     "category" : "",
     "tags"     : " 디자인패턴",

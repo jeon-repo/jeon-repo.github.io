@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-04T01:24:35+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle>그림도 잘 그리고 싶은 개발자</subtitle><entry><title type="html">[Design Pattern] 커맨드 패턴 (Command)</title><link href="https://jeon-repo.github.io/2021/08/04/Designe-Pattern-Command.html" rel="alternate" type="text/html" title="[Design Pattern] 커맨드 패턴 (Command)" /><published>2021-08-04T00:00:00+09:00</published><updated>2021-08-04T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/08/04/Designe-Pattern-Command</id><content type="html" xml:base="https://jeon-repo.github.io/2021/08/04/Designe-Pattern-Command.html">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-05T17:31:36+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle>그림도 잘 그리고 싶은 개발자</subtitle><entry><title type="html">[Design Pattern] 어댑터 패턴 (Adapter)</title><link href="https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html" rel="alternate" type="text/html" title="[Design Pattern] 어댑터 패턴 (Adapter)" /><published>2021-08-05T00:00:00+09:00</published><updated>2021-08-05T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter</id><content type="html" xml:base="https://jeon-repo.github.io/2021/08/05/Designe-Pattern-Adapter.html">&lt;hr /&gt;
+
+&lt;h3 id=&quot;설명&quot;&gt;설명&lt;/h3&gt;
+
+&lt;p&gt;항상 보던 위키백과를 보겠다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;클래스의 인터페이스를 사용자가 기대하는 다른 인터페이스로 변환하는 패턴으로, 호환성이 없는 인터페이스 때문에 함께 동작할 수 없는 클래스들이 함께 작동하도록 해준다. (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GoF 구조&lt;/code&gt;에 포함)&lt;/p&gt;
+
+  &lt;p&gt;“위키백과 - &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%96%B4%EB%8C%91%ED%84%B0_%ED%8C%A8%ED%84%B4&quot;&gt;Adapter&lt;/a&gt;”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가장 설명이 간결한 디자인 패턴 같다.&lt;/li&gt;
+  &lt;li&gt;기존 구조에 외부 기능을 접목시킬 때, 중간자 역할을 구성하는 방식이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;예시-코드&quot;&gt;예시 코드&lt;/h3&gt;
+
+&lt;p&gt;위키백과의 예제를 가져왔다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;specific_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;Hello Adapter Pattern&apos;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Adapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;specific_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Adapter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;client&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;결과&quot;&gt;결과&lt;/h3&gt;
+
+&lt;p&gt;Target 클래스의 specific_request() 함수를 바로 호출할 수 없어서 Adapter 클래스의 request() 함수를 통해 Target 클래스의 specific_request() 함수를 호출하였다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-08-05-Designe-Pattern-Adapter/%EC%96%B4%EB%8C%91%ED%84%B0-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="디자인패턴" /><summary type="html"></summary></entry><entry><title type="html">[Design Pattern] 커맨드 패턴 (Command)</title><link href="https://jeon-repo.github.io/2021/08/04/Designe-Pattern-Command.html" rel="alternate" type="text/html" title="[Design Pattern] 커맨드 패턴 (Command)" /><published>2021-08-04T00:00:00+09:00</published><updated>2021-08-04T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/08/04/Designe-Pattern-Command</id><content type="html" xml:base="https://jeon-repo.github.io/2021/08/04/Designe-Pattern-Command.html">&lt;hr /&gt;
 
 &lt;h3 id=&quot;설명&quot;&gt;설명&lt;/h3&gt;
 
@@ -1355,64 +1395,4 @@ Local -&amp;gt; Enclosing -&amp;gt; Global -&amp;gt; Built-in&lt;/p&gt;
     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;minv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minv&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="알고리즘" /><summary type="html"></summary></entry><entry><title type="html">[Design Pattern] 전략 패턴 (Strategy)</title><link href="https://jeon-repo.github.io/2021/07/23/Designe-Pattern-Strategy.html" rel="alternate" type="text/html" title="[Design Pattern] 전략 패턴 (Strategy)" /><published>2021-07-23T00:00:00+09:00</published><updated>2021-07-23T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/23/Designe-Pattern-Strategy</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/23/Designe-Pattern-Strategy.html">&lt;hr /&gt;
-
-&lt;h3 id=&quot;설명&quot;&gt;설명&lt;/h3&gt;
-
-&lt;p&gt;위키백과에 나온 내용은 다음과 같다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;실행 중에 알고리즘을 선택할 수 있게 하는 행위 소프트웨어 디자인 패턴이다.&lt;/p&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;특정한 계열의 알고리즘들을 정의&lt;/li&gt;
-    &lt;li&gt;각 알고리즘을 캡슐화&lt;/li&gt;
-    &lt;li&gt;알고리즘들을 해당 계열 안에서 상호 교체가 가능하게 만듬&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;p&gt;Strategy는 알고리즘을 사용하는 클라이언트와는 독립적으로 다양하게 만든다. Strategy는 유연하고 재사용 가능한 객체지향 소프트웨어를 어떻게 설계하는지 기술하기 위해 디자인 패턴의 개념을 보급시킨 디자인 패턴이라는 영향력 있는 책에 포함된 패턴들 가운데 하나이다. (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GoF 행위&lt;/code&gt;에 포함)&lt;/p&gt;
-
-  &lt;p&gt;“위키백과 - &lt;a href=&quot;https://ko.wikipedia.org/wiki/전략_패턴&quot;&gt;Strategy Pattern&lt;/a&gt;”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;객체지향 프로그래밍 설계를 할 때 자주 발생하는 문제들을 피하기 위해 사용되는 패턴이라고 한다.&lt;/li&gt;
-  &lt;li&gt;위키백과의 설명을 보면 알고리즘의 캡슐화를 통해 실행중에 알고리즘을 바꿔가며 사용하는 방식같다.&lt;/li&gt;
-  &lt;li&gt;Strategy는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의 시스템&lt;/code&gt;에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;설정이 각각 다른 여러 모듈&lt;/code&gt;을 사용할 때 설정의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공통 부분&lt;/code&gt;에 이용하면 좋을 것 같다고 생각이 들었다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;예시-코드&quot;&gt;예시 코드&lt;/h3&gt;
-
-&lt;p&gt;클래스 선언시에 parameter가 없으면 클래스 내부 함수 호출, parameter가 있으면 전달받은 함수 호출&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Strategy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# Python은 함수도 parameter로 전달하고, 전달받을 수 있다.
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;# obj가 있으면 self.getFunction()에 할당
-&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;Internal Function&apos;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;outFunction1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;External Function 1&apos;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;outFunction2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;External Function 2&apos;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;__main__&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;strategy0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Strategy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;strategy1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Strategy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outFunction1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;strategy2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Strategy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outFunction2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;strategy0: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strategy0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;strategy1: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strategy1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;strategy2: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strategy2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;실행-결과&quot;&gt;실행 결과&lt;/h3&gt;
-
-&lt;p&gt;strategy0, 1, 2의 결과가 각각 다른 것을 확인할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-23-Designe-Pattern-Strategy/%EC%A0%84%EB%9E%B5-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="디자인패턴" /><summary type="html"></summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>janos</name></author><category term="알고리즘" /><summary type="html"></summary></entry></feed>
