@@ -10,7 +10,7 @@ favicon: assets/favicon.ico                             # Icon displayed in the 
 
 # Header and footer text
 header_text: 그림도 잘 그리고 싶은 개발자
-header_feature_image: assets/img/pexels/triangular.jpeg
+header_feature_image: assets/img/feature-img/황금해안-top.jpeg
 footer_text: >
   Copyright 2021. jeon-repo all rights reserved.
 #  Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
