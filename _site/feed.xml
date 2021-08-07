@@ -1,4 +1,134 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-06T17:34:56+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle>그림도 잘 그리고 싶은 개발자</subtitle><entry><title type="html">[Design Pattern] 프록시 패턴 (Proxy)</title><link href="https://jeon-repo.github.io/2021/08/06/Designe-Pattern-Proxy.html" rel="alternate" type="text/html" title="[Design Pattern] 프록시 패턴 (Proxy)" /><published>2021-08-06T00:00:00+09:00</published><updated>2021-08-06T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/08/06/Designe-Pattern-Proxy</id><content type="html" xml:base="https://jeon-repo.github.io/2021/08/06/Designe-Pattern-Proxy.html">&lt;hr /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jeon-repo.github.io/" rel="alternate" type="text/html" /><updated>2021-08-07T01:23:18+09:00</updated><id>https://jeon-repo.github.io/feed.xml</id><title type="html">Jeon Repository</title><subtitle>그림도 잘 그리고 싶은 개발자</subtitle><entry><title type="html">[백준 2447번] 별 찍기 - 10</title><link href="https://jeon-repo.github.io/2021/08/07/%EB%B0%B1%EC%A4%80-2447%EB%B2%88.html" rel="alternate" type="text/html" title="[백준 2447번] 별 찍기 - 10" /><published>2021-08-07T00:00:00+09:00</published><updated>2021-08-07T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/08/07/%EB%B0%B1%EC%A4%80-2447%EB%B2%88</id><content type="html" xml:base="https://jeon-repo.github.io/2021/08/07/%EB%B0%B1%EC%A4%80-2447%EB%B2%88.html">&lt;hr /&gt;
+
+&lt;p&gt;백준 “별 찍기 - 10” 문제를 풀어보겠습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;#solution&quot;&gt;여기&lt;/a&gt;를 누르면 설명을 건너뛸 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+&lt;p&gt;재귀적인 패턴으로 별을 찍어 보자. N이 3의 거듭제곱(3, 9, 27, …)이라고 할 때, 크기 N의 패턴은 N×N 정사각형 모양이다.&lt;/p&gt;
+
+&lt;p&gt;크기 3의 패턴은 가운데에 공백이 있고, 가운데를 제외한 모든 칸에 별이 하나씩 있는 패턴이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;N이 3보다 클 경우, 크기 N의 패턴은 공백으로 채워진 가운데의 (N/3)×(N/3) 정사각형을 크기 N/3의 패턴으로 둘러싼 형태이다. 예를 들어 크기 27의 패턴은 예제 출력 1과 같다.&lt;/p&gt;
+
+&lt;h2 id=&quot;입력&quot;&gt;입력&lt;/h2&gt;
+
+&lt;p&gt;첫째 줄에 N이 주어진다. N은 3의 거듭제곱이다. 즉 어떤 정수 k에 대해 N=3k이며, 이때 1 ≤ k &amp;lt; 8이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;출력&quot;&gt;출력&lt;/h2&gt;
+
+&lt;p&gt;첫째 줄부터 N번째 줄까지 별을 출력한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;예제-입력-1&quot;&gt;예제 입력 1&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;예제-출력-1&quot;&gt;예제 출력 1&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;***************************&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***************************&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;******&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;******&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;******&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;******&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***************************&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***************************&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*********&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;*********&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*********&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;*********&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*********&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;*********&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*********&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;*********&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***************************&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***************************&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;******&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;******&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;******&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;******&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***************************&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;***************************&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;solution&quot;&gt;Solution&lt;/h1&gt;
+
+&lt;h3 id=&quot;문제-이해&quot;&gt;문제 이해&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;문제의 요구대로 재귀함수를 사용해야 한다.&lt;/li&gt;
+  &lt;li&gt;접근 방식은 2가지 방식이 떠올랐다.
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;3등분하여 연산&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-08-07-%EB%B0%B1%EC%A4%80-2447%EB%B2%88/3%EB%93%B1%EB%B6%84.jpeg&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;좌표별 아이템 복사&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-08-07-%EB%B0%B1%EC%A4%80-2447%EB%B2%88/%EB%B3%B5%EC%82%AC.jpeg&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3등분하여 연산하는 방식으로 풀어보는 것이 간결할 것이라고 생각이 들어서 진행하였다.&lt;/p&gt;
+
+&lt;h3 id=&quot;코드&quot;&gt;코드&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setrecursionlimit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readline&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 재귀함수
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;draw_star&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leng&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 최하단인 경우 &apos;*&apos; 반환
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;leng&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;*&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# 최하단까지 재귀함수를 사용
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;stars&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;draw_star&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leng&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# 최하단부터 반환받은 아이템을 나열하여 전체적인 그림을 맞춤
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 윗줄, 반환받은 아이템 나열
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 중간, 반환받은 아이템 사이에 공백을 포함하여 나열
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos; &apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leng&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# 아랫줄, 반환 받은 아이템 나열
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 리스트 타입이라 문자열로 변환
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;draw_star&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;여담&quot;&gt;여담&lt;/h3&gt;
+
+&lt;p&gt;처음 진행할 때는 데이터 타입을 리스트가 아닌 문자열로 사용해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\n&lt;/code&gt; 때문에 제대로 출력이 되지 않아 삽질?을 조금 하게 되었다.&lt;/p&gt;
+
+&lt;p&gt;머리를 refresh 할 수 있었던 문제였다.&lt;/p&gt;</content><author><name>janos</name></author><category term="알고리즘" /><summary type="html"></summary></entry><entry><title type="html">[Design Pattern] 프록시 패턴 (Proxy)</title><link href="https://jeon-repo.github.io/2021/08/06/Designe-Pattern-Proxy.html" rel="alternate" type="text/html" title="[Design Pattern] 프록시 패턴 (Proxy)" /><published>2021-08-06T00:00:00+09:00</published><updated>2021-08-06T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/08/06/Designe-Pattern-Proxy</id><content type="html" xml:base="https://jeon-repo.github.io/2021/08/06/Designe-Pattern-Proxy.html">&lt;hr /&gt;
 
 &lt;h3 id=&quot;설명&quot;&gt;설명&lt;/h3&gt;
 
@@ -1174,79 +1304,4 @@ Local -&amp;gt; Enclosing -&amp;gt; Global -&amp;gt; Built-in&lt;/p&gt;
 
 &lt;p&gt;이제 단순 배열은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;곱하기&lt;/code&gt; 연산을 통해 생성하는게 효율면에서 좋을 것이라고 생각이 들었다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/%EA%B3%B1%ED%95%98%EA%B8%B0-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="알고리즘" /><summary type="html"></summary></entry><entry><title type="html">함수형 프로그래밍 (Functional Programming)-1</title><link href="https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html" rel="alternate" type="text/html" title="함수형 프로그래밍 (Functional Programming)-1" /><published>2021-07-25T00:00:00+09:00</published><updated>2021-07-25T00:00:00+09:00</updated><id>https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming</id><content type="html" xml:base="https://jeon-repo.github.io/2021/07/25/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-Functional-Programming.html">&lt;hr /&gt;
-
-&lt;p&gt;함수형 프로그래밍이란 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;순수 함수(Pure Function)&lt;/code&gt;를 통해 자료 처리를 수학적 함수의 계산으로 취급하고, 상태와 가변 데이터를 멀리하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부작용(Side-Effect)&lt;/code&gt;을 최소화며 프로그래밍하는 패러다임이다.&lt;/p&gt;
-
-&lt;p&gt;이전에 포스팅한 객체지향 프로그래밍과 약간 대조되는 패러다임이라고 생각이 들었다.&lt;/p&gt;
-
-&lt;p&gt;그 주관적인 이유는 아래와 같다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;객체 단위의 효율적인 처리와 다르게 함수 단위의 독립적인 처리 방식을 고집한다.&lt;/li&gt;
-    &lt;li&gt;일급 객체의 기준이 다음과 같다.&lt;br /&gt;
- 함수형 - 객체(Object) vs 객체지향 - 함수(Function)&lt;/li&gt;
-    &lt;li&gt;복잡한 구조로 구성되는 객체지향 프로그래밍과 달리 아주x2 간결한 구조로 구성된다.&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;p&gt;📌 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일급 객체&lt;/code&gt;란 다른 객체들에 일반적으로 적용 가능한 연산을 모두 지원하는 객체를 가리킨다. 보통 매개변수로 넘기기, 수정하기, 변수에 대입하기와 같은 연산을 지원할 때 일급 객체라고 한다.&lt;/p&gt;
-
-  &lt;p&gt;“위키백과 - &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%9D%BC%EA%B8%89_%EA%B0%9D%EC%B2%B4&quot;&gt;일급 객체&lt;/a&gt;”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;함수형 프로그래밍에는 몇 가지의 특징적인 함수의 형태와 개념이 존재한다.&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#특징적인-함수&quot; id=&quot;markdown-toc-특징적인-함수&quot;&gt;특징적인 함수&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#1-순수-함수-pure-function&quot; id=&quot;markdown-toc-1-순수-함수-pure-function&quot;&gt;1. 순수 함수 (Pure Function)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#2-익명-함수-anonymous-function&quot; id=&quot;markdown-toc-2-익명-함수-anonymous-function&quot;&gt;2. 익명 함수 (Anonymous Function)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3-고계-함수-higher-order-function&quot; id=&quot;markdown-toc-3-고계-함수-higher-order-function&quot;&gt;3. 고계 함수 (Higher-Order Function)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;특징적인-함수&quot;&gt;특징적인 함수&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-순수-함수-pure-function&quot;&gt;1. 순수 함수 (Pure Function)&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;순수 함수&lt;/code&gt;는 함수형 프로그래밍을 하기 위해서 반드시 사용해야하는 함수 형태이며, 아래와 같은 특징이 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부작용(Side-Effect)&lt;/code&gt;이 없는 함수이다.&lt;/li&gt;
-  &lt;li&gt;함수의 &lt;strong&gt;실행&lt;/strong&gt;이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;외부에 영향&lt;/code&gt;을 끼치지 않아야 한다.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동일한 입력 값&lt;/code&gt;을 넣었을 때는 항상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동일한 값을 반환&lt;/code&gt;해야 한다.&lt;/li&gt;
-  &lt;li&gt;호출 위치와 상관없이 항상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동일한 값을 반환&lt;/code&gt;해야 한다.&lt;/li&gt;
-  &lt;li&gt;위의 특징들로 인해서 안정적인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;병렬 계산&lt;/code&gt;이 가능하다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-익명-함수-anonymous-function&quot;&gt;2. 익명 함수 (Anonymous Function)&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;익명 함수&lt;/code&gt;는 이름이 없는 함수를 말한다. &lt;strong&gt;생성 즉시 실행&lt;/strong&gt;되기 때문에 초기화 같은 작업에 효과적으로 사용되는 함수 형태이며, 아래와 같은 특징이 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;일회성 함수이다.&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;선언 이전에 사용될 수 없다.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;📌 Javascript의 경우에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;호이스팅&lt;/code&gt;으로 인해서 선언 이전에도 함수를 사용할 수 있지만, 익명 함수의 경우에는 호이스팅이 적용되지 않아서 선언 이후에 사용해야 한다.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;람다(Lambda)식을 통해 익명 함수를 수행할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-고계-함수-higher-order-function&quot;&gt;3. 고계 함수 (Higher-Order Function)&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고계 함수&lt;/code&gt; 는 함수 자체도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;값(value)&lt;/code&gt; 으로 취급하여 사용하는 함수 형태이며, 아래와 같은 특징이 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;함수를 다른 함수의 입력 값으로 전달할 수 있다.&lt;/li&gt;
-  &lt;li&gt;함수의 반환 값 역시 함수로 반환할 수 있다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;📌 함수형 프로그래밍-2 에서 이어서 포스팅 하도록 하겠다.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>janos</name></author><category term="기본기" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/assets/img/post/2021-07-26-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85/%EA%B3%B1%ED%95%98%EA%B8%B0-%EA%B2%B0%EA%B3%BC.png&quot; alt=&quot;Result&quot; /&gt;&lt;/p&gt;</content><author><name>janos</name></author><category term="알고리즘" /><summary type="html"></summary></entry></feed>
