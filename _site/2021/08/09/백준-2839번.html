@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.3.7
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Jeon Repository" href="https://jeon-repo.github.io/feed.xml"/>
+
+    
+
+    <!-- KaTeX 0.13.9 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 8.9.2 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://jeon-repo.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/feature-img/황금해안-top.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>[백준 2839번] 설탕 배달 | Jeon Repository</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="[백준 2839번] 설탕 배달" />
+<meta name="author" content="janos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="그림도 잘 그리고 싶은 개발자" />
+<meta property="og:description" content="그림도 잘 그리고 싶은 개발자" />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html" />
+<meta property="og:site_name" content="Jeon Repository" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-09T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[백준 2839번] 설탕 배달" />
+<script type="application/ld+json">
+{"datePublished":"2021-08-09T00:00:00+09:00","dateModified":"2021-08-09T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html"},"url":"https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","description":"그림도 잘 그리고 싶은 개발자","headline":"[백준 2839번] 설탕 배달","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="[백준 2839번] 설탕 배달">
+    <meta name="twitter:description" content="백준 “설탕 배달”  여기를 누르면 건너뛸 수 있습니다.문제상근이는 요즘 설탕공장에서 설탕을 배달하고 있다. 상근이는 지금 사탕가게에 설탕을 정확하게 N킬로그램을 배달해야 한다. 설탕공장에서 만드는 설탕은 봉지에 담겨져 있다. 봉지는 3킬로그램 봉지와 5킬로그램 봉지가 있다.상근이...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/feature-img/황금해안-top.jpeg">
+    <meta name="twitter:image:alt" content="[백준 2839번] 설탕 배달">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/bike.png" />
+		</a>
+        
+        <a class="site-title" aria-label="Jeon Repository" href="/">
+        Jeon Repository
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                     About Me 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                     Portfolio 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="[백준 2839번] 설탕 배달 " aria-label="[백준 2839번] 설탕 배달" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image" >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="%5B%EB%B0%B1%EC%A4%80+2839%EB%B2%88%5D+%EC%84%A4%ED%83%95+%EB%B0%B0%EB%8B%AC" class="title">[백준 2839번] 설탕 배달</h1>
+      
+
+
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
+    <p class="meta">
+      janos - 
+      
+      August 09, 2021
+    </p></a></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <hr />
+
+<p>백준 “설탕 배달”</p>
+
+<blockquote>
+  <p><a href="#solution">여기</a>를 누르면 건너뛸 수 있습니다.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="문제">문제</h2>
+
+<p>상근이는 요즘 설탕공장에서 설탕을 배달하고 있다. 상근이는 지금 사탕가게에 설탕을 정확하게 N킬로그램을 배달해야 한다. 설탕공장에서 만드는 설탕은 봉지에 담겨져 있다. 봉지는 3킬로그램 봉지와 5킬로그램 봉지가 있다.</p>
+
+<p>상근이는 귀찮기 때문에, 최대한 적은 봉지를 들고 가려고 한다. 예를 들어, 18킬로그램 설탕을 배달해야 할 때, 3킬로그램 봉지 6개를 가져가도 되지만, 5킬로그램 3개와 3킬로그램 1개를 배달하면, 더 적은 개수의 봉지를 배달할 수 있다.</p>
+
+<p>상근이가 설탕을 정확하게 N킬로그램 배달해야 할 때, 봉지 몇 개를 가져가면 되는지 그 수를 구하는 프로그램을 작성하시오.</p>
+
+<h2 id="입력">입력</h2>
+
+<p>첫째 줄에 N이 주어진다. (3 ≤ N ≤ 5000)</p>
+
+<h2 id="출력">출력</h2>
+
+<p>상근이가 배달하는 봉지의 최소 개수를 출력한다. 만약, 정확하게 N킬로그램을 만들 수 없다면 -1을 출력한다.</p>
+
+<h2 id="예제-입력-1">예제 입력 1</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>18
+</code></pre></div></div>
+
+<h2 id="예제-출력-1">예제 출력 1</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4
+</code></pre></div></div>
+
+<h2 id="예제-입력-2">예제 입력 2</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4
+</code></pre></div></div>
+
+<h2 id="예제-출력-2">예제 출력 2</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1
+</code></pre></div></div>
+
+<h2 id="예제-입력-3">예제 입력 3</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6
+</code></pre></div></div>
+
+<h2 id="예제-출력-3">예제 출력 3</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+</code></pre></div></div>
+
+<h2 id="예제-입력-4">예제 입력 4</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>9
+</code></pre></div></div>
+
+<h2 id="예제-출력-4">예제 출력 4</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+</code></pre></div></div>
+
+<h2 id="예제-입력-5">예제 입력 5</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>11
+</code></pre></div></div>
+
+<h2 id="예제-출력-5">예제 출력 5</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="solution">Solution</h1>
+
+<h3 id="문제-이해">문제 이해</h3>
+
+<ul>
+  <li>큰 수(5)부터 확인하고, 작은 수(3)를 처리하면 간단하게 해결될 것 같았다.<br />
+→ DP 문제</li>
+  <li>조건문을 최소화하여 효율성을 높이도록 문제를 풀어보았다.<br />
+→ 테스트 결과 : 64ms</li>
+</ul>
+
+<h3 id="코드">코드</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">N</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">:</span>
+    <span class="c1"># 총 무게 N 나누기 5의 나머지가 0인 경우
+</span>    <span class="k">if</span> <span class="n">N</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># N 나누기 5의 몫을 result에 더하여 출력
+</span>        <span class="n">result</span> <span class="o">+=</span> <span class="n">N</span> <span class="o">//</span> <span class="mi">5</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="c1"># 3킬로 짜리 1개 추가하는 경우
+</span>    <span class="c1"># 총 무게 N에서 -3, 봉지 +1
+</span>    <span class="n">N</span> <span class="o">-=</span> <span class="mi">3</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># 반복문이 종료될 때까지 답이 찾아지지 않으면,
+</span>    <span class="c1"># 3과 5로 N을 만들수 없으므로 -1 출력
+</span>    <span class="k">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=%5B%EB%B0%B1%EC%A4%80+2839%EB%B2%88%5D+%EC%84%A4%ED%83%95+%EB%B0%B0%EB%8B%AC%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F08%2F09%2F%25EB%25B0%25B1%25EC%25A4%2580-2839%25EB%25B2%2588.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html&quote=%5B%EB%B0%B1%EC%A4%80+2839%EB%B2%88%5D+%EC%84%A4%ED%83%95+%EB%B0%B0%EB%8B%AC%20%7C%20Jeon+Repository&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html&media=$description=%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html&title=%5B%EB%B0%B1%EC%A4%80+2839%EB%B2%88%5D+%EC%84%A4%ED%83%95+%EB%B0%B0%EB%8B%AC%20%7C%20Jeon+Repository"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html&title=%5B%EB%B0%B1%EC%A4%80+2839%EB%B2%88%5D+%EC%84%A4%ED%83%95+%EB%B0%B0%EB%8B%AC%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=[백준 2839번] 설탕 배달%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/08/09/%EB%B0%B1%EC%A4%80-2839%EB%B2%88.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="/tags#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 알고리즘</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="[백준 2775번] 부녀회장이 될테야" href="/2021/08/09/%EB%B0%B1%EC%A4%80-2775%EB%B2%88.html">
+            <p>다음 포스트</p>
+            [백준 2775번] 부녀회장이 될테야
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  
+  
+  .feature-image a { color: red !important; }
+  div#post-nav a { color: red !important; }
+  footer a { color: red !important; }
+  .site-header nav a:hover {  color: red !important; }
+  header#main { 
+      background-color: red !important;
+      background-image: url('/assets/img/lineart.png');
+  }
+  
+  
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Copyright 2021. jeon-repo all rights reserved.
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/jeon-repo"
+               title="Follow on Github"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto://jano.jeon@gmail.com"
+               title="Follow on Mail"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
