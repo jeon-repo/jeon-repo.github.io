@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.3.7
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Jeon Repository" href="https://jeon-repo.github.io/feed.xml"/>
+
+    
+
+    <!-- KaTeX 0.13.9 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 8.9.2 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://jeon-repo.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/feature-img/beach001.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>collections 라이브러리 | Jeon Repository</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="collections 라이브러리" />
+<meta name="author" content="janos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="그림도 잘 그리고 싶은 개발자" />
+<meta property="og:description" content="그림도 잘 그리고 싶은 개발자" />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/08/15/collections.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/08/15/collections.html" />
+<meta property="og:site_name" content="Jeon Repository" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-15T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="collections 라이브러리" />
+<script type="application/ld+json">
+{"datePublished":"2021-08-15T00:00:00+09:00","dateModified":"2021-08-15T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/08/15/collections.html"},"url":"https://jeon-repo.github.io/2021/08/15/collections.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","description":"그림도 잘 그리고 싶은 개발자","headline":"collections 라이브러리","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="collections 라이브러리">
+    <meta name="twitter:description" content="collections 는 Python의 내장 라이브러리로 컨테이너 데이터형 의 구현 및 활용을 도와주는 라이브러리이다.collections 의 주요 객체를 살펴보면 아래와 같다.            객체      설명                  namedtuple      이름...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/feature-img/beach001.jpeg">
+    <meta name="twitter:image:alt" content="collections 라이브러리">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/bike.png" />
+		</a>
+        
+        <a class="site-title" aria-label="Jeon Repository" href="/">
+        Jeon Repository
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                     About Me 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                     Portfolio 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="collections 라이브러리 " aria-label="collections 라이브러리" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image" >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="collections+%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC" class="title">collections 라이브러리</h1>
+      
+
+
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
+    <p class="meta">
+      janos - 
+      
+      August 15, 2021
+    </p></a></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <hr />
+
+<p><code class="language-plaintext highlighter-rouge">collections</code> 는 Python의 내장 라이브러리로 <code class="language-plaintext highlighter-rouge">컨테이너 데이터형</code> 의 구현 및 활용을 도와주는 라이브러리이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">collections</code> 의 주요 객체를 살펴보면 아래와 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>객체</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>namedtuple</td>
+      <td>이름 붙은 필드를 갖는 튜플 서브 클래스를 만들기 위한 팩토리 함수</td>
+    </tr>
+    <tr>
+      <td>deque</td>
+      <td>양쪽 끝에서 빠르게 추가와 삭제를 할 수 있는 리스트류 컨테이너</td>
+    </tr>
+    <tr>
+      <td>ChainMap</td>
+      <td>여러 매핑의 단일 뷰를 만드는 딕셔너리류 클래스</td>
+    </tr>
+    <tr>
+      <td>Counter</td>
+      <td>해시 가능한 객체를 세는 데 사용하는 딕셔너리 서브 클래스</td>
+    </tr>
+    <tr>
+      <td>OrderedDict</td>
+      <td>항목이 추가된 순서를 기억하는 딕셔너리 서브 클래스</td>
+    </tr>
+    <tr>
+      <td>defaultdict</td>
+      <td>누락된 값을 제공하기 위해 팩토리 함수를 호출하는 딕셔너리 서브 클래스</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul id="markdown-toc">
+  <li><a href="#namedtuple" id="markdown-toc-namedtuple">namedtuple</a></li>
+  <li><a href="#deque" id="markdown-toc-deque">deque</a></li>
+  <li><a href="#chainmap" id="markdown-toc-chainmap">ChainMap</a></li>
+  <li><a href="#counter" id="markdown-toc-counter">Counter</a></li>
+  <li><a href="#ordereddict" id="markdown-toc-ordereddict">OrderedDict</a></li>
+  <li><a href="#defaultdict" id="markdown-toc-defaultdict">defaultdict</a></li>
+</ul>
+
+<h1 id="namedtuple">namedtuple</h1>
+
+<p>이름 그대로 튜플(값)에 이름(키)을 붙이는 데이터 구조이다.</p>
+
+<p>먼저 간단하게 사용 방법을 보겠다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="c1"># namedtuple 선언부분, []안에 이름(키)을 선언
+</span><span class="n">Computer</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Computer'</span><span class="p">,</span> <span class="p">[</span><span class="s">'cpu'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">,</span> <span class="s">'ssd'</span><span class="p">])</span>
+<span class="c1"># 아래의 방식으로 이름(키) 선언 가능
+</span><span class="n">Computer</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Computer'</span><span class="p">,</span> <span class="s">'cpu ram ssd'</span><span class="p">)</span>
+
+<span class="c1"># Computer라는 namedtuple 객체를 통해 데이터를 할당하여, com_100 인스턴스 생성
+</span><span class="n">com_100</span> <span class="o">=</span> <span class="n">Computer</span><span class="p">(</span><span class="n">cpu</span><span class="o">=</span><span class="s">'i5'</span><span class="p">,</span> <span class="n">ram</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ssd</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+
+<span class="c1"># com_200 생성
+</span><span class="n">com_200</span> <span class="o">=</span> <span class="n">Computer</span><span class="p">(</span><span class="n">cpu</span><span class="o">=</span><span class="s">'i7'</span><span class="p">,</span> <span class="n">ram</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">ssd</span><span class="o">=</span><span class="mi">2048</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'com_100 [type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">com_100</span><span class="p">)</span><span class="si">}</span><span class="s"> / data: </span><span class="si">{</span><span class="n">com_100</span><span class="si">}</span><span class="s">]'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'com_200 [type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">com_200</span><span class="p">)</span><span class="si">}</span><span class="s"> / data: </span><span class="si">{</span><span class="n">com_200</span><span class="si">}</span><span class="s">]'</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"com_100 [type: &lt;class '__main__.Computer'&gt; / data: Computer(cpu='i5', ram=8, ssd=1024)]"</span>
+<span class="s">"com_200 [type: &lt;class '__main__.Computer'&gt; / data: Computer(cpu='i7', ram=16, ssd=2048)]"</span>
+</code></pre></div></div>
+
+<p>출력된 결과를 보면 타입이 <strong>namedtuple로 선언된 객체</strong>인 <code class="language-plaintext highlighter-rouge">Computer</code> 로 나오는 것을 볼 수 있다.</p>
+
+<p>아래는 <code class="language-plaintext highlighter-rouge">namedtuple</code> 와 관련된 추가적인 내용이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 출력부만 변경
+# 이름(키)을 통해서 해당되는 데이터를 호출할 수 있다.
+</span><span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'com_100 [ssd: </span><span class="si">{</span><span class="n">com_100</span><span class="p">.</span><span class="n">ssd</span><span class="si">}</span><span class="s">]'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'com_200 [cpu: </span><span class="si">{</span><span class="n">com_100</span><span class="p">.</span><span class="n">cpu</span><span class="si">}</span><span class="s">]'</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"com_100 [ssd: 1024]"</span>
+<span class="s">"com_200 [cpu: i5]"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _make(iterable)
+</span><span class="n">amd</span> <span class="o">=</span> <span class="p">[</span><span class="s">'amd 5600x'</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">2048</span><span class="p">]</span>
+<span class="n">com_amd_make</span> <span class="o">=</span> <span class="n">Computer</span><span class="p">.</span><span class="n">_make</span><span class="p">(</span><span class="n">amd</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">com_amd_make</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"Computer(cpu='amd 5600x', ram=16, ssd=2048)"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _fields
+</span><span class="k">print</span><span class="p">(</span><span class="n">com_100</span><span class="p">.</span><span class="n">_fields</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"('cpu', 'ram', 'ssd')"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _field_defaults
+# -&gt; default값은 뒷쪽부터 채워짐
+# -&gt; 인스턴스 생성시 입력값은 앞쪽부터 채워짐
+</span><span class="n">Default_Computer</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s">'Default_Computer'</span><span class="p">,</span> <span class="p">[</span><span class="s">'cpu'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">,</span> <span class="s">'ssd'</span><span class="p">],</span> <span class="n">defaults</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1024</span><span class="p">])</span>
+<span class="n">com_100</span> <span class="o">=</span> <span class="n">Default_Computer</span><span class="p">(</span><span class="s">'i3'</span><span class="p">)</span>
+<span class="n">com_200</span> <span class="o">=</span> <span class="n">Default_Computer</span><span class="p">(</span><span class="s">'i5'</span><span class="p">)</span>
+
+<span class="c1"># default로 설정된 값 확인
+</span><span class="k">print</span><span class="p">(</span><span class="n">Default_Computer</span><span class="p">.</span><span class="n">_field_defaults</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'com_100: </span><span class="si">{</span><span class="n">com_100</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'com_200: </span><span class="si">{</span><span class="n">com_200</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"{'ram': 4, 'ssd': 1024}"</span>
+<span class="s">"com_100: Default_Computer(cpu='i3', ram=4, ssd=1024)"</span>
+<span class="s">"com_200: Default_Computer(cpu='i5', ram=4, ssd=1024)"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># namedtuple은 class로 취급되기 때문에,
+# 서브 클래스를 사용하여 기능을 추가, 변경할 수 있다.
+</span><span class="k">class</span> <span class="nc">Computer</span><span class="p">(</span><span class="n">namedtuple</span><span class="p">(</span><span class="s">'Computer'</span><span class="p">,</span> <span class="p">[</span><span class="s">'cpu'</span><span class="p">,</span> <span class="s">'ram'</span><span class="p">,</span> <span class="s">'ssd'</span><span class="p">])):</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># 출력 형태를 재선언하여 변경
+</span>        <span class="k">return</span> <span class="sa">f</span><span class="s">'Computer[cpu: </span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">cpu</span><span class="si">}</span><span class="s">|ram: </span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">ram</span><span class="si">}</span><span class="s">|ssd: </span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">ssd</span><span class="si">}</span><span class="s">]'</span>
+
+<span class="n">com_test1</span> <span class="o">=</span> <span class="n">Computer</span><span class="p">(</span><span class="s">'i3'</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
+<span class="n">com_test2</span> <span class="o">=</span> <span class="n">Computer</span><span class="p">(</span><span class="s">'i5'</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2048</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">com_test1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">com_test2</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"Computer[cpu: i3|ram: 4|ssd: 1024]"</span>
+<span class="s">"Computer[cpu: i5|ram: 8|ssd: 2048]"</span>
+</code></pre></div></div>
+
+<h1 id="deque">deque</h1>
+
+<p>deque는 스택과 큐를 일반화 한 것이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Double Ended Queue</code>의 약자이다.</p>
+
+<p>데이터의 삽입과 삭제가 양쪽에서 모두 가능한 자료구조이다.</p>
+
+<p>아래의 함수를 통해 활용이 가능하다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>함수</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>append(x)</td>
+      <td>deque 오른쪽에 x를 추가</td>
+    </tr>
+    <tr>
+      <td>appendleft(x)</td>
+      <td>deque 왼쪽에 x를 추가</td>
+    </tr>
+    <tr>
+      <td>clear()</td>
+      <td>deque에서 모든 요소를 제거하고 길이가 0인 상태로 만듬</td>
+    </tr>
+    <tr>
+      <td>copy()</td>
+      <td>deque의 얕은 복사본을 만듬</td>
+    </tr>
+    <tr>
+      <td>count(x)</td>
+      <td>x와 같은 요소의 갯수를 반환</td>
+    </tr>
+    <tr>
+      <td>extend(iterable)</td>
+      <td>iterable 인자의 요소를 추가하여 deque의 오른쪽을 확장</td>
+    </tr>
+    <tr>
+      <td>index(x, start, stop)</td>
+      <td>deque에 있는 x의 위치를 반환 (start 이후, stop 이전 - 필수 아님), 반환할 수 없는 경우 ValueError 발생</td>
+    </tr>
+    <tr>
+      <td>pop()</td>
+      <td>deque의 오른쪽에서 요소를 제거하고 반환, 요소가 없으면 IndexError 발생</td>
+    </tr>
+    <tr>
+      <td>popleft()</td>
+      <td>deque의 왼쪽에서 요소를 제거하고 반환, 요소가 없으면 IndexError 발생</td>
+    </tr>
+    <tr>
+      <td>remove(value)</td>
+      <td>value의 첫 번째 항목을 제거, 찾을 수 없으면 ValueError 발생</td>
+    </tr>
+    <tr>
+      <td>reverse()</td>
+      <td>deque 요소들의 순서를 뒤집기, 원본 데이터가 변형</td>
+    </tr>
+    <tr>
+      <td>rotate(n=1)</td>
+      <td>deque를 n단계 오른쪽으로 회전, n이 음수면 왼쪽으로 회전 → dq.rotate(n=1) == dq.appendleft(dq.pop()) → dq.rotate(n=-1) == dq.append(dq.popleft())</td>
+    </tr>
+    <tr>
+      <td>maxlen</td>
+      <td>deque의 최대 크기 or None 반환</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="chainmap">ChainMap</h1>
+
+<p>맵 여러 개를 합쳐서 중복을 제외하고 하나의 dictionary로 만들어주는 자료구조이다.</p>
+
+<p>중복된 데이터는 첫 번째 인자로 입력된 맵의 데이터를 남겨두고 나머지는 제외한다.</p>
+
+<p>Map 형태의 데이터를 인자로 받아서 선언한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">ChainMap</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s">'a'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s">'c1'</span><span class="p">}</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="s">'b'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s">'c2'</span><span class="p">}</span>
+
+<span class="c1"># 선언
+</span><span class="n">cm</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cm</span><span class="p">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cm</span><span class="p">.</span><span class="n">values</span><span class="p">()))</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"ChainMap({1: 'a', 3: 'c1'}, {2: 'b', 3: 'c2'})"</span>
+<span class="s">"[2, 3, 1]"</span>
+<span class="s">"['b', 'c1', 'a']"</span>
+</code></pre></div></div>
+
+<h1 id="counter">Counter</h1>
+
+<p>요소와 요소의 갯수로 “<strong>키-값</strong>“의 형태를 같는 해시 가능한 dictionary 서브 클래스이다.</p>
+
+<p>기본적으로 특정 요소의 갯수를 셀 때 사용한다.</p>
+
+<p>아래의 코드를 보면 4가지 형태의 선언 방식을 사용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># Counter 객체의 인스턴스 생성
+</span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="s">'word test'</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">({</span><span class="s">'red'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">red</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">blue</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>key 값에 갯수 확인을 원하는 요소를 넣으면 갯수를 확인할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="s">'red'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"red: </span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s">'red'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"green: </span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s">'green'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"red: 1"</span>
+<span class="s">"green: 0"</span>
+</code></pre></div></div>
+
+<p>아래는 함수를 통해 사용할 수 있는 기능이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># elements() -&gt; iter의 형태로 요소들을 반환
+</span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">elements</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">elements</span><span class="p">()))</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"&lt;itertools.chain object at 0x7ffe51242040&gt;"</span>
+<span class="s">"['a', 'a', 'b', 'b', 'b', 'd']"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># most_common([n]) -&gt; 갯수가 가장 많은 요소부터 n개 출력
+</span><span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="s">'abracadabra'</span><span class="p">).</span><span class="n">most_common</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"[('a', 5), ('b', 2), ('r', 2)]"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># update([iterable-or-mapping]) -&gt; 요소들의 합을 연산 (원본 데이터 변경)
+</span><span class="n">c3</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">c4</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c3</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">c4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c3</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"Counter({'a': 4, 'b': 4, 'c': 4})"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># subtract([iterable-or-mapping]) -&gt; 요소들의 차를 연산 (원본 데이터 변경)
+</span><span class="n">c1</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c1</span><span class="p">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"Counter({'a': 2, 'b': 0, 'c': -2})"</span>
+</code></pre></div></div>
+
+<h1 id="ordereddict">OrderedDict</h1>
+
+<blockquote>
+  <p>Python 3.7 이후부터 기본 dictionary에서도 데이터 <strong>입력 순서가 보존</strong>되기 때문에 활용성이 약간 감소되었다.</p>
+
+  <p>“Python - <a href="[https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries](https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries)">Dictionary</a>”</p>
+</blockquote>
+
+<p>현재 일반 dictionary 객체와의 차이는 데이터의 순서를 바꾸는 연산에 적합하다는 차이만 가지고 있다.</p>
+
+<p>아래는 순서를 변경할 때 사용하는 함수이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="c1"># move_to_end(key, last=True) -&gt; last가 False이면 왼쪽 끝으로 이동
+</span><span class="n">d</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="s">'abcde'</span><span class="p">)</span>
+<span class="n">d</span><span class="p">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="s">'c'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'True: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"True: OrderedDict([('a', None), ('b', None), ('d', None), ('e', None), ('c', None)])"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d</span><span class="p">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="s">'c'</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'False: </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"False: OrderedDict([('c', None), ('a', None), ('b', None), ('d', None), ('e', None)])"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># popitem(last=True) -&gt; last가 True면 LIFO, False이면 FIFO 순서로 반환
+</span><span class="n">d</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="s">'abcde'</span><span class="p">)</span>
+<span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="n">popitem</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'True: </span><span class="si">{</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"True: ('e', None)"</span>
+<span class="s">"OrderedDict([('a', None), ('b', None), ('c', None), ('d', None)])"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="n">popitem</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'False: </span><span class="si">{</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"False: ('a', None)"</span>
+<span class="s">"OrderedDict([('b', None), ('c', None), ('d', None)])"</span>
+</code></pre></div></div>
+
+<h1 id="defaultdict">defaultdict</h1>
+
+<p>dictionary value의 초깃값을 설정한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">default_list</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="n">default_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">default_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'default_list: </span><span class="si">{</span><span class="n">default_list</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"default_list: defaultdict(&lt;class 'list'&gt;, {1: [], 2: []})"</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">default_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+<span class="n">default_dict</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">default_dict</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'default_dict: </span><span class="si">{</span><span class="n">default_dict</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="o">---------------------------------------------------</span>
+<span class="s">"default_dict: defaultdict(&lt;class 'dict'&gt;, {1: {}, 2: {}})"</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>“Python 3.9.6 Documentation - <a href="https://docs.python.org/ko/3/library/collections.html#collections.namedtuple">collections</a></p>
+</blockquote>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/08/15/collections.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=collections+%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F08%2F15%2Fcollections.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/08/15/collections.html&quote=collections+%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%7C%20Jeon+Repository&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/08/15/collections.html&media=https://jeon-repo.github.io/assets/img/feature-img/beach001.jpeg$description=%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/08/15/collections.html&title=collections+%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%7C%20Jeon+Repository"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/08/15/collections.html&title=collections+%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/08/15/collections.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=collections 라이브러리%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/08/15/collections.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="/tags#Python">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Python</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="[프로그래머스] - 음양 더하기" href="/2021/08/14/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0.html">
+            <p>다음 포스트</p>
+            [프로그래머스] - 음양 더하기
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  
+  
+  
+  
+  header#main { background-image: url('/assets/img/feature-img/beach001.jpeg'); }
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Copyright 2021. jeon-repo all rights reserved.
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/jeon-repo"
+               title="Follow on Github"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto://jano.jeon@gmail.com"
+               title="Follow on Mail"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
