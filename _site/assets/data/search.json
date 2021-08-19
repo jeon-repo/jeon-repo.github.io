@@ -1,6 +1,16 @@
 [
   
   {
+    "title"    : "[Python] 파이썬 철학",
+    "category" : "",
+    "tags"     : " Python",
+    "url"      : "/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html",
+    "date"     : "August 19, 2021",
+    "excerpt"  : "\n\n먼저 파이썬의 핵심 철학부터 살펴보겠다.\n\n- Beautiful is better than ugly. \n(아름다운 것이 추한 것보다 낫다)\n\n- Explicit is better than implicit.\n(명시적인 것이 암시적인 것보다 낫다.)\n\n- Simple is better than complex.\n(단순한 것이 복잡한 것보다 낫다.)\n\n- Complex is better than complicated.\n(복잡한 것이 난해한 것...",
+  "content"  : "\n\n먼저 파이썬의 핵심 철학부터 살펴보겠다.\n\n- Beautiful is better than ugly. \n(아름다운 것이 추한 것보다 낫다)\n\n- Explicit is better than implicit.\n(명시적인 것이 암시적인 것보다 낫다.)\n\n- Simple is better than complex.\n(단순한 것이 복잡한 것보다 낫다.)\n\n- Complex is better than complicated.\n(복잡한 것이 난해한 것보다 낫다.)\n\n- Flat is better than nested.\n(단조로운 것이 뒤엉킨 것보다 낫다.)\n\n- Sparse is better than dense.\n(분포되어 있는 것이 빽빽한 것보다 낫다.)\n\n- Readability counts.\n(가독성은 중요하다.)\n\n\n나머지 파이썬의 철학이다.\n\n- Special cases aren&#39;t special enough to break the rules.\n(특별한 경우라 하더라도 규칙을 어길 수 있을 만큼 특별하지 않다.)\n\n- Although practicality beats purity.\n(비록 실용성이 순수함을 앞선다 할지라도.)\n\n- Errors should never pass silently.\n(오류를 절대로 조용히 넘기면 안된다.)\n\n- Unless explicitly silenced.\n(분명하게 조용하지 않는한)\n\n- In the face of ambiguity, refuse the temptation to guess.\n(애매모호한 상황에서도 추측하려는 유혹을 떨쳐내야 한다.)\n\n- There should be one-- and preferably only one --obvious way to do it.\n(한 가지 방법이 있어야 한다. 그리고 가급적이면 그것을 할 수 있는 분명한 한 가지 방법이 있어야 한다.\n\n- Although that way may not be obvious at first unless you&#39;re Dutch.\n(비록 당신이 네덜란드 사람이 아니라면, 처음에 그 방법이 분명하지 않을 수도 있다.)\n→ 네덜란드 사람 = 파이썬 창시자\n\n- Now is better than never.\n(지금 하는 것이 하지 않는 것보다 낫다.)\n\n- Although never is often better than right now.\n(비록 하지 않는 것이 종종 지금 당장 하는 것보다 나을지라도.)\n\n- If the implementation is hard to explain, it&#39;s a bad idea.\n(만약 구현한 것이 설명하기 어렵다면, 그것은 나쁜 아이디어다.)\n\n- If the implementation is easy to explain, it may be a good idea.\n(만약 구현한 것이 설명하기 쉽다면, 그것은 좋은 아이디어일 것이다.)\n\n- Namespace are one honking great idea -- let&#39;s do more of those!\n(네임스페이스는 정말 좋은 아이디어다. 더 많이 사용하자!)\n\n\nEaster Egg\n\n&amp;gt;&amp;gt;&amp;gt; import this\n\n\n이스터 에그를 cli에 입력하면 파이썬 철학이 출력된다.\n\n\n\n\n  이 이스터 에그는 파이썬에 많은 기여를 한 팀 피터스(Tim Peters)가 추가해둔 것이라고 한다.\n\n  Reference - [Python doc]\n\n"
+} ,
+  
+  {
     "title"    : "collections 라이브러리",
     "category" : "",
     "tags"     : " Python",

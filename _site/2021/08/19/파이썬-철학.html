@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.3.7
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Jeon Repository" href="https://jeon-repo.github.io/feed.xml"/>
+
+    
+
+    <!-- KaTeX 0.13.9 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 8.9.2 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://jeon-repo.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/feature-img/황금해안-top.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>[Python] 파이썬 철학 | Jeon Repository</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="[Python] 파이썬 철학" />
+<meta name="author" content="janos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="그림도 잘 그리고 싶은 개발자" />
+<meta property="og:description" content="그림도 잘 그리고 싶은 개발자" />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html" />
+<meta property="og:site_name" content="Jeon Repository" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-19T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[Python] 파이썬 철학" />
+<script type="application/ld+json">
+{"datePublished":"2021-08-19T00:00:00+09:00","dateModified":"2021-08-19T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html"},"url":"https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","description":"그림도 잘 그리고 싶은 개발자","headline":"[Python] 파이썬 철학","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="[Python] 파이썬 철학">
+    <meta name="twitter:description" content="먼저 파이썬의 핵심 철학부터 살펴보겠다.- Beautiful is better than ugly. (아름다운 것이 추한 것보다 낫다)- Explicit is better than implicit.(명시적인 것이 암시적인 것보다 낫다.)- Simple is better than co...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/feature-img/황금해안-top.jpeg">
+    <meta name="twitter:image:alt" content="[Python] 파이썬 철학">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/bike.png" />
+		</a>
+        
+        <a class="site-title" aria-label="Jeon Repository" href="/">
+        Jeon Repository
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                     About Me 
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/portfolio/">
+                     Portfolio 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="[Python] 파이썬 철학 " aria-label="[Python] 파이썬 철학" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image" >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="%5BPython%5D+%ED%8C%8C%EC%9D%B4%EC%8D%AC+%EC%B2%A0%ED%95%99" class="title">[Python] 파이썬 철학</h1>
+      
+
+
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
+    <p class="meta">
+      janos - 
+      
+      August 19, 2021
+    </p></a></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <hr />
+
+<p>먼저 파이썬의 <strong>핵심 철학</strong>부터 살펴보겠다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Beautiful is better than ugly. 
+(아름다운 것이 추한 것보다 낫다)
+
+- Explicit is better than implicit.
+(명시적인 것이 암시적인 것보다 낫다.)
+
+- Simple is better than complex.
+(단순한 것이 복잡한 것보다 낫다.)
+
+- Complex is better than complicated.
+(복잡한 것이 난해한 것보다 낫다.)
+
+- Flat is better than nested.
+(단조로운 것이 뒤엉킨 것보다 낫다.)
+
+- Sparse is better than dense.
+(분포되어 있는 것이 빽빽한 것보다 낫다.)
+
+- Readability counts.
+(가독성은 중요하다.)
+</code></pre></div></div>
+
+<p>나머지 파이썬의 철학이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Special cases aren't special enough to break the rules.
+(특별한 경우라 하더라도 규칙을 어길 수 있을 만큼 특별하지 않다.)
+
+- Although practicality beats purity.
+(비록 실용성이 순수함을 앞선다 할지라도.)
+
+- Errors should never pass silently.
+(오류를 절대로 조용히 넘기면 안된다.)
+
+- Unless explicitly silenced.
+(분명하게 조용하지 않는한)
+
+- In the face of ambiguity, refuse the temptation to guess.
+(애매모호한 상황에서도 추측하려는 유혹을 떨쳐내야 한다.)
+
+- There should be one-- and preferably only one --obvious way to do it.
+(한 가지 방법이 있어야 한다. 그리고 가급적이면 그것을 할 수 있는 분명한 한 가지 방법이 있어야 한다.
+
+- Although that way may not be obvious at first unless you're Dutch.
+(비록 당신이 네덜란드 사람이 아니라면, 처음에 그 방법이 분명하지 않을 수도 있다.)
+→ 네덜란드 사람 = 파이썬 창시자
+
+- Now is better than never.
+(지금 하는 것이 하지 않는 것보다 낫다.)
+
+- Although never is often better than right now.
+(비록 하지 않는 것이 종종 지금 당장 하는 것보다 나을지라도.)
+
+- If the implementation is hard to explain, it's a bad idea.
+(만약 구현한 것이 설명하기 어렵다면, 그것은 나쁜 아이디어다.)
+
+- If the implementation is easy to explain, it may be a good idea.
+(만약 구현한 것이 설명하기 쉽다면, 그것은 좋은 아이디어일 것이다.)
+
+- Namespace are one honking great idea -- let's do more of those!
+(네임스페이스는 정말 좋은 아이디어다. 더 많이 사용하자!)
+</code></pre></div></div>
+
+<h3 id="easter-egg">Easter Egg</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import this
+</code></pre></div></div>
+
+<p>이스터 에그를 cli에 입력하면 파이썬 철학이 출력된다.</p>
+
+<p><img src="/assets/img/post/2021-08-19-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99/%EC%9D%B4%EC%8A%A4%ED%84%B0%EC%97%90%EA%B7%B8.png" alt="Result" /></p>
+
+<blockquote>
+  <p>이 <code class="language-plaintext highlighter-rouge">이스터 에그</code>는 파이썬에 많은 기여를 한 <code class="language-plaintext highlighter-rouge">팀 피터스(Tim Peters)</code>가 추가해둔 것이라고 한다.</p>
+
+  <p>Reference - <a href="https://www.python.org/dev/peps/pep-0020/">[Python doc]</a></p>
+</blockquote>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=%5BPython%5D+%ED%8C%8C%EC%9D%B4%EC%8D%AC+%EC%B2%A0%ED%95%99%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F08%2F19%2F%25ED%258C%258C%25EC%259D%25B4%25EC%258D%25AC-%25EC%25B2%25A0%25ED%2595%2599.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html&quote=%5BPython%5D+%ED%8C%8C%EC%9D%B4%EC%8D%AC+%EC%B2%A0%ED%95%99%20%7C%20Jeon+Repository&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html&media=$description=%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html&title=%5BPython%5D+%ED%8C%8C%EC%9D%B4%EC%8D%AC+%EC%B2%A0%ED%95%99%20%7C%20Jeon+Repository"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html&title=%5BPython%5D+%ED%8C%8C%EC%9D%B4%EC%8D%AC+%EC%B2%A0%ED%95%99%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=[Python] 파이썬 철학%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/08/19/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%B2%A0%ED%95%99.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="/tags#Python">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> Python</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="collections 라이브러리" href="/2021/08/15/collections.html">
+            <p>다음 포스트</p>
+            collections 라이브러리
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  
+  
+  .feature-image a { color: black !important; }
+  div#post-nav a { color: black !important; }
+  footer a { color: black !important; }
+  .site-header nav a:hover {  color: black !important; }
+  header#main { 
+      background-color: black !important;
+      background-image: url('/assets/img/lineart.png');
+  }
+  
+  
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Copyright 2021. jeon-repo all rights reserved.
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/jeon-repo"
+               title="Follow on Github"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto://jano.jeon@gmail.com"
+               title="Follow on Mail"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
