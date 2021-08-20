@@ -23,6 +23,8 @@
         {% assign name_page = "" %}
 
         {% for page in site.pages %}
+            <!-- 포트폴리오 안보이기 -->
+            {% if page.title != "Portfolio" %}
             {% unless page.title == null or page.hide or name_page contains page.title %}
             <li class="separator"> | </li>
             <li>
@@ -32,6 +34,7 @@
                 </a>
             </li>
             {% endunless %}
+            {% endif %}
             {% assign name_page = page.title | append: name_page %}
         {% endfor %}
         

@@ -29,15 +29,18 @@ layout: page
     {% endfor %}
 
     <!-- Displays the list of tags-->
-    {% include default/tags_list.html tags=rawtags %}
+    <!-- 태그 목록 안보여주기 -->
+    <!-- {% include default/tags_list.html tags=rawtags %} -->
 
     <!-- Displays the posts and pages that contains the tag-->
     <div class="posts">
         {% for tag in tags %}
         <h3 id="{{ tag | cgi_escape }}" class="tag-anchor">
-            <a href="#{{ tag | cgi_escape }}"><i class="fas fa-tag fa-fw fa-sm"></i> {{ tag }}</a>
-            <a href="#{{ page.title }}" style="float: right"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"> </i> </a>
-
+            <!-- 태그 모양 아이콘 제거 -->
+            <a href="#{{ tag | cgi_escape }}"> {{ tag }}</a>
+            <!-- <a href="#{{ tag | cgi_escape }}"><i class="fas fa-tag fa-fw fa-sm"></i> {{ tag }}</a> -->
+            <!-- 맨 위로 이동 버튼 -->
+            <!-- <a href="#{{ page.title }}" style="float: right"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"> </i> </a> -->
         </h3>
 
         <!-- Posts and collection for each tags -->
@@ -87,5 +90,8 @@ layout: page
         </div>
         {% endfor %}
 
+    </div>
+    <div style="margin-top: 0.5rem;">
+        <a href="#{{ page.title }}" style="float: right"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"> </i> </a>
     </div>
 </div>
