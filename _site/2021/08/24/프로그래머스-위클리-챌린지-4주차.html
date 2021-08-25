@@ -253,6 +253,12 @@
             
             
         
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
         
         
         <li class="separator"> | </li>
@@ -303,7 +309,60 @@
 
 <p>아래 표는 5개 직업군 별로 많이 사용하는 5개 언어에 <code class="language-plaintext highlighter-rouge">직업군 언어 점수</code>를 부여한 표입니다.</p>
 
-<p><a href="https://www.notion.so/ff43a956d6fa44b5a8e2ca40965c87e7">제목 없음</a></p>
+<table>
+  <thead>
+    <tr>
+      <th>점수</th>
+      <th>SI</th>
+      <th>CONTENTS</th>
+      <th>HARDWARE</th>
+      <th>PORTAL</th>
+      <th>GAME</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5</td>
+      <td>JAVA</td>
+      <td>JAVASCRIPT</td>
+      <td>C</td>
+      <td>JAVA</td>
+      <td>C++</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>JAVASCRIPT</td>
+      <td>JAVA</td>
+      <td>C++</td>
+      <td>JAVASCRIPT</td>
+      <td>C#</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>SQL</td>
+      <td>PYTHON</td>
+      <td>PYTHON</td>
+      <td>PYTHON</td>
+      <td>JAVASCRIPT</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>PYTHON</td>
+      <td>SQL</td>
+      <td>JAVA</td>
+      <td>KOTLIN</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>C#</td>
+      <td>C++</td>
+      <td>JAVASCRIPT</td>
+      <td>PHP</td>
+      <td>JAVA</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>예를 들면, SQL의 SI <code class="language-plaintext highlighter-rouge">직업군 언어 점수</code>는 3점이지만 CONTENTS <code class="language-plaintext highlighter-rouge">직업군 언어 점수</code>는 2점입니다. SQL의 HARDWARE, PORTAL, GAME <code class="language-plaintext highlighter-rouge">직업군 언어 점수</code>는 0점입니다.</p>
 
@@ -339,7 +398,30 @@
 
 <h3 id="입출력-예">입출력 예</h3>
 
-<p><a href="https://www.notion.so/1a8adaf01ca6435e88d99769a02b8a0b">제목 없음</a></p>
+<table>
+  <thead>
+    <tr>
+      <th>table</th>
+      <th>languages</th>
+      <th>preference</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[“SI JAVA JAVASCRIPT SQL PYTHON C#”, “CONTENTS JAVASCRIPT JAVA PYTHON SQL C++”, “HARDWARE C C++ PYTHON JAVA JAVASCRIPT”, “PORTAL JAVA JAVASCRIPT PYTHON KOTLIN PHP”, “GAME C++ C# JAVASCRIPT C JAVA”]</td>
+      <td>[“PYTHON”, “C++”, “SQL”]</td>
+      <td>[7, 5, 5]</td>
+      <td>“HARDWARE”</td>
+    </tr>
+    <tr>
+      <td>[“SI JAVA JAVASCRIPT SQL PYTHON C#”, “CONTENTS JAVASCRIPT JAVA PYTHON SQL C++”, “HARDWARE C C++ PYTHON JAVA JAVASCRIPT”, “PORTAL JAVA JAVASCRIPT PYTHON KOTLIN PHP”, “GAME C++ C# JAVASCRIPT C JAVA”]</td>
+      <td>[“JAVA”, “JAVASCRIPT”]</td>
+      <td>[7, 5]</td>
+      <td>“PORTAL”</td>
+    </tr>
+  </tbody>
+</table>
 
 <hr />
 
@@ -566,6 +648,13 @@
 <!-- Post navigation -->
 
 <div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="[프로그래머스] - 상호 평가" href="/2021/08/25/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%9C%84%ED%81%B4%EB%A6%AC-%EC%B1%8C%EB%A6%B0%EC%A7%80-2%EC%A3%BC%EC%B0%A8.html">
+            <p>이전 포스트</p>
+            [프로그래머스] - 상호 평가
+        </a>
+    </div>
     
 
     
