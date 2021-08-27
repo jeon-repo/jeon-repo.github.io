@@ -1,6 +1,26 @@
 [
   
   {
+    "title"    : "[현대 모비스 경진대회] - 2번",
+    "category" : "",
+    "tags"     : " 알고리즘",
+    "url"      : "/2021/08/27/%ED%98%84%EB%8C%80-%EB%AA%A8%EB%B9%84%EC%8A%A4-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-2%EB%B2%88.html",
+    "date"     : "August 27, 2021",
+    "excerpt"  : "\n\n현대 모비스 경진대회 “2번” 문제를 풀어보았습니다.\n\n\n  혹시 해당 포스팅이 저작권상 문제가 되는 경우 이메일로 연락을 주시면 조치하도록 하겠습니다.\n\n  이메일 - jano.jeon@gmail.com\n\n\n\n\nSolution\n\n문제를 유출하지 말라는 조건이 있었기 때문에 문제는 생략하고\n본인의 문제에 대한 이해 부분과 코드만 작성했습니다.\n\n[문제 이해]\n\n\n  맨 앞 or 뒤가 a인 경우 제거\n  맨 앞뒤가 모두 b인 경우 제거\n...",
+  "content"  : "\n\n현대 모비스 경진대회 “2번” 문제를 풀어보았습니다.\n\n\n  혹시 해당 포스팅이 저작권상 문제가 되는 경우 이메일로 연락을 주시면 조치하도록 하겠습니다.\n\n  이메일 - jano.jeon@gmail.com\n\n\n\n\nSolution\n\n문제를 유출하지 말라는 조건이 있었기 때문에 문제는 생략하고\n본인의 문제에 대한 이해 부분과 코드만 작성했습니다.\n\n[문제 이해]\n\n\n  맨 앞 or 뒤가 a인 경우 제거\n  맨 앞뒤가 모두 b인 경우 제거\n  제거하다 마지막에 남은 문자가 a면 true, b면 false\n\n\n이해한 내용을 바탕으로 코드를 작성했습니다.\n\n[답안 제출 코드]\n\ndef solution(a):\n    answer = []\n\n    for s in a:\n        while True:\n            flag = 0\n            if s[0] == &#39;a&#39;:\n                flag += 1\n                s = s[1:]\n            if s[-1] == &#39;a&#39;:\n                flag += 1\n                s = s[:-1]\n\n            if s[0] == &#39;b&#39; and s[-1] == &#39;b&#39;:\n                flag += 1\n                x = s.count(&#39;a&#39;)\n                while x &amp;gt; 0 and s[0] == &#39;b&#39;:\n                    s = s[1:-1]\n                    x -= 1\n            \n            if &#39;b&#39; not in s or &#39;a&#39; not in s or flag == 0:\n                break\n\n        if s == &#39;a&#39;:\n            answer.append(True)\n            continue\n        else:\n            answer.append(False)\n            continue\n\n    return answer\n\n\n코드 실행 시 테스트 케이스가 1개 빼고 모두 실패가 나와서 정말 의문이었습니다.\n\n하지만 답안 제출이 끝나고 난 뒤에 다시 코드를 확인해보니 크게 실수한 부분이 있었습니다.\n\n[원래 의도한 코드]\n\ndef solution(a):\n    answer = []\n\n    for s in a:\n        while True:\n            flag = 0\n            if s[0] == &#39;a&#39;:\n                flag += 1\n                s = s[1:]\n            if s[-1] == &#39;a&#39;:\n                flag += 1\n                s = s[:-1]\n\n            if s[0] == &#39;b&#39; and s[-1] == &#39;b&#39;:\n                flag += 1\n                s = s[1:-1]\n            \n            if &#39;b&#39; not in s or &#39;a&#39; not in s or flag == 0:\n                break\n\n        if s == &#39;a&#39;:\n            answer.append(True)\n            continue\n        else:\n            answer.append(False)\n            continue\n\n    return answer\n\n\nb를 제거하는 조건문에 while문을 넣었던 것이 잘못이었습니다.\n\n문제를 풀기위해 이것저것 넣어보면 테스트하던 코드가 일부 남아있었습니다…\n\n풀이가 의도대로 되었다면 맞출 수 있었던 문제였기에 너무 아쉬웠습니다.\n"
+} ,
+  
+  {
+    "title"    : "[현대 모비스 경진대회] - 1번",
+    "category" : "",
+    "tags"     : " 알고리즘",
+    "url"      : "/2021/08/27/%ED%98%84%EB%8C%80-%EB%AA%A8%EB%B9%84%EC%8A%A4-%EA%B2%BD%EC%A7%84%EB%8C%80%ED%9A%8C-1%EB%B2%88.html",
+    "date"     : "August 27, 2021",
+    "excerpt"  : "\n\n현대 모비스 경진대회 “1번” 문제를 풀어보았습니다.\n\n\n  혹시 해당 포스팅이 저작권상 문제가 되는 경우 이메일로 연락을 주시면 조치하도록 하겠습니다.\n\n  이메일 - jano.jeon@gmail.com\n\n\n\n\nSolution\n\n문제를 유출하지 말라는 조건이 있었기 때문에 문제는 생략하고\n본인의 문제에 대한 이해 부분과 코드만 작성했습니다.\n\n[문제 이해]\n\n\n  dice 데이터를 가지고 순열 데이터 생성\n  비교 방식을 set() ...",
+  "content"  : "\n\n현대 모비스 경진대회 “1번” 문제를 풀어보았습니다.\n\n\n  혹시 해당 포스팅이 저작권상 문제가 되는 경우 이메일로 연락을 주시면 조치하도록 하겠습니다.\n\n  이메일 - jano.jeon@gmail.com\n\n\n\n\nSolution\n\n문제를 유출하지 말라는 조건이 있었기 때문에 문제는 생략하고\n본인의 문제에 대한 이해 부분과 코드만 작성했습니다.\n\n[문제 이해]\n\n\n  dice 데이터를 가지고 순열 데이터 생성\n  비교 방식을 set() - set() 형태로 진행\n  순열 데이터 중에 만들어지지 않은 가장 작은 데이터 반환\n\n\n이해한 내용을 바탕으로 코드를 작성했습니다.\n\n[답안 제출 코드]\n\nfrom itertools import permutations\n\ndef solution(dice):\n    temp = []\n    for i in dice:\n        temp += set(i)\n    \n    data = []\n    for n in range(1, len(dice)+1):\n        data += [int(&#39;&#39;.join(map(str, i))) for i in list(permutations(temp, n))]\n    data = list(set(data))\n    check_data = list(range(data[0], data[-1]+1))\n    answer = sorted(set(check_data) - set(data))\n    if answer[0] == 0:\n        return answer[1]\n    else:\n        return answer[0]\n\n\n완성인 줄 알았지만, 코드 실행 시 1개의 테스트 케이스가 실패하였습니다.\n\n실패한 테스트 케이스를 찾으면 업데이트 예정입니다.\n"
+} ,
+  
+  {
     "title"    : "[Python] 리스트 복사",
     "category" : "",
     "tags"     : " Python",
