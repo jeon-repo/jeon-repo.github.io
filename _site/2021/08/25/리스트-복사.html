@@ -85,7 +85,7 @@
 
     <!-- Twitter Cards -->
     <meta name="twitter:title" content="[Python] 리스트 복사">
-    <meta name="twitter:description" content="내가 그랬듯이 파이썬 사용자들이 자주 헷갈려하는 리스트 복사에 대한 내용을 정리했다.파이썬의 리스트 복사는 4가지 경우가 있다.  데이터를 가리키는 메모리 주소를 복사하는 경우  데이터 자체를 복사하는 경우  mutable 데이터의 메모리 주소를 복사하는 경우  mutable 데이...">
+    <meta name="twitter:description" content="내가 그랬듯이 파이썬 사용자들이 자주 헷갈려하는 리스트 복사에 대한 내용을 정리했습니다.파이썬의 리스트 복사는 4가지 경우가 있습니다.  데이터를 가리키는 메모리 주소를 복사하는 경우  데이터 자체를 복사하는 경우  mutable 데이터의 메모리 주소를 복사하는 경우  mutabl...">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/feature-img/황금해안-top.jpeg">
@@ -295,9 +295,9 @@
   
       <hr />
 
-<p>내가 그랬듯이 파이썬 사용자들이 자주 헷갈려하는 리스트 복사에 대한 내용을 정리했다.</p>
+<p>내가 그랬듯이 파이썬 사용자들이 자주 헷갈려하는 리스트 복사에 대한 내용을 정리했습니다.</p>
 
-<p>파이썬의 리스트 복사는 4가지 경우가 있다.</p>
+<p>파이썬의 리스트 복사는 4가지 경우가 있습니다.</p>
 
 <ol>
   <li>데이터를 가리키는 메모리 주소를 복사하는 경우</li>
@@ -306,7 +306,7 @@
   <li>mutable 데이터 자체를 복사하는 경우</li>
 </ol>
 
-<p>보기쉽게 코드로 먼저 확인해보겠다.</p>
+<p>보기쉽게 코드로 먼저 확인해보겠습니다.</p>
 
 <h3 id="1번-코드">[1번 코드]</h3>
 
@@ -321,11 +321,11 @@
 
 <p><img src="/assets/img/post/2021-08-25-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%B3%B5%EC%82%AC/1%EB%B2%88%EC%9D%981.png" alt="Result" /></p>
 
-<p>결과를 보면 id값이 동일한 것을 보아 같은 데이터라고 볼 수 있다.</p>
+<p>결과를 보면 id값이 동일한 것을 보아 같은 데이터라고 볼 수 있습니다.</p>
 
 <p>그리고</p>
 
-<p><code class="language-plaintext highlighter-rouge">copy_data</code>의 데이터를 변경해보았다.</p>
+<p><code class="language-plaintext highlighter-rouge">copy_data</code>의 데이터를 변경해봤습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">copy_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'origin_data: </span><span class="si">{</span><span class="n">origin_data</span><span class="si">}</span><span class="s"> / id: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">origin_data</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
@@ -334,8 +334,8 @@
 
 <p><img src="/assets/img/post/2021-08-25-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%B3%B5%EC%82%AC/1%EB%B2%88%EC%9D%982.png" alt="Result" /></p>
 
-<p><code class="language-plaintext highlighter-rouge">origin_data</code>의 데이터 역시 변경된 것을 확인할 수 있다.<br />
-이것으로 <code class="language-plaintext highlighter-rouge">copy_data</code> 변수는 <code class="language-plaintext highlighter-rouge">origin_data</code>의 메모리 주소를 복사했다는 것을 알 수 있다.</p>
+<p><code class="language-plaintext highlighter-rouge">origin_data</code>의 데이터 역시 변경된 것을 확인할 수 있습니다.<br />
+이것으로 <code class="language-plaintext highlighter-rouge">copy_data</code> 변수는 <code class="language-plaintext highlighter-rouge">origin_data</code>의 메모리 주소를 복사했다는 것을 알 수 있습니다.</p>
 
 <h3 id="2번-코드">[2번 코드]</h3>
 
@@ -354,9 +354,9 @@
 
 <p><img src="/assets/img/post/2021-08-25-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%B3%B5%EC%82%AC/2%EB%B2%88%EC%9D%981.png" alt="Result" /></p>
 
-<p>id값이 각각 다르게 나온 것을 보면 <code class="language-plaintext highlighter-rouge">[:]</code>와 <code class="language-plaintext highlighter-rouge">copy()</code> 모두 원하던 데이터 복사가 수행된 것을 볼 수 있다.</p>
+<p>id값이 각각 다르게 나온 것을 보면 <code class="language-plaintext highlighter-rouge">[:]</code>와 <code class="language-plaintext highlighter-rouge">copy()</code> 모두 원하던 데이터 복사가 수행된 것을 볼 수 있습니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">copy_data1, 2</code>의 데이터를 변경해보았다.</p>
+<p><code class="language-plaintext highlighter-rouge">copy_data1, 2</code>의 데이터를 변경해봤습니다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">copy_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'origin_data: </span><span class="si">{</span><span class="n">origin_data</span><span class="si">}</span><span class="s"> / id: </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">origin_data</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
@@ -365,11 +365,11 @@
 
 <p><img src="/assets/img/post/2021-08-25-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%B3%B5%EC%82%AC/2%EB%B2%88%EC%9D%982.png" alt="Result" /></p>
 
-<p><code class="language-plaintext highlighter-rouge">copy_data1, 2</code>를 변경해도 <code class="language-plaintext highlighter-rouge">origin_data</code>가 변경되지 않는 것을 확인할 수 있다.</p>
+<p><code class="language-plaintext highlighter-rouge">copy_data1, 2</code>를 변경해도 <code class="language-plaintext highlighter-rouge">origin_data</code>가 변경되지 않는 것을 확인할 수 있습니다.</p>
 
 <p>이게 완전히 복사가 된 것일까?</p>
 
-<p>아니다, <code class="language-plaintext highlighter-rouge">origin_data</code>의 데이터가 mutable 객체인 경우는 다르다.</p>
+<p>아닙니다, <code class="language-plaintext highlighter-rouge">origin_data</code>의 데이터가 mutable 객체인 경우는 다릅니다.</p>
 
 <h3 id="3번-코드">[3번 코드]</h3>
 
@@ -387,14 +387,14 @@
 
 <p><img src="/assets/img/post/2021-08-25-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%B3%B5%EC%82%AC/3%EB%B2%88%EC%9D%981.png" alt="Result" /></p>
 
-<p><code class="language-plaintext highlighter-rouge">copy_data1</code>의 0번 인덱스의 데이터는 <code class="language-plaintext highlighter-rouge">[1, 2]</code> 로 mutable 데이터이다.<br />
-mutable 데이터 안에 있는 데이터를 변경하는 경우는 <code class="language-plaintext highlighter-rouge">origin_data</code>의 메모리 주소를 복사해서 갖고 있기 때문에 <code class="language-plaintext highlighter-rouge">copy_data1, 2</code>의 데이터가 모두 변하는 것을 확인할 수 있다.<br />
+<p><code class="language-plaintext highlighter-rouge">copy_data1</code>의 0번 인덱스의 데이터는 <code class="language-plaintext highlighter-rouge">[1, 2]</code> 로 mutable 데이터입니다.<br />
+mutable 데이터 안에 있는 데이터를 변경하는 경우는 <code class="language-plaintext highlighter-rouge">origin_data</code>의 메모리 주소를 복사해서 갖고 있기 때문에 <code class="language-plaintext highlighter-rouge">copy_data1, 2</code>의 데이터가 모두 변하는 것을 확인할 수 있습니다.<br />
 3개 변수 모두 : [1, 2] → [10, 2]</p>
 
-<p>하지만 mutable 데이터 전체를 다른 데이터 <code class="language-plaintext highlighter-rouge">20</code> 으로 변경한 경우는 정상적으로 <code class="language-plaintext highlighter-rouge">copy_data2</code>만 변경된 것을 확인할 수 있다.<br />
+<p>하지만 mutable 데이터 전체를 다른 데이터 <code class="language-plaintext highlighter-rouge">20</code> 으로 변경한 경우는 정상적으로 <code class="language-plaintext highlighter-rouge">copy_data2</code>만 변경된 것을 확인할 수 있습니다.<br />
 <code class="language-plaintext highlighter-rouge">copy_data2</code>만 : [3, 4] → 20</p>
 
-<p>이런 문제를 해결하기 위해서는 4번 방식을 사용해야 한다.</p>
+<p>이런 문제를 해결하기 위해서는 4번 방식을 사용해야 합니다.</p>
 
 <h3 id="4번-코드">[4번 코드]</h3>
 
@@ -409,15 +409,15 @@ mutable 데이터 안에 있는 데이터를 변경하는 경우는 <code class=
 
 <p><img src="/assets/img/post/2021-08-25-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%B3%B5%EC%82%AC/4%EB%B2%88%EC%9D%981.png" alt="Result" /></p>
 
-<p><code class="language-plaintext highlighter-rouge">deepcopy()</code> 함수를 사용한 복사만 mutable 데이터까지 완전하게 복사되는 것을 확인할 수 있다.</p>
+<p><code class="language-plaintext highlighter-rouge">deepcopy()</code> 함수를 사용한 복사만 mutable 데이터까지 완전하게 복사되는 것을 확인할 수 있습니다.</p>
 
-<p>하지만 그렇다고 <code class="language-plaintext highlighter-rouge">deepcopy()</code>가 만능은 아니다.</p>
+<p>하지만 그렇다고 <code class="language-plaintext highlighter-rouge">deepcopy()</code>가 만능은 아닙니다.</p>
 
-<p>이유는 복사하는 속도의 차이가 굉장히 크기 때문이다.</p>
+<p>이유는 복사하는 속도의 차이가 굉장히 크기 때문입니다.</p>
 
-<p>속도가 가장 빠른 슬라이스 형식의 복사 <code class="language-plaintext highlighter-rouge">[:]</code> 에 비해서 <code class="language-plaintext highlighter-rouge">deepcopy</code> 복사는 30배 이상 느리다.</p>
+<p>속도가 가장 빠른 슬라이스 형식의 복사 <code class="language-plaintext highlighter-rouge">[:]</code> 에 비해서 <code class="language-plaintext highlighter-rouge">deepcopy</code> 복사는 30배 이상 느립니다.</p>
 
-<p>그렇기 때문에 상황에 맞는 방식을 적절히 사용해야 한다.</p>
+<p>그렇기 때문에 상황에 맞는 방식을 적절히 사용해야 합니다.</p>
 
 <blockquote>
   <p>📌 Stack Overflow - <a href="https://stackoverflow.com/questions/2612802/list-changes-unexpectedly-after-assignment-why-is-this-and-how-can-i-prevent-it">복사 속도에 대한 내용</a></p>

@@ -85,7 +85,7 @@
 
     <!-- Twitter Cards -->
     <meta name="twitter:title" content="스코프 (Scope)">
-    <meta name="twitter:description" content="먼저 위키백과의 내용을 보면 아래와 같다.  컴퓨터 프로그래밍에서 변수 영역은 변수가 유효성을 갖는 영역을 가리킨다. 프로그램은 영역을 벗어난 변수를 가리킬 수 없다.  변수의 영역을 지정하는 규칙은 크게 정적 영역 규칙과 동적 영역 규칙으로 나뉜다. 정적 영역 규칙을 따르는 언어...">
+    <meta name="twitter:description" content="먼저 위키백과의 내용을 보면 아래와 같습니다.  컴퓨터 프로그래밍에서 변수 영역은 변수가 유효성을 갖는 영역을 가리킨다. 프로그램은 영역을 벗어난 변수를 가리킬 수 없다.  변수의 영역을 지정하는 규칙은 크게 정적 영역 규칙과 동적 영역 규칙으로 나뉜다. 정적 영역 규칙을 따르는 ...">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/feature-img/황금해안-top.jpeg">
@@ -295,7 +295,7 @@
   
       <hr />
 
-<p>먼저 위키백과의 내용을 보면 아래와 같다.</p>
+<p>먼저 위키백과의 내용을 보면 아래와 같습니다.</p>
 
 <blockquote>
   <p>컴퓨터 프로그래밍에서 <strong>변수 영역</strong>은 변수가 유효성을 갖는 영역을 가리킨다. 프로그램은 영역을 벗어난 변수를 가리킬 수 없다.</p>
@@ -316,12 +316,12 @@
 
 <h3 id="1-전역">1. 전역</h3>
 
-<p>소스 코드 상의 모든 곳에서 사용할 수 있는 <strong>전역 변수</strong>이다. 대부분의 언어에서 나쁜 습관으로 취급되는 전역 변수지만, 함수명이나 클래스명은 대부분 전역에서 접근할 수 있다.</p>
+<p>소스 코드 상의 모든 곳에서 사용할 수 있는 <strong>전역 변수</strong>이다. 대부분의 언어에서 나쁜 습관으로 취급되는 전역 변수지만, 함수명이나 클래스명은 대부분 전역에서 접근할 수 있습니다.</p>
 
-<p><strong>namespace</strong>를 사용하면 전역 영역에서 변수나 함수명이 충돌하는 것을 막을 수 있다.</p>
+<p><strong>namespace</strong>를 사용하면 전역 영역에서 변수나 함수명이 충돌하는 것을 막을 수 있습니다.</p>
 
 <ul>
-  <li>Python에서는 함수 안에서 상위 범위(Scope)의 변수를 사용하기 위해서 <code class="language-plaintext highlighter-rouge">global</code> , <code class="language-plaintext highlighter-rouge">nonlocal</code> 키워드를 사용한다.</li>
+  <li>Python에서는 함수 안에서 상위 범위(Scope)의 변수를 사용하기 위해서 <code class="language-plaintext highlighter-rouge">global</code> , <code class="language-plaintext highlighter-rouge">nonlocal</code> 키워드를 사용합니다.</li>
   <li>global은 전역</li>
   <li>nonlocal은 상위 함수</li>
 </ul>
@@ -359,15 +359,15 @@
 
 <h3 id="2-모듈-영역">2. 모듈 영역</h3>
 
-<p>Python과 같이 모듈을 지원하는 프로그래밍 언어에서는 모듈 단위 변수를 선언할 수 있다. 모듈 밖에서는 변수를 볼 수 없다.</p>
+<p>Python과 같이 모듈을 지원하는 프로그래밍 언어에서는 모듈 단위 변수를 선언할 수 있습니다. 모듈 밖에서는 변수를 볼 수 없습니다.</p>
 
 <h3 id="3-파일-영역">3. 파일 영역</h3>
 
-<p>C와 C++ 및 그 유사 언어에서만 지원하는 개념이다. 파일 영역은 보다 원시적인 형태의 모듈 영역이라고 할 수 있다.</p>
+<p>C와 C++ 및 그 유사 언어에서만 지원하는 개념입니다. 파일 영역은 보다 원시적인 형태의 모듈 영역이라고 할 수 있습니다.</p>
 
 <h3 id="4-함수-영역">4. 함수 영역</h3>
 
-<p>거의 모든의 프로그래밍 언어는 함수 내에서만 유효한 <strong>지역 변수</strong>를 제공한다. 함수안에 지역 변수는 함수가 반환되면 더 이상 사용할 수 없다.</p>
+<p>거의 모든의 프로그래밍 언어는 함수 내에서만 유효한 <strong>지역 변수</strong>를 제공합니다. 함수안에 지역 변수는 함수가 반환되면 더 이상 사용할 수 없습니다.</p>
 
 <p><strong>[예시 코드]</strong></p>
 
@@ -382,11 +382,11 @@
 <span class="nb">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s">'local_var'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">parents_func()</code> 함수의 영역에 있는 변수 <code class="language-plaintext highlighter-rouge">local_var</code> 을 <code class="language-plaintext highlighter-rouge">child_func()</code> 함수 영역에서 접근하면 선언되지 않았다는 에러가 발생한다.</p>
+<p><code class="language-plaintext highlighter-rouge">parents_func()</code> 함수의 영역에 있는 변수 <code class="language-plaintext highlighter-rouge">local_var</code> 을 <code class="language-plaintext highlighter-rouge">child_func()</code> 함수 영역에서 접근하면 선언되지 않았다는 에러가 발생합니다.</p>
 
 <h3 id="5-블록-영역">5. 블록 영역</h3>
 
-<p>코드 블록(if, for, try, catch 등) 영역에서만 유효한 <strong>지역 변수</strong>이다.</p>
+<p>코드 블록(if, for, try, catch 등) 영역에서만 유효한 <strong>지역 변수</strong>입니다.</p>
 
 <p><strong>[예시 코드]</strong></p>
 
@@ -395,13 +395,13 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>위 코드에서 i 는 <code class="language-plaintext highlighter-rouge">for</code> 반복문 안에서만 접근이 가능하다.</p>
+<p>위 코드에서 i 는 <code class="language-plaintext highlighter-rouge">for</code> 반복문 안에서만 접근이 가능합니다.</p>
 
 <h3 id="6-표현식-영역">6. 표현식 영역</h3>
 
-<p>특정 표현식 안에서만 유효한 <strong>지역 변수</strong>이다.<br />
-대부분의 함수형 프로그래밍 언어는 <code class="language-plaintext highlighter-rouge">let</code> 키워드를 지원한다.<br />
-간단하게 Javascript의 예시를 보면 아래와 같다.</p>
+<p>특정 표현식 안에서만 유효한 <strong>지역 변수</strong>입니다.<br />
+대부분의 함수형 프로그래밍 언어는 <code class="language-plaintext highlighter-rouge">let</code> 키워드를 지원합니다.<br />
+간단하게 Javascript의 예시를 보면 아래와 같습니다.</p>
 
 <p><strong>[예시 코드]</strong></p>
 
@@ -413,7 +413,7 @@
 <span class="nb">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s">'x'</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
 </code></pre></div></div>
 
-<p>변수 x는 표현식 안에서만 접근 가능하기 때문에 에러가 발생한다.</p>
+<p>변수 x는 표현식 안에서만 접근 가능하기 때문에 에러가 발생합니다.</p>
 
 <blockquote>
   <p>📌 Python은 변수를 찾는 스코프에 <code class="language-plaintext highlighter-rouge">LEGB</code> 규칙을 따른다고 한다.<br />

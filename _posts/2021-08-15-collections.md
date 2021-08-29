@@ -8,9 +8,9 @@ tags: [Python]
 
 ---
 
-`collections` 는 Python의 내장 라이브러리로 `컨테이너 데이터형` 의 구현 및 활용을 도와주는 라이브러리이다.
+`collections` 는 Python의 내장 라이브러리로 `컨테이너 데이터형` 의 구현 및 활용을 도와주는 라이브러리입니다.
 
-`collections` 의 주요 객체를 살펴보면 아래와 같다.
+`collections` 의 주요 객체를 살펴보면 아래와 같습니다.
 
 | 객체        | 설명                                                                  |
 |-------------|-----------------------------------------------------------------------|
@@ -26,9 +26,9 @@ tags: [Python]
 
 # namedtuple
 
-이름 그대로 튜플(값)에 이름(키)을 붙이는 데이터 구조이다.
+이름 그대로 튜플(값)에 이름(키)을 붙이는 데이터 구조입니다.
 
-먼저 간단하게 사용 방법을 보겠다.
+먼저 간단하게 사용 방법을 보겠습니다.
 
 ```python
 from collections import namedtuple
@@ -51,9 +51,9 @@ print(f'com_200 [type: {type(com_200)} / data: {com_200}]')
 "com_200 [type: <class '__main__.Computer'> / data: Computer(cpu='i7', ram=16, ssd=2048)]"
 ```
 
-출력된 결과를 보면 타입이 **namedtuple로 선언된 객체**인 `Computer` 로 나오는 것을 볼 수 있다.
+출력된 결과를 보면 타입이 **namedtuple로 선언된 객체**인 `Computer` 로 나오는 것을 볼 수 있습니다.
 
-아래는 `namedtuple` 와 관련된 추가적인 내용이다.
+아래는 `namedtuple` 와 관련된 추가적인 내용입니다.
 
 ```python
 # 출력부만 변경
@@ -115,13 +115,13 @@ print(com_test2)
 
 # deque
 
-deque는 스택과 큐를 일반화 한 것이다.
+deque는 스택과 큐를 일반화 한 것입니다.
 
-`Double Ended Queue`의 약자이다.
+`Double Ended Queue`의 약자입니다.
 
-데이터의 삽입과 삭제가 양쪽에서 모두 가능한 자료구조이다.
+데이터의 삽입과 삭제가 양쪽에서 모두 가능한 자료구조입니다.
 
-아래의 함수를 통해 활용이 가능하다.
+아래의 함수를 통해 활용이 가능합니다.
 
 | 함수                  | 설명                                                                                                                                             |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -141,11 +141,11 @@ deque는 스택과 큐를 일반화 한 것이다.
 
 # ChainMap
 
-맵 여러 개를 합쳐서 중복을 제외하고 하나의 dictionary로 만들어주는 자료구조이다.
+맵 여러 개를 합쳐서 중복을 제외하고 하나의 dictionary로 만들어주는 자료구조입니다.
 
-중복된 데이터는 첫 번째 인자로 입력된 맵의 데이터를 남겨두고 나머지는 제외한다.
+중복된 데이터는 첫 번째 인자로 입력된 맵의 데이터를 남겨두고 나머지는 제외합니다.
 
-Map 형태의 데이터를 인자로 받아서 선언한다.
+Map 형태의 데이터를 인자로 받아서 선언합니다.
 
 ```python
 from collections import ChainMap
@@ -166,11 +166,11 @@ print(list(cm.values()))
 
 # Counter
 
-요소와 요소의 갯수로 "**키-값**"의 형태를 같는 해시 가능한 dictionary 서브 클래스이다.
+요소와 요소의 갯수로 "**키-값**"의 형태를 같는 해시 가능한 dictionary 서브 클래스입니다.
 
-기본적으로 특정 요소의 갯수를 셀 때 사용한다.
+기본적으로 특정 요소의 갯수를 셀 때 사용합니다.
 
-아래의 코드를 보면 4가지 형태의 선언 방식을 사용할 수 있다.
+아래의 코드를 보면 4가지 형태의 선언 방식을 사용할 수 있습니다.
 
 ```python
 from collections import Counter
@@ -195,7 +195,7 @@ print(f"green: {c['green']}")
 "green: 0"
 ```
 
-아래는 함수를 통해 사용할 수 있는 기능이다.
+아래는 함수를 통해 사용할 수 있는 기능입니다.
 
 ```python
 from collections import Counter
@@ -236,13 +236,13 @@ print(c1)
 
 # OrderedDict
 
-> Python 3.7 이후부터 기본 dictionary에서도 데이터 **입력 순서가 보존**되기 때문에 활용성이 약간 감소되었다.
+> Python 3.7 이후부터 기본 dictionary에서도 데이터 **입력 순서가 보존**되기 때문에 활용성이 약간 감소되었습니다.
 > 
 > "Python - [Dictionary]([https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries](https://docs.python.org/3.7/tutorial/datastructures.html#dictionaries))"
 
-현재 일반 dictionary 객체와의 차이는 데이터의 순서를 바꾸는 연산에 적합하다는 차이만 가지고 있다.
+현재 일반 dictionary 객체와의 차이는 데이터의 순서를 바꾸는 연산에 적합하다는 차이만 가지고 있습니다.
 
-아래는 순서를 변경할 때 사용하는 함수이다.
+아래는 순서를 변경할 때 사용하는 함수입니다.
 
 ```python
 from collections import OrderedDict
@@ -281,7 +281,7 @@ print(d)
 
 # defaultdict
 
-dictionary value의 초깃값을 설정한다.
+dictionary value의 초깃값을 설정합니다.
 
 ```python
 from collections import defaultdict

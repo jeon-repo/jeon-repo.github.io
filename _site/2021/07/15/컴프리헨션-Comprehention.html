@@ -85,7 +85,7 @@
 
     <!-- Twitter Cards -->
     <meta name="twitter:title" content="컴프리헨션(Comprehention)">
-    <meta name="twitter:description" content="컴프리헨션이란?  Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 자료구조를 보다 쉽게 저장, 검색을 할 수 있게 하는 문법이다.  컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있다.  ⚠️ ...">
+    <meta name="twitter:description" content="컴프리헨션이란?  Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 자료구조를 보다 쉽게 저장, 검색을 할 수 있게 하는 문법입니다.  컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있습니다.  ...">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/feature-img/circuit.jpeg">
@@ -298,13 +298,13 @@
 <h2 id="컴프리헨션이란">컴프리헨션이란?</h2>
 
 <ul>
-  <li>Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 <code class="language-plaintext highlighter-rouge">자료구조를 보다 쉽게 저장, 검색을 할 수 있게 하는 문법</code>이다.</li>
-  <li>컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있다.</li>
+  <li>Python에서 컴프리헨션(Comprehension)이란 list, dictionary, set의 <code class="language-plaintext highlighter-rouge">자료구조를 보다 쉽게 저장, 검색을 할 수 있게 하는 문법</code>입니다.</li>
+  <li>컴프리헨션은 list, dictionary, set의 내부에 코드를 작성하는 특징이 있습니다.</li>
 </ul>
 
 <blockquote>
-  <p>⚠️ 컴프리헨션은 입력 시퀀스에 있는 값 별로 객체를 담은 자료구조를 통째로 생성하기 때문에 메모리가 많이 소모될 수 있다.<br />
-→ 하지만 이런 문제를 해결하기 위해서 Python에서는 <code class="language-plaintext highlighter-rouge">제너레이터</code> 표현식을 사용한다.</p>
+  <p>⚠️ 컴프리헨션은 입력 시퀀스에 있는 값 별로 객체를 담은 자료구조를 통째로 생성하기 때문에 메모리가 많이 소모될 수 있습니다.<br />
+→ 하지만 이런 문제를 해결하기 위해서 Python에서는 <code class="language-plaintext highlighter-rouge">제너레이터</code> 표현식을 사용합니다.</p>
 </blockquote>
 
 <hr />
@@ -330,8 +330,8 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </code></pre></div>    </div>
 
-    <p>위의 코드는 반복문을 통해 1 ~ 5의 숫자를 갖는 list를 생성하는 코드이다.<br />
-  아래는 위의 코드와 동일하게 list를 생성하는 컴프리헨션이다.</p>
+    <p>위의 코드는 반복문을 통해 1 ~ 5의 숫자를 갖는 list를 생성하는 코드입니다.<br />
+  아래는 위의 코드와 동일하게 list를 생성하는 컴프리헨션입니다.</p>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">var_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 	
@@ -354,8 +354,8 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
   <span class="p">{</span><span class="s">'짱구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">:</span> <span class="s">'human'</span><span class="p">}</span>
 </code></pre></div>    </div>
 
-    <p>위의 코드는 students의 학생들을 <code class="language-plaintext highlighter-rouge">key</code> 로 ‘human’을 <code class="language-plaintext highlighter-rouge">value</code> 를 할당하는 dictionary를 생성하는 코드이다.<br />
-  아래는 위의 코드와 동일하게 dictionary를 생성하는 컴프리헨션이다.</p>
+    <p>위의 코드는 students의 학생들을 <code class="language-plaintext highlighter-rouge">key</code> 로 ‘human’을 <code class="language-plaintext highlighter-rouge">value</code> 를 할당하는 dictionary를 생성하는 코드입니다.<br />
+  아래는 위의 코드와 동일하게 dictionary를 생성하는 컴프리헨션입니다.</p>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s">'짱구'</span><span class="p">,</span> <span class="s">'철수'</span><span class="p">,</span> <span class="s">'유리'</span><span class="p">,</span> <span class="s">'훈이'</span><span class="p">,</span> <span class="s">'맹구'</span><span class="p">]</span>
   <span class="n">var_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s">'human'</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">students</span><span class="p">}</span>
@@ -378,9 +378,9 @@ Set        : {표현식 for 객체 in 순회가능객체} + 조건, 다중 반�
   <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
 </code></pre></div>    </div>
 
-    <p>위의 코드는 반복문을 통해 1 ~ 5의 숫자를 갖는 set(집합)을 생성하는 코드이다.<br />
-  set(집합)은 괄호의 형태가 dictionary와 동일하기 때문에 <code class="language-plaintext highlighter-rouge">{}</code> 를 사용하지 않고 <code class="language-plaintext highlighter-rouge">set()</code> 을 사용하여 선언한다.<br />
-  아래는 위의 코드와 동일하게 set(집합)을 생성하는 컴프리헨션이다.</p>
+    <p>위의 코드는 반복문을 통해 1 ~ 5의 숫자를 갖는 set(집합)을 생성하는 코드입니다.<br />
+  set(집합)은 괄호의 형태가 dictionary와 동일하기 때문에 <code class="language-plaintext highlighter-rouge">{}</code> 를 사용하지 않고 <code class="language-plaintext highlighter-rouge">set()</code> 을 사용하여 선언합니다.<br />
+  아래는 위의 코드와 동일하게 set(집합)을 생성하는 컴프리헨션입니다.</p>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">var_set</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)}</span>
 	
