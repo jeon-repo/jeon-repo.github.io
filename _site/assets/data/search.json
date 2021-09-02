@@ -1,6 +1,16 @@
 [
   
   {
+    "title"    : "[백준 14391번] 종이 조각",
+    "category" : "",
+    "tags"     : " 알고리즘",
+    "url"      : "/2021/09/02/%EB%B0%B1%EC%A4%80-14391%EB%B2%88.html",
+    "date"     : "September 2, 2021",
+    "excerpt"  : "\n\n백준 “종이 조각” 문제를 풀어보았습니다.\n\n\n  여기를 누르면 건너뛸 수 있습니다.\n\n\n\n\n문제\n\n영선이는 숫자가 쓰여 있는 직사각형 종이를 가지고 있다. 종이는 1×1 크기의 정사각형 칸으로 나누어져 있고, 숫자는 각 칸에 하나씩 쓰여 있다. 행은 위에서부터 아래까지 번호가 매겨져 있고, 열은 왼쪽부터 오른쪽까지 번호가 매겨져 있다.\n\n영선이는 직사각형을 겹치지 않는 조각으로 자르려고 한다. 각 조각은 크기가 세로나 가로 크기가 1...",
+  "content"  : "\n\n백준 “종이 조각” 문제를 풀어보았습니다.\n\n\n  여기를 누르면 건너뛸 수 있습니다.\n\n\n\n\n문제\n\n영선이는 숫자가 쓰여 있는 직사각형 종이를 가지고 있다. 종이는 1×1 크기의 정사각형 칸으로 나누어져 있고, 숫자는 각 칸에 하나씩 쓰여 있다. 행은 위에서부터 아래까지 번호가 매겨져 있고, 열은 왼쪽부터 오른쪽까지 번호가 매겨져 있다.\n\n영선이는 직사각형을 겹치지 않는 조각으로 자르려고 한다. 각 조각은 크기가 세로나 가로 크기가 1인 직사각형 모양이다. 길이가 N인 조각은 N자리 수로 나타낼 수 있다. 가로 조각은 왼쪽부터 오른쪽까지 수를 이어 붙인 것이고, 세로 조각은 위에서부터 아래까지 수를 이어붙인 것이다.\n\n아래 그림은 4×4 크기의 종이를 자른 한 가지 방법이다.\n\n\n\n각 조각의 합은 493 + 7160 + 23 + 58 + 9 + 45 + 91 = 7879 이다.\n\n종이를 적절히 잘라서 조각의 합을 최대로 하는 프로그램을 작성하시오.\n\n입력\n\n첫째 줄에 종이 조각의 세로 크기 N과 가로 크기 M이 주어진다. (1 ≤ N, M ≤ 4)\n\n둘째 줄부터 종이 조각이 주어진다. 각 칸에 쓰여 있는 숫자는 0부터 9까지 중 하나이다.\n\n출력\n\n영선이가 얻을 수 있는 점수의 최댓값을 출력한다.\n\n예제 입력 1\n\n2 3\n123\n312\n\n\n\n예제 출력 1\n\n435\n\n\n\n예제 입력 2\n\n2 2\n99\n11\n\n\n\n예제 출력 2\n\n182\n\n\n\n예제 입력 3\n\n4 3\n001\n010\n111\n100\n\n\n\n예제 출력 3\n\n1131\n\n\n\n예제 입력 4\n\n1 1\n8\n\n\n\n예제 출력 4\n\n8\n\n\n\n\nSolution\n\n[문제 이해]\n\n새로운 유형의 문제였고, 시간초과를 이겨내지 못해서 검색을 통해 풀이를 진행하였습니다.\n\n\n  비트마스킹 사용\n→ 경우의 수를 비트를 이용해서 뽑아내어 원본 데이터를 대입하여 계산하는 방식\n  브루트포스 사용\n\n\n검색을 통해 이해한 내용을 바탕으로 코드를 작성했습니다.\n\n[코드]\n\nimport sys\n# import numpy as np\nfrom itertools import product\ninput = sys.stdin.readline\n\ndef solution():\n    N, M = map(int, input().split())\n    board = [[int(y) for y in x] for _ in range(N) for x in input().split()]\n    \n    # 비트마스킹 데이터 생성\n    bit_masks = product([0, 1], repeat=N*M)\n    result = 0\n\n    # 1차원 배열인 bit_mask 데이터를 2차원 배열로 변환하는 함수\n    def to_matrix(arr):\n        # return np.array_split(arr, N)\n        return [arr[i:i+M] for i in range(0, len(arr), M)]\n\n    # 비트마스킹 데이터에 따라 가로 -&amp;gt; 세로 순으로 연산\n    for case in bit_masks:\n        bit_mask = to_matrix(case)\n        # 행과 열의 총합 변수\n        rows_sum = cols_sum = 0\n\n        # 행 연산\n        for x in range(N):\n            row_sum = 0\n            for y in range(M):\n                if bit_mask[x][y] == 0:\n                    row_sum = row_sum * 10 + board[x][y]\n                if bit_mask[x][y] == 1 or y == (M-1):\n                    rows_sum += row_sum\n                    row_sum = 0\n\n        # 열 연산\n        for y in range(M):\n            col_sum = 0\n            for x in range(N):\n                if bit_mask[x][y] == 1:\n                    col_sum = col_sum * 10 + board[x][y]\n                if bit_mask[x][y] == 0 or x == (N-1):\n                    cols_sum += col_sum\n                    col_sum = 0\n\n        total_sum = rows_sum + cols_sum\n        result = max(result, total_sum)\n\n    print(result)\n\nsolution()\n\n\n[여담]\n\n비트마스킹이란 문제 풀이 방식을 알게 됐습니다.\n\n채점하던 도중 마지막에\n\n\n  “Python 버전을 어떤 걸 쓰길래 ModuleNotFoundError 가 뜨는 걸까?”\n\n\n라는 생각이 들어서 백준 사이트는 외부(numpy) 라이브러리를 지원하지 않는다는 것을 알게 됐습니다.\n\n\n"
+} ,
+  
+  {
     "title"    : "[프로그래머스] - 전화번호 목록",
     "category" : "",
     "tags"     : " 알고리즘",
