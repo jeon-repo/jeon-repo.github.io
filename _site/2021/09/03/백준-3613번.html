@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.3.7
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/assets/js/main.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Jeon Repository" href="https://jeon-repo.github.io/feed.xml"/>
+
+    
+
+    <!-- KaTeX 0.13.9 -->
+    
+    <script defer src="/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 8.9.2 -->
+    
+    <script defer src="/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true});"></script>
+    
+
+    <!-- Simple Jekyll Search 1.9.1 -->
+    <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://jeon-repo.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://jeon-repo.github.io/assets/img/feature-img/황금해안-top.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>[백준 3613번] Java vs C++ | Jeon Repository</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="[백준 3613번] Java vs C++" />
+<meta name="author" content="janos" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="그림도 잘 그리고 싶은 개발자" />
+<meta property="og:description" content="그림도 잘 그리고 싶은 개발자" />
+<link rel="canonical" href="https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html" />
+<meta property="og:url" content="https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html" />
+<meta property="og:site_name" content="Jeon Repository" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-03T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[백준 3613번] Java vs C++" />
+<script type="application/ld+json">
+{"datePublished":"2021-09-03T00:00:00+09:00","dateModified":"2021-09-03T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html"},"url":"https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html","author":{"@type":"Person","name":"janos"},"@type":"BlogPosting","description":"그림도 잘 그리고 싶은 개발자","headline":"[백준 3613번] Java vs C++","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link type="application/atom+xml" rel="alternate" href="https://jeon-repo.github.io/feed.xml" title="Jeon Repository" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="[백준 3613번] Java vs C++">
+    <meta name="twitter:description" content="백준 “Java vs C++” 문제를 풀어보았습니다.  여기를 누르면 건너뛸 수 있습니다.문제Java 예찬론자 김동규와 C++ 옹호가 김동혁은 서로 어떤 프로그래밍 언어가 최고인지 몇 시간동안 토론을 하곤 했다. 동규는 Java가 명확하고 에러가 적은 프로그램을 만든다고 주장했고,...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://jeon-repo.github.io/assets/img/feature-img/황금해안-top.jpeg">
+    <meta name="twitter:image:alt" content="[백준 3613번] Java vs C++">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/">
+			<img alt="logo img" class="avatar" src="/assets/img/bike.png" />
+		</a>
+        
+        <a class="site-title" aria-label="Jeon Repository" href="/">
+        Jeon Repository
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About Me" title="About Me" href="/about/">
+                     About Me 
+                </a>
+            </li>
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Category" title="Category" href="/category/">
+                     Category 
+                </a>
+            </li>
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+            <!-- 포트폴리오 안보이기 -->
+            
+            
+            
+            
+        
+        
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="[백준 3613번] Java vs C++ " aria-label="[백준 3613번] Java vs C++" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image" >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="%5B%EB%B0%B1%EC%A4%80+3613%EB%B2%88%5D+Java+vs+C%2B%2B" class="title">[백준 3613번] Java vs C++</h1>
+      
+
+
+<div class="post-info"><a href="https://github.com/jeon-repo" target="_blank">
+      <img alt="Author's avatar" src="/assets/img/bike.png">
+    
+    <p class="meta">
+      janos - 
+      
+      September 03, 2021
+    </p></a></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <hr />
+
+<p>백준 “Java vs C++” 문제를 풀어보았습니다.</p>
+
+<blockquote>
+  <p><a href="#solution">여기</a>를 누르면 건너뛸 수 있습니다.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="문제">문제</h2>
+
+<p>Java 예찬론자 김동규와 C++ 옹호가 김동혁은 서로 어떤 프로그래밍 언어가 최고인지 몇 시간동안 토론을 하곤 했다. 동규는 Java가 명확하고 에러가 적은 프로그램을 만든다고 주장했고, 동혁이는 Java는 프로그램이 느리고, 긴 소스 코드를 갖는 점과 제네릭 배열의 인스턴스화의 무능력을 비웃었다.</p>
+
+<p>또, 김동규와 김동혁은 변수 이름을 짓는 방식도 서로 달랐다. Java에서는 변수의 이름이 여러 단어로 이루어져있을 때, 다음과 같은 방법으로 변수명을 짓는다.</p>
+
+<p>첫 단어는 소문자로 쓰고, 다음 단어부터는 첫 문자만 대문자로 쓴다. 또, 모든 단어는 붙여쓴다. 따라서 Java의 변수명은 <code class="language-plaintext highlighter-rouge">javaIdentifier</code>, <code class="language-plaintext highlighter-rouge">longAndMnemonicIdentifier</code>, <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">bAEKJOON</code>과 같은 형태이다.</p>
+
+<p>반면에 C++에서는 변수명에 소문자만 사용한다. 단어와 단어를 구분하기 위해서 밑줄(‘<code class="language-plaintext highlighter-rouge">_</code>‘)을 이용한다. C++ 변수명은 <code class="language-plaintext highlighter-rouge">c_identifier</code>, <code class="language-plaintext highlighter-rouge">long_and_mnemonic_identifier</code>, <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">b_a_e_k_j_o_o_n</code>과 같은 형태이다.</p>
+
+<p>이 둘의 싸움을 부질없다고 느낀 재원이는 C++형식의 변수명을 Java형식의 변수명으로, 또는 그 반대로 바꿔주는 프로그램을 만들려고 한다. 각 언어의 변수명 형식의 위의 설명을 따라야 한다.</p>
+
+<p>재원이의 프로그램은 가장 먼저 변수명을 입력으로 받은 뒤, 이 변수명이 어떤 언어 형식인지를 알아내야 한다. 그 다음, C++형식이라면 Java형식으로, Java형식이라면 C++형식으로 바꾸면 된다. 만약 C++형식과 Java형식 둘 다 아니라면, 에러를 발생시킨다. 변수명을 변환할 때, 단어의 순서는 유지되어야 한다.</p>
+
+<p>재원이는 프로그램을 만들려고 했으나, 너무 귀찮은 나머지 이를 문제를 읽는 사람의 몫으로 맡겨놨다.</p>
+
+<p>재원이가 만들려고 한 프로그램을 대신 만들어보자.</p>
+
+<h2 id="입력">입력</h2>
+
+<p>첫째 줄에 변수명이 주어진다. 영어 알파벳과 밑줄(‘_‘)로만 이루어져 있고, 길이는 100을 넘지 않는다.</p>
+
+<h2 id="출력">출력</h2>
+
+<p>입력으로 주어진 변수명이 Java형식이면, C++형식으로 출력하고, C++형식이라면 Java형식으로 출력한다. 둘 다 아니라면 “Error!”를 출력한다.</p>
+
+<h2 id="예제-입력-1">예제 입력 1</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>long_and_mnemonic_identifier
+</code></pre></div></div>
+
+<h2 id="예제-출력-1">예제 출력 1</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>longAndMnemonicIdentifier
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="solution">Solution</h1>
+
+<h3 id="문제-이해">[문제 이해]</h3>
+
+<ul>
+  <li>Error가 발생하는 상황
+    <ol>
+      <li>처음이 _인 경우</li>
+      <li>끝이 _인 경우</li>
+      <li>처음이 대문자인 경우</li>
+      <li>_가 2개 이상 붙어있는 경우</li>
+      <li>_와 대문자 유형이 섞여있는 경우</li>
+    </ol>
+  </li>
+  <li>정규식을 통해 error 상황 처리 후에 변환을 진행</li>
+</ul>
+
+<p>이해한 내용을 바탕으로 코드를 작성했습니다.</p>
+
+<h3 id="코드">[코드]</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">stdin</span><span class="p">.</span><span class="n">readline</span>
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">():</span>
+    <span class="c1"># 처음이 _인 경우                 -&gt; _asdf
+</span>    <span class="c1"># 끝이 _인 경우                   -&gt; asdf_
+</span>    <span class="c1"># 처음이 대문자인 경우            -&gt; AsdfAsdf
+</span>    <span class="c1"># _가 2개 이상 붙어있는 경우          -&gt; asdf__asdf
+</span>    <span class="c1"># _ 와 대문자 유형이 섞여있는 경우 -&gt; asdf_asdfAsdf
+</span>    <span class="n">err_p</span> <span class="o">=</span> <span class="sa">r</span><span class="s">'^_|_$|^[A-Z]|_{2,}|(?=.*(_)).*[A-Z]'</span>
+    <span class="n">re_err</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">err_p</span><span class="p">)</span>
+    <span class="n">var_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">cpp_to_java</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s">'</span><span class="si">{</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">upper</span><span class="p">()</span><span class="si">}{</span><span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="si">}</span><span class="s">'</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">word</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'_'</span><span class="p">))])</span>
+    <span class="n">java_to_cpp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="n">c</span> <span class="k">if</span> <span class="n">c</span><span class="p">.</span><span class="n">islower</span><span class="p">()</span> <span class="k">else</span> <span class="sa">f</span><span class="s">'_</span><span class="si">{</span><span class="n">c</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s">'</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">name</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">re_err</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="n">var_name</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Error!'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s">'_'</span> <span class="ow">in</span> <span class="n">var_name</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">cpp_to_java</span><span class="p">(</span><span class="n">var_name</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">java_to_cpp</span><span class="p">(</span><span class="n">var_name</span><span class="p">))</span>
+
+<span class="n">solution</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><del>정규식 만세</del></p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=%5B%EB%B0%B1%EC%A4%80+3613%EB%B2%88%5D+Java+vs+C%2B%2B%20https%3A%2F%2Fjeon-repo.github.io%2F2021%2F09%2F03%2F%25EB%25B0%25B1%25EC%25A4%2580-3613%25EB%25B2%2588.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.tumblr.com/share?v=3&u=https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html&quote=%5B%EB%B0%B1%EC%A4%80+3613%EB%B2%88%5D+Java+vs+C%2B%2B%20%7C%20Jeon+Repository&s="
+               target="_blank" title=" Tumblr">
+                <i class="fab fa-tumblr-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Tumblr</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://pinterest.com/pin/create/button/?url=https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html&media=$description=%0A"
+               target="_blank" title="">
+                <i class="fab fa-pinterest-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Pin it</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html&title=%5B%EB%B0%B1%EC%A4%80+3613%EB%B2%88%5D+Java+vs+C%2B%2B%20%7C%20Jeon+Repository"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html&title=%5B%EB%B0%B1%EC%A4%80+3613%EB%B2%88%5D+Java+vs+C%2B%2B%20%7C%20Jeon+Repository&summary=&source=https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html"
+               target="_blank" title=" LinkedIn">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on LinkedIn</span>
+            </a>
+        </li>
+          
+        <li>
+            <a href="mailto:?subject=[백준 3613번] Java vs C++%20%7C%20Jeon Repository&body=https://jeon-repo.github.io/2021/09/03/%EB%B0%B1%EC%A4%80-3613%EB%B2%88.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tag</li>
+      
+
+      
+        <li><a class="button" href="/tags#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> 알고리즘</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+
+    
+    <div id="next-post">
+        <a alt="[백준 14391번] 종이 조각" href="/2021/09/02/%EB%B0%B1%EC%A4%80-14391%EB%B2%88.html">
+            <p>다음 포스트</p>
+            [백준 14391번] 종이 조각
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  
+  
+  .feature-image a { color: purple !important; }
+  div#post-nav a { color: purple !important; }
+  footer a { color: purple !important; }
+  .site-header nav a:hover {  color: purple !important; }
+  header#main { 
+      background-color: purple !important;
+      background-image: url('/assets/img/lineart.png');
+  }
+  
+  
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Copyright 2021. jeon-repo all rights reserved.
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/feed.xml"
+       title="Follow RSS feed">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/jeon-repo"
+               title="Follow on Github"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="mailto://jano.jeon@gmail.com"
+               title="Follow on Mail"
+               rel="me">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
