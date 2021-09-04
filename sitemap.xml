@@ -9,24 +9,18 @@ layout: null
     {% for post in site.posts %}
     <url>
         <loc>{{ site.url }}{{ post.url }}</loc>
-        <!-- lastmod - 마지막 수정일 -->
-        <!-- lastmod default - date 설정 -->
         {% if post.lastmod == null %}
         <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
         {% else %}
         <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
         {% endif %}
 
-        <!-- changefreq - 스크랩 주기 (daily, weekly : 너무 짧으면 트래픽에 안좋은 영향을 미칠 수 있음) -->
-        <!-- changefreq default - daily 설정 -->
         {% if post.sitemap.changefreq == null %}
         <changefreq>daily</changefreq>
         {% else %}
         <changefreq>{{ post.sitemap.changefreq }}</changefreq>
         {% endif %}
 
-        <!-- priority - 스크랩 우선순위 -->
-        <!-- priority default - 0.5 설정 -->
         {% if post.sitemap.priority == null %}
         <priority>0.5</priority>
         {% else %}
