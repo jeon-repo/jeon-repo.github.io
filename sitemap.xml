@@ -1,34 +1,38 @@
 ---
+layout: null
 ---
+
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for post in site.posts %}
     <url>
-      <loc>{{ site.url }}{{ post.url }}</loc>
-      <!-- lastmod - 마지막 수정일 -->
-      <!-- lastmod default - date 설정 -->
-      {% if post.lastmod == null %}
+        <loc>{{ site.url }}{{ post.url }}</loc>
+        <!-- lastmod - 마지막 수정일 -->
+        <!-- lastmod default - date 설정 -->
+        {% if post.lastmod == null %}
         <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-      {% else %}
+        {% else %}
         <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
-      {% endif %}
+        {% endif %}
 
-      <!-- changefreq - 스크랩 주기 (daily, weekly : 너무 짧으면 트래픽에 안좋은 영향을 미칠 수 있음) -->
-      <!-- changefreq default - daily 설정 -->
-      {% if post.sitemap.changefreq == null %}
+        <!-- changefreq - 스크랩 주기 (daily, weekly : 너무 짧으면 트래픽에 안좋은 영향을 미칠 수 있음) -->
+        <!-- changefreq default - daily 설정 -->
+        {% if post.sitemap.changefreq == null %}
         <changefreq>daily</changefreq>
-      {% else %}
+        {% else %}
         <changefreq>{{ post.sitemap.changefreq }}</changefreq>
-      {% endif %}
+        {% endif %}
 
-      <!-- priority - 스크랩 우선순위 -->
-      <!-- priority default - 0.5 설정 -->
-      {% if post.sitemap.priority == null %}
-          <priority>0.5</priority>
-      {% else %}
+        <!-- priority - 스크랩 우선순위 -->
+        <!-- priority default - 0.5 설정 -->
+        {% if post.sitemap.priority == null %}
+        <priority>0.5</priority>
+        {% else %}
         <priority>{{ post.sitemap.priority }}</priority>
-      {% endif %}
+        {% endif %}
 
     </url>
-  {% endfor %}
+    {% endfor %}
 </urlset>
