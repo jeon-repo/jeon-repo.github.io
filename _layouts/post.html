@@ -69,4 +69,6 @@ layout: default
   {% if page.feature-img %}
   header#main { background-image: url('{{ page.feature-img | relative_url }}'); }
   {% endif %}
+  /* 댓글창 사이즈 100% 사용 */
+  .utterances { max-width: 100% !important; }
 </style>
