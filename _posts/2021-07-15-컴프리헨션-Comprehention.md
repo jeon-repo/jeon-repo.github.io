@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "컴프리헨션(Comprehention)"
+title: "[Python] 컴프리헨션(Comprehention)"
 feature-img: "assets/img/feature-img/circuit.jpeg"
 author: janos
 tags: [Python]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "collections 라이브러리"
+title: "[Python] collections 라이브러리"
 feature-img: "assets/img/feature-img/beach001.jpeg"
 author: janos
 tags: [Python]
