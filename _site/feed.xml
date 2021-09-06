@@ -5,8 +5,20 @@
     <description>그림도 잘 그리고 싶은 개발자</description>
     <link>https://jeon-repo.github.io</link>
     <atom:link href="https://jeon-repo.github.io/feed.xml" rel="self" type="application/rss+xml" />
-	<lastBuildDate>Sun, 05 Sep 2021 00:00:00 +0900</lastBuildDate>
+	<lastBuildDate>Mon, 06 Sep 2021 00:00:00 +0900</lastBuildDate>
 	
+	<item>
+		<title>순열과 조합 (Permutation and Combination)</title>
+        
+        
+            <description>&lt;hr /&gt;
+</description>
+        
+        <pubDate>Mon, 06 Sep 2021 00:00:00 +0900</pubDate>
+        <link>https://jeon-repo.github.io/2021/09/06/%E1%84%89%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA-%E1%84%8C%E1%85%A9%E1%84%92%E1%85%A1%E1%86%B8.html</link>
+        <guid isPermaLink="true">https://jeon-repo.github.io/2021/09/06/%E1%84%89%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA-%E1%84%8C%E1%85%A9%E1%84%92%E1%85%A1%E1%86%B8.html</guid>
+      </item>
+    
 	<item>
 		<title>[백준 4396번] 지뢰 찾기</title>
         
@@ -113,18 +125,6 @@
         <pubDate>Sun, 29 Aug 2021 00:00:00 +0900</pubDate>
         <link>https://jeon-repo.github.io/2021/08/29/%E1%84%92%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A2-%E1%84%86%E1%85%A9%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%A2%E1%84%92%E1%85%AC-4%E1%84%87%E1%85%A5%E1%86%AB.html</link>
         <guid isPermaLink="true">https://jeon-repo.github.io/2021/08/29/%E1%84%92%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A2-%E1%84%86%E1%85%A9%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%A2%E1%84%92%E1%85%AC-4%E1%84%87%E1%85%A5%E1%86%AB.html</guid>
-      </item>
-    
-	<item>
-		<title>[현대 모비스 경진대회] 3번</title>
-        
-        
-            <description>&lt;hr /&gt;
-</description>
-        
-        <pubDate>Sun, 29 Aug 2021 00:00:00 +0900</pubDate>
-        <link>https://jeon-repo.github.io/2021/08/29/%E1%84%92%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A2-%E1%84%86%E1%85%A9%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%A2%E1%84%92%E1%85%AC-3%E1%84%87%E1%85%A5%E1%86%AB.html</link>
-        <guid isPermaLink="true">https://jeon-repo.github.io/2021/08/29/%E1%84%92%E1%85%A7%E1%86%AB%E1%84%83%E1%85%A2-%E1%84%86%E1%85%A9%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3-%E1%84%80%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%A2%E1%84%92%E1%85%AC-3%E1%84%87%E1%85%A5%E1%86%AB.html</guid>
       </item>
     
   </channel>
