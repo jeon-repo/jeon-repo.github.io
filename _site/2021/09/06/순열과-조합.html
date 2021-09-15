@@ -335,11 +335,64 @@
 
 \[nPr = {n! \over (n-r)!}\]
 
+<p>코드로 순열의 알고리즘을 구현하면 아래와 같습니다. (얼마든지 다른 형태로 구현 가능하지만 재귀를 이용한 구현 방식을 사용했습니다.)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">permutations</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="c1"># 1.
+</span>    <span class="n">arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">))]</span>
+
+    <span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">chosen</span><span class="p">,</span> <span class="n">used</span><span class="p">):</span>
+        <span class="c1"># 2.
+</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># 3.
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">chosen</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">generator</span><span class="p">(</span><span class="n">chosen</span><span class="p">,</span> <span class="n">used</span><span class="p">)</span>
+                <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">chosen</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">generator</span><span class="p">([],</span> <span class="n">used</span><span class="p">)</span>
+
+<span class="c1"># 예제
+# 1 ~ 5 중 3개를 선택한 순열 리스트를 출력
+</span><span class="n">permutaions</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
 <h3 id="조합">조합</h3>
 
 <p>조합은 서로 다른 n개중에 순서 상관없이 r개를 선택하는 경우의 수를 의미합니다.</p>
 
 \[nCr = {n! \over (n-r)!r! }\]
+
+<p>코드로 조합의 알고리즘을 구현하면 다음과 같습니다. (얼마든지 다른 형태로 구현 가능하지만 재귀를 이용한 구현 방식을 사용했습니다.)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">combinations</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="c1"># 1.
+</span>    <span class="n">arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+    <span class="c1"># 2.
+</span>    <span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">chosen</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># 3.
+</span>        <span class="n">start</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">chosen</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">chosen</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">_next</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+            <span class="n">chosen</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">_next</span><span class="p">])</span>
+            <span class="n">generator</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span>
+            <span class="n">chosen</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">generator</span><span class="p">([])</span>
+
+<span class="c1"># 예제
+# 1 ~ 5 중 3개를 선택한 조합 리스트 출력
+</span><span class="n">combinations</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="중복-순열">중복 순열</h3>
 
@@ -347,11 +400,91 @@
 
 \[{n\Pi r} = n^r\]
 
+<p>중복 순열의 경우 <code class="language-plaintext highlighter-rouge">중복되는 원소에 등장 순서를 정하면 해결할 수 있습니다.</code></p>
+
+<p>일반 순열 코드와 동일하지만 # 3. 의 조건문만 달라집니다.</p>
+
+<ol>
+  <li>i가 0일 때
+    <ul>
+      <li>i가 0이면 배열의 첫 원소이기 때문에 바로 사용</li>
+    </ul>
+  </li>
+  <li>arr[i-1] ≠ arr[i]일 때
+    <ul>
+      <li>arr은 정렬된 상태</li>
+      <li>이 때 i번째 원소가 i-1번째와 다르면 다른 원소</li>
+    </ul>
+  </li>
+  <li>used[i-1]일 때
+    <ul>
+      <li>and 조건이 not used[i]이기 때문에 used[i-1]를 이용</li>
+    </ul>
+  </li>
+</ol>
+
+<p>위의 3가지 조건을 사용하면 중복된 원소를 피해서 순열을 생성할 수 있습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">permutations</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="c1"># 1.
+</span>    <span class="n">arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">))]</span>
+
+    <span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">chosen</span><span class="p">,</span> <span class="n">used</span><span class="p">):</span>
+        <span class="c1"># 2.
+</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># 3.
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">or</span> <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="n">chosen</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">generator</span><span class="p">(</span><span class="n">chosen</span><span class="p">,</span> <span class="n">used</span><span class="p">)</span>
+                <span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">chosen</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">generator</span><span class="p">([],</span> <span class="n">used</span><span class="p">)</span>
+
+<span class="c1"># 예제
+# 1 ~ 3 중 3개를 선택한 순열 리스트를 중복 요소 건너뛰고 출력
+</span><span class="n">permutations</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
 <h3 id="중복-조합">중복 조합</h3>
 
 <p>중복 조합은 중복 가능한 n개 중에서 순서 상관없이 r개를 선택하는 경우의 수를 의미합니다.</p>
 
 \[nHr = {_{n+r-1}C_r}\]
+
+<p>중복 조합 역시 중복 순열과 같은 조건을 추가하면 됩니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">combinations</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="c1"># 1.
+</span>    <span class="n">arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">))]</span>
+
+    <span class="c1"># 2.
+</span>    <span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">chosen</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="c1"># 3.
+</span>        <span class="n">start</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">chosen</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">chosen</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">_next</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">used</span><span class="p">[</span><span class="n">_next</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="n">_next</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">arr</span><span class="p">[</span><span class="n">_next</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">arr</span><span class="p">[</span><span class="n">_next</span><span class="p">]</span> <span class="ow">or</span> <span class="n">used</span><span class="p">[</span><span class="n">_next</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="n">chosen</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">_next</span><span class="p">])</span>
+                <span class="n">used</span><span class="p">[</span><span class="n">_next</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">generator</span><span class="p">(</span><span class="n">chosen</span><span class="p">)</span>
+                <span class="n">used</span><span class="p">[</span><span class="n">_next</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">chosen</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">generator</span><span class="p">([])</span>
+
+<span class="c1"># 예제
+# 1 ~ 3 중 3개를 선택한 조합 리스트를 중복 요소 건너뛰고 출력
+</span><span class="n">combinations</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
 
     
   </section>
